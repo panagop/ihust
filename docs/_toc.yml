@@ -1,2 +1,7 @@
 format: jb-book
 root: notebooks/index
+
+parts:
+- caption: Intro
+  chapters:
+    - file: notebooks/example7-trans

@@ -3,3 +3,7 @@
 root: .
 title: Your Project Docs
 author: Your Name
+
+launch_buttons:
+  binderhub_url: "https://mybinder.org" 
+  colab_url: "https://colab.research.google.com"
