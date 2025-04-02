@@ -4,6 +4,11 @@ root: notebooks/index
 parts:
 - caption: Intro
   chapters:
+    - file: markdown
+
+
+- caption: ΣΤΑΤΙΚΗ ΜΕ ΜΗΤΡΩΑ
+  chapters:
     - file: notebooks/lessons/mitroa/example1
     - file: notebooks/lessons/mitroa/example2
     - file: notebooks/lessons/mitroa/example3
@@ -15,3 +20,8 @@ parts:
     - file: notebooks/lessons/mitroa/example8-trans
     - file: notebooks/lessons/mitroa/example9
     - file: notebooks/lessons/mitroa/example10
+
+# - caption: ΟΠΛΙΣΜΕΝΟ ΣΚΥΡΟΔΕΜΑ
+
+
+# - caption: References
