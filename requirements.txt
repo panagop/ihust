@@ -5,4 +5,3 @@ pandas
 sympy
 matplotlib
 streamlit
--e .
