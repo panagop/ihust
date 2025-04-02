@@ -171,5 +171,4 @@ webencodings==0.5.1
 websocket-client==1.8.0
 wheel==0.45.1
 widgetsnbextension==4.0.13
--e file:///D:/mypython_projects/ihust
 zipp==3.21.0
