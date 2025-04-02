@@ -1,7 +1,4 @@
 #!/bin/bash
-# Install system dependencies
-apt-get update -y
-apt-get install -y libblas3 liblapack3 libgfortran5
 
 # Install the local package in development mode
 pip install -e .
