@@ -4,4 +4,14 @@ root: notebooks/index
 parts:
 - caption: Intro
   chapters:
-    - file: notebooks/example7-trans
+    - file: notebooks/lessons/mitroa/example1
+    - file: notebooks/lessons/mitroa/example2
+    - file: notebooks/lessons/mitroa/example3
+    - file: notebooks/lessons/mitroa/example4
+    - file: notebooks/lessons/mitroa/example5
+    - file: notebooks/lessons/mitroa/example6  
+    - file: notebooks/lessons/mitroa/example7
+    - file: notebooks/lessons/mitroa/example7-trans
+    - file: notebooks/lessons/mitroa/example8-trans
+    - file: notebooks/lessons/mitroa/example9
+    - file: notebooks/lessons/mitroa/example10
