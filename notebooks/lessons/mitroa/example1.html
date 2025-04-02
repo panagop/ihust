@@ -1,0 +1,903 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Στατική με Μητρώα - Παράδειγμα 1 &#8212; Your Project Docs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/lessons/mitroa/example1';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Στατική με Μητρώα - Παράδειγμα 2" href="example2.html" />
+    <link rel="prev" title="Welcome to Your Project" href="../../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Your Project Docs</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Welcome to Your Project
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Στατική με Μητρώα - Παράδειγμα 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example2.html">Στατική με Μητρώα - Παράδειγμα 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example3.html">Εφαρμογή 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example4.html">Εφαρμογή 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example5.html">Εφαρμογή 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example6.html">Εφαρμογή 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example7.html">Εφαρμογή 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example7-trans.html">Εφαρμογή 7 - Χρήση μητρώων μετασχηματισμού</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example8-trans.html">Εφαρμογή 8 - Χρήση μητρώων μετασχηματισμού σε μη ορθογωνικό φορέα</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example9.html">Εφαρμογή 9 - Δικτύωμα</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example10.html">Εφαρμογή 10 - Δικτύωμα</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/panagop/ihust/main?urlpath=tree/docs/notebooks/lessons/mitroa/example1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/panagop/ihust/blob/main/docs/notebooks/lessons/mitroa/example1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/notebooks/lessons/mitroa/example1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Στατική με Μητρώα - Παράδειγμα 1</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ορισμός των συμβόλων που θα χρησιμοποιηθούν στην επίλυση του προβλήματος</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Καθορισμός μητρώων και διανυσμάτων</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Μητρώο στιβαρότητας</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Μητρώο παραμορφώσεων</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Μητρώο δυνάμεων</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Μητρώο αντιδράσεων</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Παράδειγμα 1 - Επίλυση προβόλου</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Υπολογισμός παραμέτρων παραδείγματος</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Αντικατάσταση τιμών στο μητρώο στιβαρότητας</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Αντικατάσταση τιμών στο μητρώο δυνάμεων</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Υπολογισμός των παραμορφώσεων και των αντιδράσεων</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Αντικατάσταση γνωστών τιμών στα μητρώα αντιδράσεων και παραμορφώσεων</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Διαχωρισμός σε υπομητρώα</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Εναλλακτική επίλυση με πράξεις μητρώων</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Στατική με Μητρώα - Παράδειγμα 1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Matrix</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h2>Ορισμός των συμβόλων που θα χρησιμοποιηθούν στην επίλυση του προβλήματος<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;A E I L&#39;</span><span class="p">)</span>
+<span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="p">,</span> <span class="n">U3</span><span class="p">,</span> <span class="n">U4</span><span class="p">,</span> <span class="n">U5</span><span class="p">,</span> <span class="n">U6</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;U1 U2 U3 U4 U5 U6&#39;</span><span class="p">)</span>
+<span class="n">P1</span><span class="p">,</span> <span class="n">P2</span><span class="p">,</span> <span class="n">P3</span><span class="p">,</span> <span class="n">P4</span><span class="p">,</span> <span class="n">P5</span><span class="p">,</span> <span class="n">P6</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;P1 P2 P3 P4 P5 P6&#39;</span><span class="p">)</span>
+<span class="n">R1</span><span class="p">,</span> <span class="n">R2</span><span class="p">,</span> <span class="n">R3</span><span class="p">,</span> <span class="n">R4</span><span class="p">,</span> <span class="n">R5</span><span class="p">,</span> <span class="n">R6</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;R1 R2 R3 R4 R5 R6&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Καθορισμός μητρώων και διανυσμάτων<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>Μητρώο στιβαρότητας<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">A</span><span class="o">*</span><span class="n">E</span><span class="o">/</span><span class="n">L</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">A</span><span class="o">*</span><span class="n">E</span><span class="o">/</span><span class="n">L</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="o">**</span><span class="mi">2</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="p">],</span>
+        <span class="p">[</span><span class="o">-</span><span class="n">A</span><span class="o">*</span><span class="n">E</span><span class="o">/</span><span class="n">L</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">A</span><span class="o">*</span><span class="n">E</span><span class="o">/</span><span class="n">L</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="o">**</span><span class="mi">2</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="o">/</span><span class="n">L</span><span class="p">]])</span>
+
+<span class="n">K</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\frac{A E}{L} &amp; 0 &amp; 0 &amp; - \frac{A E}{L} &amp; 0 &amp; 0\\0 &amp; \frac{12 E I}{L^{3}} &amp; \frac{6 E I}{L^{2}} &amp; 0 &amp; - \frac{12 E I}{L^{3}} &amp; \frac{6 E I}{L^{2}}\\0 &amp; \frac{6 E I}{L^{2}} &amp; \frac{4 E I}{L} &amp; 0 &amp; - \frac{6 E I}{L^{2}} &amp; \frac{2 E I}{L}\\- \frac{A E}{L} &amp; 0 &amp; 0 &amp; \frac{A E}{L} &amp; 0 &amp; 0\\0 &amp; - \frac{12 E I}{L^{3}} &amp; - \frac{6 E I}{L^{2}} &amp; 0 &amp; \frac{12 E I}{L^{3}} &amp; - \frac{6 E I}{L^{2}}\\0 &amp; \frac{6 E I}{L^{2}} &amp; \frac{2 E I}{L} &amp; 0 &amp; - \frac{6 E I}{L^{2}} &amp; \frac{4 E I}{L}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h3>Μητρώο παραμορφώσεων<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">U</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">U1</span><span class="p">],</span> <span class="p">[</span><span class="n">U2</span><span class="p">],</span> <span class="p">[</span><span class="n">U3</span><span class="p">],</span> <span class="p">[</span><span class="n">U4</span><span class="p">],</span> <span class="p">[</span><span class="n">U5</span><span class="p">],</span> <span class="p">[</span><span class="n">U6</span><span class="p">]])</span>
+<span class="n">U</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}U_{1}\\U_{2}\\U_{3}\\U_{4}\\U_{5}\\U_{6}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h3>Μητρώο δυνάμεων<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">P1</span><span class="p">],</span> <span class="p">[</span><span class="n">P2</span><span class="p">],</span> <span class="p">[</span><span class="n">P3</span><span class="p">],</span> <span class="p">[</span><span class="n">P4</span><span class="p">],</span> <span class="p">[</span><span class="n">P5</span><span class="p">],</span> <span class="p">[</span><span class="n">P6</span><span class="p">]])</span>
+<span class="n">P</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}P_{1}\\P_{2}\\P_{3}\\P_{4}\\P_{5}\\P_{6}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h3>Μητρώο αντιδράσεων<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="n">R1</span><span class="p">],</span> <span class="p">[</span><span class="n">R2</span><span class="p">],</span> <span class="p">[</span><span class="n">R3</span><span class="p">],</span> <span class="p">[</span><span class="n">R4</span><span class="p">],</span> <span class="p">[</span><span class="n">R5</span><span class="p">],</span> <span class="p">[</span><span class="n">R6</span><span class="p">]])</span>
+<span class="n">R</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}R_{1}\\R_{2}\\R_{3}\\R_{4}\\R_{5}\\R_{6}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id8">
+<h2>Παράδειγμα 1 - Επίλυση προβόλου<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<p><img alt="ekfonisi_1" src="notebooks/lessons/mitroa/ekfonisi_1.png" /> <img alt="ekfonisi_2" src="notebooks/lessons/mitroa/ekfonisi_2.png" /></p>
+<section id="id9">
+<h3>Υπολογισμός παραμέτρων παραδείγματος<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_example</span> <span class="o">=</span> <span class="mf">0.3</span><span class="o">*</span><span class="mf">0.4</span>             <span class="c1"># m^2</span>
+<span class="n">I_example</span> <span class="o">=</span> <span class="mf">0.3</span><span class="o">*</span><span class="mf">0.4</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">12</span>       <span class="c1"># m^4</span>
+<span class="n">E_example</span> <span class="o">=</span> <span class="mf">1.0e10</span>              <span class="c1"># Pa</span>
+<span class="n">L_example</span> <span class="o">=</span> <span class="mf">8.0</span>                 <span class="c1"># m</span>
+<span class="n">q_example</span> <span class="o">=</span> <span class="mf">20_000.0</span>            <span class="c1"># N/m</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A = </span><span class="si">{</span><span class="n">A_example</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1"> m^2&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;I = </span><span class="si">{</span><span class="n">I_example</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> m^4&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A = 0.1200 m^2
+I = 0.001600 m^4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id10">
+<h3>Αντικατάσταση τιμών στο μητρώο στιβαρότητας<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_example</span> <span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">A_example</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">E_example</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">I_example</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">L_example</span><span class="p">)</span>
+<span class="n">k_example</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}150000000.0 &amp; 0 &amp; 0 &amp; -150000000.0 &amp; 0 &amp; 0\\0 &amp; 375000.0 &amp; 1500000.0 &amp; 0 &amp; -375000.0 &amp; 1500000.0\\0 &amp; 1500000.0 &amp; 8000000.0 &amp; 0 &amp; -1500000.0 &amp; 4000000.0\\-150000000.0 &amp; 0 &amp; 0 &amp; 150000000.0 &amp; 0 &amp; 0\\0 &amp; -375000.0 &amp; -1500000.0 &amp; 0 &amp; 375000.0 &amp; -1500000.0\\0 &amp; 1500000.0 &amp; 4000000.0 &amp; 0 &amp; -1500000.0 &amp; 8000000.0\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+</section>
+<section id="id11">
+<h3>Αντικατάσταση τιμών στο μητρώο δυνάμεων<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>Θεωρώντας αμφίπακτη δοκό, οι τιμές των δυνάμεων στα άκρα είναι σύμφωνα με το σχήμα:</p>
+<p><img alt="uniform" src="notebooks/lessons/mitroa/uniform.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PA_example</span> <span class="o">=</span> <span class="n">PB_example</span> <span class="o">=</span> <span class="o">-</span> <span class="n">q_example</span> <span class="o">*</span> <span class="n">L_example</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">MA_example</span> <span class="o">=</span> <span class="o">-</span> <span class="n">q_example</span> <span class="o">*</span> <span class="n">L_example</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">12</span>
+<span class="n">MB_example</span> <span class="o">=</span> <span class="o">-</span><span class="n">MA_example</span>
+<span class="n">p_example</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P2</span><span class="p">,</span> <span class="n">PA_example</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P3</span><span class="p">,</span> <span class="n">MA_example</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P5</span><span class="p">,</span> <span class="n">PB_example</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P6</span><span class="p">,</span> <span class="n">MB_example</span><span class="p">)</span>
+<span class="n">p_example</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}0\\-80000.0\\-106666.666666667\\0\\-80000.0\\106666.666666667\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id12">
+<h2>Υπολογισμός των παραμορφώσεων και των αντιδράσεων<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<p>Στόχος είναι η επίλυση της μητρωικής εξίσωσης:</p>
+<p><span class="math notranslate nohighlight">\( [k] \cdot [u] = [P] + [R]\)</span></p>
+<p>στην οποία όμως υπάρχουν 2 άγνωστοι, οι πίνακες <span class="math notranslate nohighlight">\([u]\)</span> και <span class="math notranslate nohighlight">\([R]\)</span>.</p>
+<p>Επιπλέον, παρατηρείται ότι το μητρώο στιβαρότητας δεν μπορεί να αντιστραφεί καθώς η ορίζουσά του είναι μεδενική.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Υπολογισμός ορίζουσας του μητρώου στιβαρότητας</span>
+<span class="n">k_example</span><span class="o">.</span><span class="n">det</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0\]</div>
+</div>
+</div>
+<section id="id13">
+<h3>Αντικατάσταση γνωστών τιμών στα μητρώα αντιδράσεων και παραμορφώσεων<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<p>Στο μητρώο αντιδράσεων, οι αντιδράσεις στην άκρη του προβόλου θα είναι μηδενικές, ενώ αντίστοιχα, στο μητρώο παραμορφώσεων οι παραμορφώσεις στην πάκτωση θα είναι μηδενικές.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R1_example</span><span class="p">,</span> <span class="n">R2_example</span><span class="p">,</span> <span class="n">R3_example</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;R1_example R2_example R3_example&#39;</span><span class="p">)</span>
+<span class="n">r_example</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">R1</span><span class="p">,</span> <span class="n">R1_example</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">R2</span><span class="p">,</span> <span class="n">R2_example</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">R3</span><span class="p">,</span> <span class="n">R3_example</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">R4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">R5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">R6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">r_example</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}R_{1 example}\\R_{2 example}\\R_{3 example}\\0\\0\\0\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">U4_example</span><span class="p">,</span> <span class="n">U5_example</span><span class="p">,</span> <span class="n">U6_example</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;U4_example U5_example U6_example&#39;</span><span class="p">)</span>
+<span class="n">u_example</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">U1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">U2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">U3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">U4</span><span class="p">,</span> <span class="n">U4_example</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">U5</span><span class="p">,</span> <span class="n">U5_example</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">U6</span><span class="p">,</span> <span class="n">U6_example</span><span class="p">)</span>
+<span class="n">u_example</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}0\\0\\0\\U_{4 example}\\U_{5 example}\\U_{6 example}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+</section>
+<section id="id14">
+<h3>Διαχωρισμός σε υπομητρώα<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p>Παρατηρείται ότι αν θεωρηθεί το υπομητρώο με τα τελευταία 3 στοιχεία των πινάκων <span class="math notranslate nohighlight">\([k]\)</span>, <span class="math notranslate nohighlight">\([P]\)</span>, <span class="math notranslate nohighlight">\([R]\)</span> και <span class="math notranslate nohighlight">\([u]\)</span>, τότε η μητρωική εξίσωση γίνεται:</p>
+<p><span class="math notranslate nohighlight">\( [k_{456}] \cdot [u_{456}] = [P_{456}] + [R_{456}]\)</span></p>
+<p>όπου μάλιστα το <span class="math notranslate nohighlight">\([R_{456}]\)</span> είναι μηδενικό.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_456</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">k_example</span><span class="p">[</span><span class="mi">3</span><span class="p">:,</span> <span class="mi">3</span><span class="p">:])</span>
+<span class="n">p_456</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">p_example</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
+<span class="n">r_456</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">r_example</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
+<span class="n">u_456</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">u_example</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_456</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}150000000.0 &amp; 0 &amp; 0\\0 &amp; 375000.0 &amp; -1500000.0\\0 &amp; -1500000.0 &amp; 8000000.0\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_456</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}0\\0\\0\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_456</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}U_{4 example}\\U_{5 example}\\U_{6 example}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_456</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}0\\-80000.0\\106666.666666667\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<p>Από τον πολλαπλασιασμό των <span class="math notranslate nohighlight">\( [k_{456}] \cdot [u_{456}]\)</span> και την εξίσωση του γινομένου με το <span class="math notranslate nohighlight">\([P_{456}]\)</span> προκύπτει ένα σύστημα 3x3 εξισώσεων, όπου φυσικά <span class="math notranslate nohighlight">\(U_4=0 \)</span> οπότε καταλήγουμε σε σύστημα 2x2</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_456</span> <span class="o">*</span> <span class="n">u_456</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}150000000.0 U_{4 example}\\375000.0 U_{5 example} - 1500000.0 U_{6 example}\\- 1500000.0 U_{5 example} + 8000000.0 U_{6 example}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<p>Από τη λύση του συστήματος προκύπτουν οι τιμές των παραμορφώσεων <span class="math notranslate nohighlight">\(U_5\)</span> και <span class="math notranslate nohighlight">\(U_6\)</span>.</p>
+</section>
+<section id="id15">
+<h3>Εναλλακτική επίλυση με πράξεις μητρώων<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>Η εξίσωση:</p>
+<p><span class="math notranslate nohighlight">\( [k_{456}] \cdot [u_{456}] = [P_{456}] + [R_{456}]\)</span></p>
+<p>για μηδενικό <span class="math notranslate nohighlight">\([R_{456}]\)</span> μπορεί να γραφτεί και ως:</p>
+<p><span class="math notranslate nohighlight">\( [k_{456}] \cdot [u_{456}] = [P_{456}]\)</span></p>
+<p>οπότε</p>
+<p><span class="math notranslate nohighlight">\( [k_{456}]^{-1}[k_{456}] \cdot [u_{456}] = [k_{456}]^{-1} \cdot [P_{456}]\)</span></p>
+<p><span class="math notranslate nohighlight">\( [u_{456}] = [k_{456}]^{-1} \cdot [P_{456}]\)</span></p>
+<p>Το μητρώο <span class="math notranslate nohighlight">\([k_{456}]\)</span> είναι πλέον αντιστρέψιμο</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Το αντίστροφο του μητρώου στιβαρότητας για τα στοιχεία 456</span>
+<span class="n">k_456</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}6.66666666666667 \cdot 10^{-9} &amp; 0 &amp; 0\\0 &amp; 1.06666666666667 \cdot 10^{-5} &amp; 2.0 \cdot 10^{-6}\\0 &amp; 2.0 \cdot 10^{-6} &amp; 5.0 \cdot 10^{-7}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_456_solution</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">k_456</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span> <span class="o">*</span> <span class="n">p_456</span><span class="p">)</span>
+<span class="n">u_456_solution</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}0\\-0.64\\-0.106666666666667\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<p>Το παραπάνω αποτέλεσμα είναι οι τιμές του μητρώου <span class="math notranslate nohighlight">\([u_{456}]\)</span>, άρα των παραμορφώσεων <span class="math notranslate nohighlight">\(U_4\)</span>, <span class="math notranslate nohighlight">\(U_5\)</span> και <span class="math notranslate nohighlight">\(U_6\)</span>.</p>
+<p>οπότε πλέον το οι τιμές των U4, U5 και U6 της λύσης μπορούν να αντιστοιχηθούν στις σχετικές μεταβλητές</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_solution</span> <span class="o">=</span> <span class="n">u_example</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">U4_example</span><span class="p">,</span> <span class="n">u_456_solution</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">U5_example</span><span class="p">,</span> <span class="n">u_456_solution</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">U6_example</span><span class="p">,</span> <span class="n">u_456_solution</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">u_example</span> <span class="o">=</span> <span class="n">u_solution</span>
+<span class="n">u_example</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}0\\0\\0\\0\\-0.64\\-0.106666666666667\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<p>Η αρχική μητρωική εξίσωση έχει πλέον ως μόνο άγνωστο το μητρώο [R]:</p>
+<p><span class="math notranslate nohighlight">\( [k] \cdot [u] = [P] + [R]\)</span></p>
+<p>οπότε:</p>
+<p><span class="math notranslate nohighlight">\([R] = [k] \cdot [u] - [P]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_solution</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">k_example</span> <span class="o">*</span> <span class="n">u_example</span> <span class="o">-</span> <span class="n">p_example</span><span class="p">)</span>
+<span class="n">r_solution</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}0\\160000.0\\640000.0\\0\\0\\7.27595761418343 \cdot 10^{-11}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<p>Παρατηρείται ότι στο αποτέλεσμα που προκύπτει υπολογιστικά εμφανίζονται “λύσεις” για τις αντιδράσεις <span class="math notranslate nohighlight">\(R_5\)</span> και <span class="math notranslate nohighlight">\(R_6\)</span> που θα έπρεπε να είναι μηδενικές.</p>
+<p>Αυτό σχετίζεται με τους υπολογισμούς που γίνονται με τους Η/Υ και τους τρόπους που αποθηκεύονται οι πραγματικές τιμές των μεταβλητών. Βλέπουμε ότι τα νούμερα είναι πάρα πολύ μικρά, πρακτικά ίσα με μηδέν, ωστόσο οι υπολογιστές δεν τα αποδεχόνται ως τέτοια. Αυτό μπορεί να επηρεάσει την ακρίβεια των υπολογισμών, ιδιαίτερα σε περίπτωση που οι κάποιες μεταβλητές έχουν πολύ μεγάλες τιμές ενώ κάποιες άλλες πολύ μικρότερες. Βέβαια στο παράδειγμα που εξετάζεται οι τιμές των μεταβλητών είναι τέτοιες ώστε οι υπολογισμοί είναι πρακτικά ακριβείς.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks\lessons\mitroa"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to Your Project</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="example2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Στατική με Μητρώα - Παράδειγμα 2</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ορισμός των συμβόλων που θα χρησιμοποιηθούν στην επίλυση του προβλήματος</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Καθορισμός μητρώων και διανυσμάτων</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Μητρώο στιβαρότητας</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Μητρώο παραμορφώσεων</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Μητρώο δυνάμεων</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Μητρώο αντιδράσεων</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Παράδειγμα 1 - Επίλυση προβόλου</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Υπολογισμός παραμέτρων παραδείγματος</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Αντικατάσταση τιμών στο μητρώο στιβαρότητας</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Αντικατάσταση τιμών στο μητρώο δυνάμεων</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Υπολογισμός των παραμορφώσεων και των αντιδράσεων</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Αντικατάσταση γνωστών τιμών στα μητρώα αντιδράσεων και παραμορφώσεων</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Διαχωρισμός σε υπομητρώα</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Εναλλακτική επίλυση με πράξεις μητρώων</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Your Name
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
