@@ -1,0 +1,27 @@
+[project]
+name = "your_project"
+version = "0.1.0"
+description = "A Streamlit app with Jupyter Book docs"
+authors = [{name = "gp"}]
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "streamlit",
+    "jupyter-book",
+    "jupyter>=1.1.1",
+    "lab>=8.4",
+    "pandas>=2.2.3",
+    "openseespy>=3.7.1.2",
+    "sympy>=1.13.3",
+    "opsvis>=1.2.23",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
