@@ -170,6 +170,3 @@ websocket-client==1.8.0
 wheel==0.45.1
 widgetsnbextension==4.0.13
 zipp==3.21.0
-
-# Install the local package
--e .
