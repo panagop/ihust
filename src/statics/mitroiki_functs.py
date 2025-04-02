@@ -135,3 +135,28 @@ def TranformMatrix(theta: float) -> Matrix:
                 [0, 0, 0, s, c, 0],
                 [0, 0, 0, 0, 0, 1]])
     return T
+
+def K_truss(A: float, E: float, L: float) -> Matrix:
+    """Return the stiffness matrix for a truss element
+
+    Args:
+        A: Cross-sectional area of the element.
+        E: Young's modulus of the element.
+        L: Length of the element.
+
+    Returns:
+        The stiffness matrix for the element.
+    """
+    k = Matrix([[A*E/L, -A*E/L],
+                [-A*E/L, A*E/L]])
+    return k
+
+
+def TransformMatrixTruss(theta: float) -> Matrix:
+    c = sym.cos(theta)
+    s = sym.sin(theta)
+    T = Matrix([[c, 0,],
+                [s, 0],
+                [0, c],
+                [0, s]])
+    return T
