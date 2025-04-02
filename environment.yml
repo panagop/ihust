@@ -1,0 +1,14 @@
+name: notebook
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - openseespy
+  - numpy
+  - pandas
+  - sympy
+  - matplotlib
+  - pip
+  - pip:
+    - opsvis
+    - .
