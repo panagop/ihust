@@ -4,6 +4,12 @@ root: .
 title: Your Project Docs
 author: Your Name
 
+repository:
+  url: https://github.com/panagop/ihust  # Replace with your actual GitHub repo
+  path_to_book: docs  # Path to your book's source files
+  branch: main  # Or whatever branch you're using
+
+
 launch_buttons:
   binderhub_url: "https://mybinder.org" 
   colab_url: "https://colab.research.google.com"
