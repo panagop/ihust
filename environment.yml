@@ -11,5 +11,5 @@ dependencies:
   - pip:
     - openseespy==3.7.1.2
     - opsvis==1.2.23
-    - jupyter-book
+    # - jupyter-book
     - .
