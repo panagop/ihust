@@ -1,0 +1,3 @@
+#!/bin/bash
+# Install the local package in development mode
+pip install -e .
