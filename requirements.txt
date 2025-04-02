@@ -3,5 +3,6 @@ opsvis==1.2.23
 numpy
 pandas
 sympy
+scipy
 matplotlib
 streamlit
