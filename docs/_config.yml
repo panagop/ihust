@@ -13,3 +13,31 @@ repository:
 launch_buttons:
   binderhub_url: "https://mybinder.org" 
 
+execute:
+  execute_notebooks: cache
+
+
+sphinx:
+  config:
+    html_show_copyright: false
+    mathjax3_config:
+      TeX:
+        Macros:
+          vector: ["\\vec{#1}", 1]
+          uvec: ["\\hat{#1}", 1]
+          mag: ["\\lVert#1\\rVert", 1]
+          cross: "\\times"
+          unit: ["#1~\\mathrm{#2}", 2]
+
+parse:
+  myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    # - html_admonition
+    # - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    #- substitution

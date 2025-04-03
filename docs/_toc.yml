@@ -1,25 +1,23 @@
 format: jb-book
 root: notebooks/index
 
-parts:
-- caption: Intro
-  chapters:
-    - file: markdown
-
-
-- caption: ΣΤΑΤΙΚΗ ΜΕ ΜΗΤΡΩΑ
-  chapters:
-    - file: notebooks/lessons/mitroa/example1
-    - file: notebooks/lessons/mitroa/example2
-    - file: notebooks/lessons/mitroa/example3
-    - file: notebooks/lessons/mitroa/example4
-    - file: notebooks/lessons/mitroa/example5
-    - file: notebooks/lessons/mitroa/example6  
-    - file: notebooks/lessons/mitroa/example7
-    - file: notebooks/lessons/mitroa/example7-trans
-    - file: notebooks/lessons/mitroa/example8-trans
-    - file: notebooks/lessons/mitroa/example9
-    - file: notebooks/lessons/mitroa/example10
+chapters:
+  - file: markdown
+  - file: notebooks/lessons/mitroa/examples
+    sections:
+      - file: notebooks/lessons/mitroa/example1
+      - file: notebooks/lessons/mitroa/example2
+      - file: notebooks/lessons/mitroa/example3
+      - file: notebooks/lessons/mitroa/example4
+      - file: notebooks/lessons/mitroa/example5
+  - file: notebooks/lessons/mitroa/examples2
+    sections:
+      - file: notebooks/lessons/mitroa/example6  
+      - file: notebooks/lessons/mitroa/example7
+      - file: notebooks/lessons/mitroa/example7-trans
+      - file: notebooks/lessons/mitroa/example8-trans
+      - file: notebooks/lessons/mitroa/example9
+      - file: notebooks/lessons/mitroa/example10
 
 # - caption: ΟΠΛΙΣΜΕΝΟ ΣΚΥΡΟΔΕΜΑ
 

@@ -1,7 +1,7 @@
 import numpy as np
 import math
 from ..common.io.output import OutputTable, OutputString, OutputExtended
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from ..common.math.charts.linexy import LineXY
 from ..common.math.numerical import xy_with_endpoints
 
@@ -42,7 +42,7 @@ class BilinearCurve:
 
     @property
     def μ(self) -> float:
-        """
+        r"""
         .. math::
             μ = \dfrac{d_u - d_0}{d_y - d_0}
 
@@ -51,28 +51,28 @@ class BilinearCurve:
 
     @property
     def kel(self) -> float:
-        """
+        r"""
         Slope of the elastic branch, :math:`k_{el} = \dfrac{a_y - a_0}{d_y - d_0}`
         """
         return (self.ay - self.a0) / (self.dy - self.d0)
 
     @property
     def kinel(self) -> float:
-        """
+        r"""
         Slope of the inelastic branch, :math:`k_{inel} = \dfrac{a_u - a_y}{d_u - d_y}`
         """
         return (self.au - self.ay) / (self.du - self.dy)
 
     @property
     def α(self) -> float:
-        """
+        r"""
         Hardening, :math:`α = k_{inel}/k_{el}`
         """
         return self.kinel / self.kel
 
     @property
     def β0(self) -> float:
-        """
+        r"""
         Damping after Fema440 Equation 3-6
 
         .. math::
@@ -92,7 +92,7 @@ class BilinearCurve:
 
     @property
     def T0(self):
-        """
+        r"""
         Initial period T0
 
         .. math::
@@ -101,7 +101,7 @@ class BilinearCurve:
         return 2*math.pi*((self.dy-self.d0)/(self.ay - self.a0))**0.5
 
     def Teq(self, T0):
-        """
+        r"""
         Effective period Teq  after Fema440 Equation 3-5
 
         .. math::
@@ -156,7 +156,7 @@ class Bilin:
             - __get_area()
             }
     """
-    curve_ini: LineXY = LineXY()
+    curve_ini: LineXY = field(default_factory=LineXY)
     xtarget: float = 0.0
     dropstrength: float = 0.75
     elastoplastic: bool = False
