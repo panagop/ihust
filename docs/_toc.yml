@@ -1,25 +1,66 @@
 format: jb-book
-root: notebooks/index
+root: index
 
-chapters:
-  - file: markdown
-  - file: notebooks/lessons/mitroa/examples
-    sections:
-      - file: notebooks/lessons/mitroa/example1
-      - file: notebooks/lessons/mitroa/example2
-      - file: notebooks/lessons/mitroa/example3
-      - file: notebooks/lessons/mitroa/example4
-      - file: notebooks/lessons/mitroa/example5
-  - file: notebooks/lessons/mitroa/examples2
-    sections:
-      - file: notebooks/lessons/mitroa/example6  
-      - file: notebooks/lessons/mitroa/example7
-      - file: notebooks/lessons/mitroa/example7-trans
-      - file: notebooks/lessons/mitroa/example8-trans
-      - file: notebooks/lessons/mitroa/example9
-      - file: notebooks/lessons/mitroa/example10
+parts:
+  - caption: Intro
+    chapters:
+      - file: markdown
+  - caption: ΣΤΑΤΙΚΗ ΜΕ ΜΗΤΡΩΑ
+    chapters:
+      - file: notebooks/lessons/mitroa/examples.md
+        sections:
+        - file: notebooks/lessons/mitroa/example1.ipynb
+        - file: notebooks/lessons/mitroa/example2.ipynb
+        - file: notebooks/lessons/mitroa/example3.ipynb
+        - file: notebooks/lessons/mitroa/example4.ipynb
+        - file: notebooks/lessons/mitroa/example5.ipynb
+        - file: notebooks/lessons/mitroa/example6.ipynb
+        - file: notebooks/lessons/mitroa/example7.ipynb
+        - file: notebooks/lessons/mitroa/example7-trans.ipynb
+        - file: notebooks/lessons/mitroa/example8-trans.ipynb
+        - file: notebooks/lessons/mitroa/example9.ipynb
+        - file: notebooks/lessons/mitroa/example10.ipynb
+      - file: notebooks/lessons/modelling/modelling.md
+        sections:
+        - file: notebooks/lessons/modelling/statics_vs_sap.md
+        - file: notebooks/lessons/modelling/sap2000_default.md
+        - file: notebooks/lessons/modelling/sap2000_no_shear.md
+        - file: notebooks/lessons/modelling/frame2d_pi.md
+        - file: notebooks/lessons/modelling/sap2000_truss.md
+        - file: notebooks/lessons/modelling/frame2d_truss.md
 
-# - caption: ΟΠΛΙΣΜΕΝΟ ΣΚΥΡΟΔΕΜΑ
+  - caption: ΟΠΛΙΣΜΕΝΟ ΣΚΥΡΟΔΕΜΑ 1
+    chapters:
+    - file: notebooks/lessons/rc1/markdown-01
+      sections:
+      - file: notebooks/lessons/rc1/enal_loads
 
 
-# - caption: References
+  - caption: ΟΠΛΙΣΜΕΝΟ ΣΚΥΡΟΔΕΜΑ 2
+    chapters:
+    - file: notebooks/lessons/rc2/intro
+      sections:
+      - title: Εργασίες 2021-22
+        file: notebooks/lessons/rc2/homework_2021-22/intro # Create this file or point to existing
+        sections:
+        - file: notebooks/lessons/rc2/homework_2021-22/betonII_lab_01_2021.ipynb
+        - file: notebooks/lessons/rc2/homework_2021-22/betonII_lab_02-Sap_results_tables_2021.ipynb
+      - title: Εργασίες 2022-23
+        file: notebooks/lessons/rc2/homework_2022-23/intro # Create this file or point to existing
+        sections:
+        - file: notebooks/lessons/rc2/homework_2022-23/betonII_lab_01_2022.ipynb
+        - file: notebooks/lessons/rc2/homework_2022-23/betonII_lab_02-Sap_results_tables_2022.ipynb
+      - title: Εργασίες 2023-24
+        file: notebooks/lessons/rc2/homework_2023-24/intro # Create this file or point to existing
+        sections:
+        - file: notebooks/lessons/rc2/homework_2023-24/betonII_lab_01_2023.ipynb
+        - file: notebooks/lessons/rc2/homework_2023-24/betonII_lab_02-Sap_results_tables_2023.ipynb
+      - title: Εργασίες 2024-25
+        file: notebooks/lessons/rc2/homework_2024-25/intro # Create this file or point to existing
+        sections:
+        - file: notebooks/lessons/rc2/homework_2024-25/betonII_lab_01_2024.ipynb
+        - file: notebooks/lessons/rc2/homework_2024-25/betonII_lab_02-Sap_results_tables_2024.ipynb
+
+  - caption: References
+    chapters:
+      - file: references

@@ -1,8 +1,9 @@
 # Jupyter Book Configuration
 
 root: .
-title: Your Project Docs
-author: Your Name
+title: Structural courses jupyter book
+author: gp
+logo: logo_civil.png
 
 repository:
   url: https://github.com/panagop/ihust  # Replace with your actual GitHub repo
@@ -17,17 +18,30 @@ execute:
   execute_notebooks: cache
 
 
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
+
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+
 sphinx:
   config:
     html_show_copyright: false
-    mathjax3_config:
-      TeX:
-        Macros:
-          vector: ["\\vec{#1}", 1]
-          uvec: ["\\hat{#1}", 1]
-          mag: ["\\lVert#1\\rVert", 1]
-          cross: "\\times"
-          unit: ["#1~\\mathrm{#2}", 2]
+#     mathjax3_config:
+#       TeX:
+#         Macros:
+#           vector: ["\\vec{#1}", 1]
+#           uvec: ["\\hat{#1}", 1]
+#           mag: ["\\lVert#1\\rVert", 1]
+#           cross: "\\times"
+#           unit: ["#1~\\mathrm{#2}", 2]
+  extra_extensions:
+    - sphinx_design
 
 parse:
   myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
@@ -41,3 +55,29 @@ parse:
     - replacements
     - smartquotes
     #- substitution
+
+
+
+html:
+  use_repository_button: true
+  use_issues_button: true
+  use_edit_page_button: true
+  favicon: ""
+  extra_navbar: ""
+  extra_footer: ""
+  analytics.google_analytics_id: ""
+  home_page_in_navbar: true
+  baseurl: ""
+  comments:
+    hypothesis: false
+    utterances: false
+  theme:
+    name: "sphinx_book_theme"
+    options:
+      theme_toggle: false   # 👈 disables dark/light toggle
+      default_mode: "light" # 👈 ensures light mode is used
+
+# 👇 This controls code visibility
+code_toggle:
+  show_buttons: true      # show toggle button
+  hide_code_by_default: true  # hide code when page loads
