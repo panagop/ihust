@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Προσομοίωση σε λογισμικό &#8212; Structural courses jupyter book</title>
+    <title>Διαστασιολόγηση δοκών &#8212; Structural courses jupyter book</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/lessons/modelling/modelling';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/lessons/rc1/markdown-01';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Στατική vs SAP2000" href="statics_vs_sap.html" />
-    <link rel="prev" title="Εφαρμογή 10 - Δικτύωμα" href="../mitroa/example10.html" />
+    <link rel="next" title="Παράδειγμα χρήσης εναλλακτών φορτίσεων σε δοκό" href="enal_loads.html" />
+    <link rel="prev" title="Επίλυση δικτυώματος με το Frame2d" href="../modelling/frame2d_truss.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,7 +186,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../markdown.html">Markdown Files</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ΣΤΑΤΙΚΗ ΜΕ ΜΗΤΡΩΑ</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../mitroa/examples.html">Εφαρμογές</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../mitroa/example1.html">Στατική με Μητρώα - Παράδειγμα 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../mitroa/example2.html">Στατική με Μητρώα - Παράδειγμα 2</a></li>
@@ -201,20 +201,20 @@
 <li class="toctree-l2"><a class="reference internal" href="../mitroa/example10.html">Εφαρμογή 10 - Δικτύωμα</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Προσομοίωση σε λογισμικό</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="statics_vs_sap.html">Στατική vs SAP2000</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sap2000_default.html">Επίλυση πλαισίου με το SAP2000 (default)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sap2000_no_shear.html">Επίλυση πλαισίου με το SAP2000 (αγνοώντας το έργο των τεμνουσών)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="frame2d_pi.html">Επίλυση πλαισίου με το Frame2d</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sap2000_truss.html">Επίλυση δικτυώματος με το SAP2000</a></li>
-<li class="toctree-l2"><a class="reference internal" href="frame2d_truss.html">Επίλυση δικτυώματος με το Frame2d</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modelling/modelling.html">Προσομοίωση σε λογισμικό</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modelling/statics_vs_sap.html">Στατική vs SAP2000</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modelling/sap2000_default.html">Επίλυση πλαισίου με το SAP2000 (default)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modelling/sap2000_no_shear.html">Επίλυση πλαισίου με το SAP2000 (αγνοώντας το έργο των τεμνουσών)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modelling/frame2d_pi.html">Επίλυση πλαισίου με το Frame2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modelling/sap2000_truss.html">Επίλυση δικτυώματος με το SAP2000</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modelling/frame2d_truss.html">Επίλυση δικτυώματος με το Frame2d</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ΟΠΛΙΣΜΕΝΟ ΣΚΥΡΟΔΕΜΑ</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../rc1/markdown-01.html">Διαστασιολόγηση δοκών</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../rc1/enal_loads.html">Παράδειγμα χρήσης εναλλακτών φορτίσεων σε δοκό</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Διαστασιολόγηση δοκών</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="enal_loads.html">Παράδειγμα χρήσης εναλλακτών φορτίσεων σε δοκό</a></li>
 </ul>
 </details></li>
 </ul>
@@ -292,7 +292,7 @@
       
       
       
-      <li><a href="https://github.com/panagop/ihust/edit/main/docs/notebooks/lessons/modelling/modelling.md" target="_blank"
+      <li><a href="https://github.com/panagop/ihust/edit/main/docs/notebooks/lessons/rc1/markdown-01.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -309,7 +309,7 @@
       
       
       
-      <li><a href="https://github.com/panagop/ihust/issues/new?title=Issue%20on%20page%20%2Fnotebooks/lessons/modelling/modelling.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/panagop/ihust/issues/new?title=Issue%20on%20page%20%2Fnotebooks/lessons/rc1/markdown-01.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -339,7 +339,7 @@
       
       
       
-      <li><a href="../../../_sources/notebooks/lessons/modelling/modelling.md" target="_blank"
+      <li><a href="../../../_sources/notebooks/lessons/rc1/markdown-01.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -421,7 +421,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Προσομοίωση σε λογισμικό</h1>
+    <h1>Διαστασιολόγηση δοκών</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -436,16 +436,13 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Προσομοίωση σε λογισμικό<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1>Διαστασιολόγηση δοκών<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>blabla</p>
+<p>For example, the following syntax: will render like <span id="id2">[<a class="reference internal" href="../../../references.html#id7" title="Γεώργιος Παναγόπουλος and Εμμανουήλ Κίρτας. Οπλισμένο Σκυρόδεμα Ι. Διεθνές Πανεπιστήμιο της Ελλάδας, 2021. URL: https://bit.ly/betoni-101.">5</a>]</span> blabla <span id="id3"><a class="reference internal" href="../../../references.html#id7" title="Γεώργιος Παναγόπουλος and Εμμανουήλ Κίρτας. Οπλισμένο Σκυρόδεμα Ι. Διεθνές Πανεπιστήμιο της Ελλάδας, 2021. URL: https://bit.ly/betoni-101.">Παναγόπουλος and Κίρτας</a></span></p>
+<p><span id="id4">[<a class="reference internal" href="../../../references.html#id8" title="Δημήτριος Κακαλέτσης. Κατασκευές Ωπλισμένου Σκυροδέματος ΙΙ. Παραδόσεις Θεωρίας. ΤΕΙ Κεντρικής Μακεδονίας, Σέρρες, 2015. URL: https://bit.ly/beton2-dkak-th.">4</a>]</span> blabla <span id="id5"><a class="reference internal" href="../../../references.html#id8" title="Δημήτριος Κακαλέτσης. Κατασκευές Ωπλισμένου Σκυροδέματος ΙΙ. Παραδόσεις Θεωρίας. ΤΕΙ Κεντρικής Μακεδονίας, Σέρρες, 2015. URL: https://bit.ly/beton2-dkak-th.">Κακαλέτσης</a></span></p>
+<p><span id="id6">[<a class="reference internal" href="../../../references.html#id9" title="Δημήτριος Κακαλέτσης. Κατασκευές Ωπλισμένου Σκυροδέματος ΙΙ. Εργαστηριακές Ασκήσεις. ΤΕΙ Κεντρικής Μακεδονίας, Σέρρες, 2015. URL: https://bit.ly/beton2-dkak-lab.">2</a>]</span> blabla <span id="id7"><a class="reference internal" href="../../../references.html#id9" title="Δημήτριος Κακαλέτσης. Κατασκευές Ωπλισμένου Σκυροδέματος ΙΙ. Εργαστηριακές Ασκήσεις. ΤΕΙ Κεντρικής Μακεδονίας, Σέρρες, 2015. URL: https://bit.ly/beton2-dkak-lab.">Κακαλέτσης</a></span></p>
+<p><span id="id8">[<a class="reference internal" href="../../../references.html#id10" title="Δημήτριος Κακαλέτσης. Κατασκευές Ωπλισμένου Σκυροδέματος ΙΙ. Παράρτημα. ΤΕΙ Κεντρικής Μακεδονίας, Σέρρες, 2015. URL: https://bit.ly/beton2-dkak-par.">3</a>]</span> blabla <span id="id9"><a class="reference internal" href="../../../references.html#id10" title="Δημήτριος Κακαλέτσης. Κατασκευές Ωπλισμένου Σκυροδέματος ΙΙ. Παράρτημα. ΤΕΙ Κεντρικής Μακεδονίας, Σέρρες, 2015. URL: https://bit.ly/beton2-dkak-par.">Κακαλέτσης</a></span></p>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="statics_vs_sap.html">Στατική vs SAP2000</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sap2000_default.html">Επίλυση πλαισίου με το SAP2000 (default)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sap2000_no_shear.html">Επίλυση πλαισίου με το SAP2000 (αγνοώντας το έργο των τεμνουσών)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="frame2d_pi.html">Επίλυση πλαισίου με το Frame2d</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sap2000_truss.html">Επίλυση δικτυώματος με το SAP2000</a></li>
-<li class="toctree-l1"><a class="reference internal" href="frame2d_truss.html">Επίλυση δικτυώματος με το Frame2d</a></li>
-</ul>
 </div>
 </section>
 
@@ -462,7 +459,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks\lessons\modelling"
+            path: "./notebooks\lessons\rc1"
         },
         predefinedOutput: true
     }
@@ -480,20 +477,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../mitroa/example10.html"
+       href="../modelling/frame2d_truss.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Εφαρμογή 10 - Δικτύωμα</p>
+        <p class="prev-next-title">Επίλυση δικτυώματος με το Frame2d</p>
       </div>
     </a>
     <a class="right-next"
-       href="statics_vs_sap.html"
+       href="enal_loads.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Στατική vs SAP2000</p>
+        <p class="prev-next-title">Παράδειγμα χρήσης εναλλακτών φορτίσεων σε δοκό</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
