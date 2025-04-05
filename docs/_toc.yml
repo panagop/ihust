@@ -5,62 +5,72 @@ parts:
   - caption: Intro
     chapters:
       - file: markdown
-  - caption: ΣΤΑΤΙΚΗ ΜΕ ΜΗΤΡΩΑ
-    chapters:
-      - file: notebooks/lessons/mitroa/examples.md
-        sections:
-        - file: notebooks/lessons/mitroa/example1.ipynb
-        - file: notebooks/lessons/mitroa/example2.ipynb
-        - file: notebooks/lessons/mitroa/example3.ipynb
-        - file: notebooks/lessons/mitroa/example4.ipynb
-        - file: notebooks/lessons/mitroa/example5.ipynb
-        - file: notebooks/lessons/mitroa/example6.ipynb
-        - file: notebooks/lessons/mitroa/example7.ipynb
-        - file: notebooks/lessons/mitroa/example7-trans.ipynb
-        - file: notebooks/lessons/mitroa/example8-trans.ipynb
-        - file: notebooks/lessons/mitroa/example9.ipynb
-        - file: notebooks/lessons/mitroa/example10.ipynb
-      - file: notebooks/lessons/modelling/modelling.md
-        sections:
-        - file: notebooks/lessons/modelling/statics_vs_sap.md
-        - file: notebooks/lessons/modelling/sap2000_default.md
-        - file: notebooks/lessons/modelling/sap2000_no_shear.md
-        - file: notebooks/lessons/modelling/frame2d_pi.md
-        - file: notebooks/lessons/modelling/sap2000_truss.md
-        - file: notebooks/lessons/modelling/frame2d_truss.md
 
-  - caption: ΟΠΛΙΣΜΕΝΟ ΣΚΥΡΟΔΕΜΑ 1
+  - caption: Στατική με Μητρώα
+    # numbered: true
+    chapters:
+      - file: mitroa/examples.md
+        sections:
+        - file: mitroa/examples/example1.ipynb
+        - file: mitroa/examples/example2.ipynb
+        - file: mitroa/examples/example3.ipynb
+        - file: mitroa/examples/example4.ipynb
+        - file: mitroa/examples/example5.ipynb
+        - file: mitroa/examples/example6.ipynb
+        - file: mitroa/examples/example7.ipynb
+        - file: mitroa/examples/example7-trans.ipynb
+        - file: mitroa/examples/example8-trans.ipynb
+        - file: mitroa/examples/example9.ipynb
+        - file: mitroa/examples/example10.ipynb
+
+      - file: mitroa/modelling.md
+        sections:
+        - file: mitroa/modelling/statics_vs_sap.md
+        - file: mitroa/modelling/sap2000_default.md
+        - file: mitroa/modelling/sap2000_no_shear.md
+        - file: mitroa/modelling/frame2d_pi.md
+        - file: mitroa/modelling/sap2000_truss.md
+        - file: mitroa/modelling/frame2d_truss.md
+
+  - caption: Οπλισμένο Σκυρόδεμα 1
     chapters:
     - file: notebooks/lessons/rc1/markdown-01
       sections:
       - file: notebooks/lessons/rc1/enal_loads
 
-
-  - caption: ΟΠΛΙΣΜΕΝΟ ΣΚΥΡΟΔΕΜΑ 2
+  - caption: Οπλισμένο Σκυρόδεμα 2
+    # numbered: true
     chapters:
-    - file: notebooks/lessons/rc2/intro
+    - file: rc2/homework.md
       sections:
       - title: Εργασίες 2021-22
-        file: notebooks/lessons/rc2/homework_2021-22/intro # Create this file or point to existing
+        file: rc2/homework/homework_2021-22/intro.md
         sections:
-        - file: notebooks/lessons/rc2/homework_2021-22/betonII_lab_01_2021.ipynb
-        - file: notebooks/lessons/rc2/homework_2021-22/betonII_lab_02-Sap_results_tables_2021.ipynb
+        - file: rc2/homework/homework_2021-22/betonII_lab_01_2021.ipynb
+        - file: rc2/homework/homework_2021-22/betonII_lab_02-Sap_results_tables_2021.ipynb
       - title: Εργασίες 2022-23
-        file: notebooks/lessons/rc2/homework_2022-23/intro # Create this file or point to existing
+        file: rc2/homework/homework_2022-23/intro.md
         sections:
-        - file: notebooks/lessons/rc2/homework_2022-23/betonII_lab_01_2022.ipynb
-        - file: notebooks/lessons/rc2/homework_2022-23/betonII_lab_02-Sap_results_tables_2022.ipynb
+        - file: rc2/homework/homework_2022-23/betonII_lab_01_2022.ipynb
+        - file: rc2/homework/homework_2022-23/betonII_lab_02-Sap_results_tables_2022.ipynb
       - title: Εργασίες 2023-24
-        file: notebooks/lessons/rc2/homework_2023-24/intro # Create this file or point to existing
+        file: rc2/homework/homework_2023-24/intro.md
         sections:
-        - file: notebooks/lessons/rc2/homework_2023-24/betonII_lab_01_2023.ipynb
-        - file: notebooks/lessons/rc2/homework_2023-24/betonII_lab_02-Sap_results_tables_2023.ipynb
+        - file: rc2/homework/homework_2023-24/betonII_lab_01_2023.ipynb
+        - file: rc2/homework/homework_2023-24/betonII_lab_02-Sap_results_tables_2023.ipynb
       - title: Εργασίες 2024-25
-        file: notebooks/lessons/rc2/homework_2024-25/intro # Create this file or point to existing
+        file: rc2/homework/homework_2024-25/intro.md
         sections:
-        - file: notebooks/lessons/rc2/homework_2024-25/betonII_lab_01_2024.ipynb
-        - file: notebooks/lessons/rc2/homework_2024-25/betonII_lab_02-Sap_results_tables_2024.ipynb
+        - file: rc2/homework/homework_2024-25/betonII_lab_01_2024.ipynb
+        - file: rc2/homework/homework_2024-25/betonII_lab_02-Sap_results_tables_2024.ipynb
 
-  - caption: References
+    # - title: Διαστασιολόγηση σε διάτμηση
+    - file: rc2/shear.md
+      sections:
+      - file: rc2/shear/beams_shear_reinforcement.ipynb
+
+    - file: rc2/blabla.md
+
+  - caption: Βιβλιογραφία
     chapters:
       - file: references
