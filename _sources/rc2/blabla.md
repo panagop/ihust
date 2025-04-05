@@ -2,7 +2,6 @@
 
 blabla
 
-<h2 style="color:blue;">This is a custom heading</h2>
 
 <div id="click-me">Click me!</div>
 
@@ -13,22 +12,66 @@ blabla
   };
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-<div>Εισάγοντας τον αριθμό μητρώου σας μπορείτε να δείτε τη βαθμολογία των
-  ασκήσεων που παραδώσατε σε προηγούμενα εξάμηνα. </div>
-<div>Ο τελικός βαθμός των εργασιών υπολογίζεται ως ο μέσος όρος των 3
-  μεγαλύτερων βαθμών σε κάποιο εξάμηνο. </div>
-<div> </div>
-<div>Οι φοιτητές που έχουν σε κάποιο εξάμηνο προβιβάσιμο βαθμό εργασιών (≥5.0)
-  δεν απαιτείται να παραδώσουν και πάλι εργασίες και κρατούν το βαθμό τους. Σε
-  διαφορετική περίπτωση έχουν τις ίδιες υποχρεώσεις με τους φοιτητές που
-  παρακολουθούν το μάθημα για πρώτη φορά. </div>
-<div> </div>
-<div>Τα παραπάνω ισχύουν τόσο για τους φοιτητές που παρακολουθούν το νέο
-  πρόγραμμα σπουδών, όσο και για τους φοιτητές που παρακολουθούν το πρόγραμμα
-  του ΤΕΙ, αντιστοιχίζοντας τις <em>Κατασκευές Οπλισμένου Σκυροδέματος Ι</em> με
-  το <em>Οπλισμένο Σκυρόδεμα Ι</em>. </div>
-<div> </div>
-<div><embed
-    src="https://panagop.github.io/betoni_examples/grades/jsongrades.html"
-    type="text/html" width="500" height="300"></div>
+<script>
+  const aInput = document.getElementById("a");
+  const bInput = document.getElementById("b");
+  const output = document.getElementById("output");
+
+  function updateEquation() {
+    const a = parseFloat(aInput.value);
+    const b = parseFloat(bInput.value);
+    if (isNaN(a) || isNaN(b)) {
+      output.textContent = ""; // clear output
+      return;
+    }
+
+    const y = a * Math.pow(b, 2);
+    const latex = `y = a \\cdot b^2 = ${a} \\cdot ${b}^2 = ${y}`;
+    output.innerHTML = `\\(${latex}\\)`;
+    MathJax.typesetPromise([output]);
+  }
+
+  // Live updates as user types
+  aInput.addEventListener("input", updateEquation);
+  bInput.addEventListener("input", updateEquation);
+
+  // Initialize display
+  updateEquation();
+</script>
+ 
+
+<style>
+  label {
+    margin-right: 0.5em;
+  }
+  input[type="number"] {
+    margin: 0.5em 1em 1em 0;
+    padding: 0.4em;
+    font-size: 1em;
+  }
+  input:invalid {
+    border: 2px solid red;
+  }
+  input:valid {
+    border: 2px solid green;
+  }
+  #output {
+    font-size: 1.3em;
+    margin-top: 1em;
+  }
+</style>
+
+## Live: $y = a \cdot b^2 $
+
+<label for="a">a:</label>
+<input type="number" id="a" value="2" min="0" step="any" required>
+
+<label for="b">b:</label>
+<input type="number" id="b" value="3" min="0" step="any" required>
+
+<p id="output"></p>
+
+
+

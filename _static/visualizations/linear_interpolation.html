@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Linear Interpolation Visualizer</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 2em;
+    }
+
+    input {
+      margin: 0.5em;
+      padding: 0.3em;
+      font-size: 1em;
+    }
+
+    input#x {
+      background-color: #fff8e1;
+      border: 2px solid #ff9800;
+    }
+
+    input:invalid {
+      border: 2px solid red;
+    }
+
+    input:valid {
+      border: 2px solid green;
+    }
+
+    label {
+      margin-right: 0.5em;
+    }
+
+    #output {
+      font-size: 1.3em;
+      margin-top: 1.2em;
+    }
+
+    .warning {
+      color: orange;
+      font-weight: bold;
+    }
+
+    #chart-container {
+      margin-top: 2em;
+    }
+
+    canvas {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .image-container {
+      margin-top: 2em;
+      text-align: center;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Linear Interpolation</h2>
+  <p>Formula: \( y = y_0 + (x - x_0) \cdot \frac{y_1 - y_0}{x_1 - x_0} \)</p>
+
+  <label>x₀:</label><input type="number" id="x0" value="1" step="any" required>
+  <label>y₀:</label><input type="number" id="y0" value="2" step="any" required><br>
+  <label>x₁:</label><input type="number" id="x1" value="4" step="any" required>
+  <label>y₁:</label><input type="number" id="y1" value="8" step="any" required><br>
+  <label>x:</label><input type="number" id="x" value="2" step="any" required>
+
+  <p id="output"></p>
+  <p id="warning" class="warning"></p>
+
+  <div id="chart-container">
+    <canvas id="interpChart" width="600" height="300"></canvas>
+  </div>
+
+  <div class="image-container">
+    <h3>Wikipedia Illustration:</h3>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/LinearInterpolation.svg/300px-LinearInterpolation.svg.png"
+         alt="Linear Interpolation Diagram from Wikipedia">
+  </div>
+
+  <script>
+    const inputs = ["x0", "y0", "x1", "y1", "x"].map(id => document.getElementById(id));
+    const output = document.getElementById("output");
+    const warning = document.getElementById("warning");
+    const ctx = document.getElementById("interpChart").getContext("2d");
+
+    const chart = new Chart(ctx, {
+      type: "scatter",
+      data: {
+        datasets: [
+          {
+            label: "Interpolation Line",
+            data: [],
+            borderColor: "#2196f3",
+            backgroundColor: "#2196f3",
+            showLine: true,
+            fill: false,
+            tension: 0,
+            pointRadius: 4
+          },
+          {
+            label: "Interpolated Value",
+            data: [],
+            backgroundColor: "red",
+            pointRadius: 6,
+            showLine: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            type: "linear",
+            title: { display: true, text: "x" }
+          },
+          y: {
+            title: { display: true, text: "y" }
+          }
+        },
+        plugins: {
+          legend: { position: "top" }
+        }
+      }
+    });
+
+    function updateInterpolation() {
+      const [x0, y0, x1, y1, x] = inputs.map(el => parseFloat(el.value));
+      warning.textContent = "";
+
+      if ([x0, y0, x1, y1, x].some(isNaN) || x0 === x1) {
+        output.innerHTML = "\\(\\text{Invalid input or } x_0 = x_1\\)";
+        chart.data.datasets[0].data = [];
+        chart.data.datasets[1].data = [];
+        chart.update();
+        MathJax.typesetPromise([output]);
+        return;
+      }
+
+      const minX = Math.min(x0, x1);
+      const maxX = Math.max(x0, x1);
+      const slope = (y1 - y0) / (x1 - x0);
+      const y = y0 + (x - x0) * slope;
+
+      const latex = `y = y_0 + (x - x_0) \\cdot \\frac{y_1 - y_0}{x_1 - x_0} = ${y0} + (${x} - ${x0}) \\cdot \\frac{${y1} - ${y0}}{${x1} - ${x0}} = ${y}`;
+      output.innerHTML = `\\(${latex}\\)`;
+      MathJax.typesetPromise([output]);
+
+      if (x < minX || x > maxX) {
+        warning.textContent = "⚠️ Warning: x is outside the range [x₀, x₁]. This is extrapolation.";
+      }
+
+      chart.data.datasets[0].data = [{ x: x0, y: y0 }, { x: x1, y: y1 }];
+      chart.data.datasets[1].data = [{ x: x, y: y }];
+      chart.update();
+    }
+
+    inputs.forEach(input => input.addEventListener("input", updateInterpolation));
+    updateInterpolation();
+  </script>
+</body>
+</html>
