@@ -1,18 +1,4 @@
-# blabla
-
-blabla
-
-<h2 style="color:blue;">This is a custom heading</h2>
-
-<div id="click-me">Click me!</div>
-
-<script>
-  document.getElementById('click-me').onclick = () => {
-    document.getElementById('click-me').innerHTML = "Clicked!";
-    console.log("Div clicked!");
-  };
-</script>
-
+# Βαθμολογίες ασκήσεων
 
 <div>Εισάγοντας τον αριθμό μητρώου σας μπορείτε να δείτε τη βαθμολογία των
   ασκήσεων που παραδώσατε σε προηγούμενα εξάμηνα. </div>
