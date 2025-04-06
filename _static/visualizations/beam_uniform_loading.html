@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Fixed Beam - Shear and Moment Calculator</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script>
+    // Helper functions to reduce code repetition
+    function calculateMoment(x, L, w, MA, MB) {
+      return MA * (1 - x / L) + MB * (x / L) + (w * L / 2) * x - (w / 2) * x * x;
+    }
+    
+    function calculateShear(x, L, w, MA, MB) {
+      return (MB - MA) / L + (w * L / 2) - w * x;
+    }
+    
+    function drawDiagrams(L, w, MA, MB, x_input) {
+      const momentCanvas = document.getElementById("momentDiagram");
+      const shearCanvas = document.getElementById("shearDiagram");
+      const W = 400;
+      const H = 150;
+      const margin = 40;
+
+      momentCanvas.setAttribute("viewBox", `0 0 ${W} ${H}`);
+      shearCanvas.setAttribute("viewBox", `0 0 ${W} ${H}`);
+
+      const ctxM = document.getElementById("momentPath");
+      const ctxV = document.getElementById("shearPath");
+
+      const scaleX = (W - 2 * margin) / L;
+      const px_input = margin + x_input * scaleX;
+
+      const N = 1000;
+      const dx = L / N;
+      let M_values = [], V_values = [], x_vals = [];
+
+      // Calculate V(0) for finding x_max
+      const VA = calculateShear(0, L, w, MA, MB);
+      const x_Mmax = VA / w; // x where V(x) = 0, which is where M(x) is maximum
+      let M_max = 0;
+      let x_max_idx = 0;
+
+      for (let i = 0; i <= N; i++) {
+        const x = i * dx;
+        const Mx = calculateMoment(x, L, w, MA, MB);
+        const Vx = calculateShear(x, L, w, MA, MB);
+        M_values.push(Mx);
+        V_values.push(Vx);
+        x_vals.push(x);
+        
+        // Find the index closest to x_Mmax
+        if (Math.abs(x - x_Mmax) < Math.abs(x_vals[x_max_idx] - x_Mmax)) {
+          x_max_idx = i;
+          M_max = Mx;
+        }
+      }
+
+      const Mmin = Math.min(...M_values), Mmax = Math.max(...M_values);
+      const Vmin = Math.min(...V_values), Vmax = Math.max(...V_values);
+
+      const scaleY_M = (H - 2 * margin) / (Mmax - Mmin || 1);
+      const scaleY_V = (H - 2 * margin) / (Vmax - Vmin || 1);
+
+      const zeroY_M = margin + (0 - Mmin) * scaleY_M;
+      const zeroY_V = H - margin - (0 - Vmin) * scaleY_V;
+
+      document.getElementById("momentZeroLine").setAttribute("x1", margin);
+      document.getElementById("momentZeroLine").setAttribute("x2", W - margin);
+      document.getElementById("momentZeroLine").setAttribute("y1", zeroY_M);
+      document.getElementById("momentZeroLine").setAttribute("y2", zeroY_M);
+
+      document.getElementById("shearZeroLine").setAttribute("x1", margin);
+      document.getElementById("shearZeroLine").setAttribute("x2", W - margin);
+      document.getElementById("shearZeroLine").setAttribute("y1", zeroY_V);
+      document.getElementById("shearZeroLine").setAttribute("y2", zeroY_V);
+
+      const pathM = x_vals.map((x, i) => {
+        const xPx = margin + x * scaleX;
+        const yPx = margin + (M_values[i] - Mmin) * scaleY_M;
+        return `${i === 0 ? 'M' : 'L'} ${xPx} ${yPx}`;
+      }).join(" ");
+      ctxM.setAttribute("d", pathM);
+
+      const pathV = x_vals.map((x, i) => {
+        const xPx = margin + x * scaleX;
+        const yPx = H - margin - (V_values[i] - Vmin) * scaleY_V;
+        return `${i === 0 ? 'M' : 'L'} ${xPx} ${yPx}`;
+      }).join(" ");
+      ctxV.setAttribute("d", pathV);
+
+      const x_idx = Math.floor((x_input / L) * N);
+      const Mx = M_values[x_idx];
+      const Vx = V_values[x_idx];
+
+      // Calculate coordinates for the Mmax point
+      const px_max = margin + x_vals[x_max_idx] * scaleX;
+      
+      const Mpts = [
+        { x: margin, label: 'M_A', value: M_values[0] },
+        { x: margin + L * scaleX, label: 'M_B', value: M_values[N] },
+        { x: px_input, label: 'M(x)', value: Mx },
+        { x: px_max, label: 'M_{max}', value: M_max }
+      ];
+      
+      const Vpts = [
+        { x: margin, label: 'V_A', value: V_values[0] },
+        { x: margin + L * scaleX, label: 'V_B', value: V_values[N] },
+        { x: px_input, label: 'V(x)', value: Vx }
+      ];
+
+      const mGroup = document.getElementById("momentLabels");
+      const vGroup = document.getElementById("shearLabels");
+      mGroup.innerHTML = "";
+      vGroup.innerHTML = "";
+
+      Mpts.forEach(p => {
+        const y = margin + (p.value - Mmin) * scaleY_M;
+        const t = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        t.setAttribute("x", p.x);
+        t.setAttribute("y", y - 5);
+        t.setAttribute("text-anchor", "middle");
+        t.setAttribute("font-size", "11");
+        t.setAttribute("fill", "steelblue");
+        t.textContent = `${p.label} = ${p.value.toFixed(2)}`;
+        mGroup.appendChild(t);
+        
+        // Add a marker dot for the Mmax point
+        if (p.label === 'M_{max}') {
+          const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+          circle.setAttribute("cx", p.x);
+          circle.setAttribute("cy", y);
+          circle.setAttribute("r", "3");
+          circle.setAttribute("fill", "red");
+          mGroup.appendChild(circle);
+        }
+      });
+
+      Vpts.forEach(p => {
+        const y = H - margin - (p.value - Vmin) * scaleY_V;
+        const t = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        t.setAttribute("x", p.x);
+        t.setAttribute("y", y - 5);
+        t.setAttribute("text-anchor", "middle");
+        t.setAttribute("font-size", "11");
+        t.setAttribute("fill", "tomato");
+        t.textContent = `${p.label} = ${p.value.toFixed(2)}`;
+        vGroup.appendChild(t);
+      });
+    }
+    
+    function calculate() {
+      const L = parseFloat(document.getElementById("L").value);
+      const w = parseFloat(document.getElementById("w").value);
+      const MA = parseFloat(document.getElementById("MA").value);
+      const MB = parseFloat(document.getElementById("MB").value);
+      const x = parseFloat(document.getElementById("xSlider").value);
+
+      if ([L, w, MA, MB, x].some(isNaN) || L <= 0 || x < 0 || x > L) {
+        document.getElementById("output").innerHTML = "\\(\\text{Please enter valid values. Ensure } 0 \\leq x \\leq L.\\)";
+        MathJax.typesetPromise();
+        return;
+      }
+
+      const M = calculateMoment(x, L, w, MA, MB);
+      const V = calculateShear(x, L, w, MA, MB);
+
+      const latex = `
+        \\begin{aligned}
+        x &= ${x.toFixed(2)} \\\\
+        M(x) &= M_A \\left(1 - \\frac{x}{L}\\right) + M_B \\left(\\frac{x}{L}\\right) + \\frac{wL}{2}x - \\frac{w}{2}x^2 = ${M.toFixed(2)} \\\\
+        V(x) &= \\frac{M_B - M_A}{L} + \\frac{wL}{2} - wx = ${V.toFixed(2)}
+        \\end{aligned}
+      `;
+
+      document.getElementById("output").innerHTML = `\\[${latex}\\]`;
+      MathJax.typesetPromise();
+
+      const VA = calculateShear(0, L, w, MA, MB);
+      const VB = calculateShear(L, L, w, MA, MB);
+      const M_mid = calculateMoment(L/2, L, w, MA, MB);
+      
+      const x_Mmax = VA / w;
+      const M_max = calculateMoment(x_Mmax, L, w, MA, MB);
+
+      const latexExtra = `
+        \\[
+        \\begin{aligned}
+        V_A &=  \\frac{wL}{2} + \\frac{M_B - M_A}{L} = ${VA.toFixed(2)} \\\\
+        V_B &=  -\\frac{wL}{2} + \\frac{M_B - M_A}{L} = ${VB.toFixed(2)} \\\\
+        M_{\\text{mid}} &= \\frac{M_A + M_B}{2} + \\frac{wL^2}{8} = ${M_mid.toFixed(2)} \\\\
+        x_{\\text{Mmax}} &= \\frac{V_A}{w} = ${x_Mmax.toFixed(3)} \\\\
+        M_{\\text{max}} &= ${M_max.toFixed(2)}
+        \\end{aligned}
+        \\]
+      `;
+      document.getElementById("extraEquations").innerHTML = latexExtra;
+      MathJax.typesetPromise([document.getElementById("extraEquations")]);
+
+      drawDiagrams(L, w, MA, MB, x);
+
+      const beamStart = 40, beamEnd = 360;
+      const scale = (beamEnd - beamStart) / L;
+      const px = beamStart + x * scale;
+
+      document.getElementById("xMarker").setAttribute("x1", px);
+      document.getElementById("xMarker").setAttribute("x2", px);
+      document.getElementById("xLabel").setAttribute("x", px);
+
+      const loadGroup = document.getElementById("loadArrows");
+      loadGroup.innerHTML = "";
+      const numArrows = Math.floor(L);
+      for (let i = 0; i <= numArrows; i++) {
+        const lx = beamStart + (i * L / numArrows) * scale;
+        const arrow = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        arrow.setAttribute("x1", lx);
+        arrow.setAttribute("x2", lx);
+        arrow.setAttribute("y1", 30);
+        arrow.setAttribute("y2", 60);
+        arrow.setAttribute("class", "load-arrow");
+        arrow.setAttribute("marker-end", "url(#arrowhead)");
+        loadGroup.appendChild(arrow);
+      }
+    }
+
+    // Event listeners
+    window.addEventListener("DOMContentLoaded", () => {
+      calculate();
+      
+      ['L', 'w', 'MA', 'MB'].forEach(id => {
+        document.getElementById(id).addEventListener("input", () => {
+          // Update xSlider max value when L changes
+          if (id === 'L') {
+            const newL = parseFloat(document.getElementById("L").value);
+            if (!isNaN(newL) && newL > 0) {
+              const xSlider = document.getElementById("xSlider");
+              xSlider.max = newL;
+              
+              // If current value exceeds new max, adjust it
+              if (parseFloat(xSlider.value) > newL) {
+                xSlider.value = newL;
+                document.getElementById("xValue").textContent = newL.toFixed(2);
+              }
+            }
+          }
+          calculate();
+        });
+      });
+
+      document.getElementById("xSlider").addEventListener("input", () => {
+        document.getElementById("xValue").textContent = parseFloat(document.getElementById("xSlider").value).toFixed(2);
+        calculate();
+      });
+    });
+  </script>
+
+  <style>
+    body { font-family: sans-serif; max-width: 700px; margin: auto; padding: 2em; }
+    input { margin: 0.5em; padding: 0.4em; font-size: 1em; width: 100px; }
+    label { margin-right: 0.5em; }
+    button { padding: 0.4em 1em; margin-top: 1em; }
+    .section { margin-bottom: 1.5em; }
+    #output { font-size: 1.0em; margin-top: 1em; }
+    svg { margin-top: 2em; border: 1px solid #ccc; background: #f9f9f9; }
+    .arrow { stroke: #333; marker-end: url(#arrowhead); }
+    .beam-line { stroke: #000; stroke-width: 4; }
+    .load-arrow { stroke: #0074D9; stroke-width: 1.5; }
+    .marker-x { stroke: red; stroke-width: 2; stroke-dasharray: 4,2; }
+    .label { font-size: 12px; fill: #000; text-anchor: middle; }
+  </style>
+</head>
+<body>
+  <h2>Fixed Beam Under Uniform Load</h2>
+  <p>This tool calculates the shear force \( V(x) \) and bending moment \( M(x) \) at a user-defined point \( x \in (0, L) \).</p>
+
+  <div class="section">
+    <label>Length \( L \):</label><input type="number" id="L" value="6" step="any">
+    <label>Load \( w \):</label><input type="number" id="w" value="30" step="any"><br>
+    <label>Moment \( M_A \):</label><input type="number" id="MA" value="-60" step="any">
+    <label>Moment \( M_B \):</label><input type="number" id="MB" value="-80" step="any"><br>
+  </div>
+
+<h3>Important values</h3>
+<div id="extraEquations"></div>
+
+
+  <h3>Results at point x</h3>
+  
+    <div class="section">
+    <label for="xSlider">Point \( x \):</label>
+    <input type="range" id="xSlider" min="0" max="6" step="0.1" value="5" style="width: 300px;">
+    <span id="xValue">5.0</span>
+    
+  </div>
+  
+  <div id="output"></div>
+  
+
+  <svg id="beamDiagram" width="100%" height="120" viewBox="0 0 400 120" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+      </marker>
+    </defs>
+    <line class="beam-line" x1="40" y1="60" x2="360" y2="60"/>
+    <g id="loadArrows"></g>
+    <line id="xMarker" class="marker-x" y1="40" y2="80"/>
+    <text x="40" y="95" class="label">A</text>
+    <text x="360" y="95" class="label">B</text>
+    <text id="xLabel" y="95" class="label">x</text>
+  </svg>
+
+  
+<h3>Moment Diagram</h3>
+<svg id="momentDiagram" width="100%" height="150">
+  <line id="momentZeroLine" stroke="#888" stroke-dasharray="4" />
+  <path id="momentPath" d="" fill="none" stroke="steelblue" stroke-width="2"/>
+  <g id="momentLabels"></g>
+</svg>
+
+<h3>Shear Force Diagram</h3>
+<svg id="shearDiagram" width="100%" height="150">
+  <line id="shearZeroLine" stroke="#888" stroke-dasharray="4" />
+  <path id="shearPath" d="" fill="none" stroke="tomato" stroke-width="2"/>
+  <g id="shearLabels"></g>
+</svg>
+
+
+
+</body>
+</html>
