@@ -70,7 +70,9 @@ parts:
       sections:
       - file: rc2/shear/beams_shear_reinforcement.ipynb
 
-    - file: rc2/blabla.md
+
+  - caption: MiniAppz
+    chapters:
     - file: rc2/blabla2.md
     - file: rc2/blabla3.md
     - file: rc2/blabla4.md
