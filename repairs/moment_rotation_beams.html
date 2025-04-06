@@ -1,0 +1,1743 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Υπολογισμός διαγραμμάτων Μ-θ σύμφωνα με τον ΚΑΝ.ΕΠΕ. &#8212; Structural courses jupyter book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'repairs/moment_rotation_beams';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Υπολογισμός διαγραμμάτων Μ-θ σύμφωνα με τον ΚΑΝ.ΕΠΕ." href="moment_rotation_columns.html" />
+    <link rel="prev" title="Παράδειγμα διαστασιολόγησης υποστυλώματος σε διάτμηση" href="../rc3/columns_shear_reinforcement.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo_civil.png" class="logo__image only-light" alt="Structural courses jupyter book - Home"/>
+    <script>document.write(`<img src="../_static/logo_civil.png" class="logo__image only-dark" alt="Structural courses jupyter book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Ihu Courses Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Στατική με Μητρώα</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mitroa/examples.html">Εφαρμογές</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/examples/example1.html">Στατική με Μητρώα - Παράδειγμα 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/examples/example2.html">Στατική με Μητρώα - Παράδειγμα 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/examples/example3.html">Εφαρμογή 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/examples/example4.html">Εφαρμογή 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/examples/example5.html">Εφαρμογή 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/examples/example6.html">Εφαρμογή 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/examples/example7.html">Εφαρμογή 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/examples/example7-trans.html">Εφαρμογή 7 - Χρήση μητρώων μετασχηματισμού</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/examples/example8-trans.html">Εφαρμογή 8 - Χρήση μητρώων μετασχηματισμού σε μη ορθογωνικό φορέα</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/examples/example9.html">Εφαρμογή 9 - Δικτύωμα</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/examples/example10.html">Εφαρμογή 10 - Δικτύωμα</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mitroa/modelling.html">Προσομοίωση σε λογισμικό</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/modelling/statics_vs_sap.html">Στατική vs SAP2000</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/modelling/sap2000_default.html">Επίλυση πλαισίου με το SAP2000 (default)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/modelling/sap2000_no_shear.html">Επίλυση πλαισίου με το SAP2000 (αγνοώντας το έργο των τεμνουσών)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/modelling/frame2d_pi.html">Επίλυση πλαισίου με το Frame2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/modelling/sap2000_truss.html">Επίλυση δικτυώματος με το SAP2000</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mitroa/modelling/frame2d_truss.html">Επίλυση δικτυώματος με το Frame2d</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Οπλισμένο Σκυρόδεμα 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rc1/markdown-01.html">Διαστασιολόγηση δοκών</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rc1/enal_loads.html">Παράδειγμα χρήσης εναλλακτών φορτίσεων σε δοκό</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../rc1/grades.html">Βαθμολογίες ασκήσεων</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Οπλισμένο Σκυρόδεμα 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rc2/homework.html">Εργασία - Έλεγχος αποτελεσμάτων SAP2000</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../rc2/homework/homework_2021-22/intro.html">Εργασίες 2021-22</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../rc2/homework/homework_2021-22/betonII_lab_01_2021.html">ΟΣ2 ΙΙ (2021-22): Δεδομένα - Αρχικοί υπολογισμοί</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rc2/homework/homework_2021-22/betonII_lab_02-Sap_results_tables_2021.html">ΟΣ2 ΙΙ (2021-22): Αποτελέσματα SAP2000 - Περιβάλλουσες</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../rc2/homework/homework_2022-23/intro.html">Εργασίες 2022-23</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../rc2/homework/homework_2022-23/betonII_lab_01_2022.html">ΟΣ2 ΙΙ (2022-23): Δεδομένα - Αρχικοί υπολογισμοί</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rc2/homework/homework_2022-23/betonII_lab_02-Sap_results_tables_2022.html">ΟΣ2 ΙΙ (2022-23): Αποτελέσματα SAP2000 - Περιβάλλουσες</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../rc2/homework/homework_2023-24/intro.html">Εργασίες 2023-24</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../rc2/homework/homework_2023-24/betonII_lab_01_2023.html">ΟΣ2 ΙΙ (2023-24): Δεδομένα - Αρχικοί υπολογισμοί</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rc2/homework/homework_2023-24/betonII_lab_02-Sap_results_tables_2023.html">ΟΣ2 ΙΙ (2023-24): Αποτελέσματα SAP2000 - Περιβάλλουσες</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../rc2/homework/homework_2024-25/intro.html">Εργασίες 2024-25</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../rc2/homework/homework_2024-25/betonII_lab_01_2024.html">ΟΣ2 ΙΙ (2024-25): Δεδομένα - Αρχικοί υπολογισμοί</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rc2/homework/homework_2024-25/betonII_lab_02-Sap_results_tables_2024.html">ΟΣ2 ΙΙ (2024-25): Αποτελέσματα SAP2000 - Περιβάλλουσες</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rc2/shear.html">Διαστασιολόγηση σε διάτμηση</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rc2/shear/beams_shear_reinforcement.html">Παράδειγμα διαστασιολόγησης δοκού σε διάτμηση</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Οπλισμένο Σκυρόδεμα 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../rc3/columns_shear_reinforcement.html">Παράδειγμα διαστασιολόγησης υποστυλώματος σε διάτμηση</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Επισκευές &amp; ενισχύσεις</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Υπολογισμός διαγραμμάτων Μ-θ σύμφωνα με τον ΚΑΝ.ΕΠΕ.</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="moment_rotation_columns.html">Υπολογισμός διαγραμμάτων Μ-θ σύμφωνα με τον ΚΑΝ.ΕΠΕ.</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="homework/repairs_homework23_part1.html">Επισκευές/Ενισχύσεις - Μέρος 1 (Νοέμ. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework/repairs_homework23_part2.html">Επισκευές/Ενισχύσεις - Μέρος 2 (Νοεμ.2023)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">MiniAppz</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../miniappz/index.html">Mini Appz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniappz/blabla2.html">Interactive Linear Interpolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniappz/blabla3.html">Normal Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniappz/blabla4.html">Κέντρο βάρους πλακοδοκών</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniappz/blabla5.html">Δοκός υπό ομοιόμορφη φόρτιση</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Βιβλιογραφία</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/panagop/ihust/main?urlpath=tree/docs/repairs/moment_rotation_beams.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/panagop/ihust" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/panagop/ihust/edit/main/docs/repairs/moment_rotation_beams.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/panagop/ihust/issues/new?title=Issue%20on%20page%20%2Frepairs/moment_rotation_beams.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/repairs/moment_rotation_beams.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Υπολογισμός διαγραμμάτων Μ-θ σύμφωνα με τον ΚΑΝ.ΕΠΕ.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Υπολογισμός διαγραμμάτων Μ-θ σύμφωνα με τον ΚΑΝ.ΕΠΕ.</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Δεδομένα παραδείγματος</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Διαστάσεις της διατομής</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Υλικά</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Οπλισμός</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Διαστάσεις του δομικού στοιχείου</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Δεδομένα χρήστη</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Συναρτήσεις για τη δεδομένα της διατομής και τα ποσοστά οπλισμού</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Συναρτήσεις για τον υπολογισμό της καμπυλότητας και της ροπής διαρροής</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Συναρτήσεις για τον υπολογισμό της στροφής διαρροής</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Συναρτήσεις για τον υπολογισμό της στροφής αστοχίας</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Διατμητική αντοχή</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Αποτελέσματα</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Εμβαδά οπλισμού</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Γεωμετρικά στοιχεία οπλισμού</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Ποσοστά οπλισμού</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Υπολογισμός της καμπυλότητας και της ροπής διαρροής</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Διαρροή λόγω χάλυβα</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Διαρροή λόγω μη-γραμμικότητας των παραμορφώσεων του θλιβόµενου σκυροδέματος</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Τελικές τιμές στη διαρροή</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Υπολογισμός της στροφής διαρροής</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v">Έλεγχος τέμνουσας λοξής ρηγμάτωσης - Υπολογισμός αv</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#y">Υπολογισμός θy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Υπολογισμός της στροφής αστοχίας</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Αρχικό διάγραμμα Μ-θ (χωρίς τον έλεγχο για τις τέμνουσες)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Υπολογισμός διατμητικής αντοχής</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Έλεγχος πρόωρης αστοχίας από διάτμηση</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Τελικό διάγραμμα Μ-θ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sap2000">Αποτελέσματα για το SAP2000</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hinge-property">Δεδομένα πλαστικής άρθρωσης (<em>Hinge Property</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sap">Ενεργός δυσκαμψία. Συντελεστής για SAP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Υπολογισμός διαγραμμάτων Μ-θ σύμφωνα με τον ΚΑΝ.ΕΠΕ.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install numpy</span>
+<span class="c1">#!pip install pandas</span>
+<span class="c1">#!pip install sympy</span>
+<span class="c1">#!pip install matplotlib</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy.solvers</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Symbol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h2>Δεδομένα παραδείγματος<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Δίνεται η διατομή του σχήματος που βρίσκεται στις κρίσιμες περιοχές της εσωτερικής δοκού του ισογείου του φορέα των σημειώσεων.</p>
+<p><img alt="Imgur" src="https://i.imgur.com/VtnieT0.png" /></p>
+<section id="id3">
+<h3>Διαστάσεις της διατομής<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(b=0.25m\)</span></p>
+<p><span class="math notranslate nohighlight">\(h=0.65m\)</span></p>
+</section>
+<section id="id4">
+<h3>Υλικά<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(f_c= 16MPa = 16000kPa\)</span></p>
+<p><span class="math notranslate nohighlight">\(E_c=25.3GPa=25300000kPa\)</span></p>
+<p><span class="math notranslate nohighlight">\(f_y= 500MPa = 500000kPa\)</span></p>
+<p><span class="math notranslate nohighlight">\(E_s= 200GPa = 200000000kPa\)</span></p>
+<p><span class="math notranslate nohighlight">\(f_{yw}= 500MPa=500000kPa\)</span></p>
+</section>
+<section id="id5">
+<h3>Οπλισμός<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(c_{nom}=30mm = 0.03m\)</span></p>
+<p><span class="math notranslate nohighlight">\(\emptyset_{L}=18mm = 0.018m\)</span></p>
+<p><span class="math notranslate nohighlight">\(A_s = 12.72cm^2\)</span> για 5∅18</p>
+<p><span class="math notranslate nohighlight">\(\emptyset_{L}^{'}=18mm = 0.018m\)</span></p>
+<p><span class="math notranslate nohighlight">\(A_s = 7.63cm^2\)</span> για 3∅18</p>
+<p><span class="math notranslate nohighlight">\(\emptyset_{Lv}=0mm = 0m\)</span> Δεν υπάρχει ενδιάμεσος οπλισμός στη δοκό</p>
+<p><span class="math notranslate nohighlight">\(A_{sv} = 0cm^2\)</span></p>
+<p><span class="math notranslate nohighlight">\(\emptyset_{d}=0mm = 0m\)</span> Δεν υπάρχει δισδιαγώνιος οπλισμός στη δοκό</p>
+<p><span class="math notranslate nohighlight">\(A_{sd} = 0cm^2\)</span></p>
+<p><span class="math notranslate nohighlight">\(\emptyset_{w}=8mm = 0.008m\)</span></p>
+<p><span class="math notranslate nohighlight">\(A_{sw} = 1.01cm^2\)</span> για 2τμητους ∅8</p>
+<p><span class="math notranslate nohighlight">\(s=150mm=0.15m\)</span> Η απόσταση μεταξύ των συνδετήρων</p>
+</section>
+<section id="id6">
+<h3>Διαστάσεις του δομικού στοιχείου<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(L_s = 2.525m\)</span> το μήκος διάτμησης</p>
+</section>
+</section>
+<section id="id7">
+<h2>Δεδομένα χρήστη<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>Στο επόμενο κελί βάζετε τα δεδομένα σας. Προσοχή στις μονάδες</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Διαστάσεις της διατομής</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="c1"># το πλάτος της θλιβόμενης ζώνης[m] </span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.60</span> <span class="c1"># το ύψος της διατομής[m]</span>
+<span class="c1"># ---------------------------</span>
+
+<span class="c1"># Υλικά</span>
+<span class="n">fc</span> <span class="o">=</span> <span class="mf">16000.0</span>      <span class="c1"># η θλιπτική αντοχή του σκυροδέματος[kPa] </span>
+<span class="n">Ec</span> <span class="o">=</span> <span class="mf">25300000.0</span>   <span class="c1"># το μέτρο ελαστικότητας του σκυροδέματος [kPa] </span>
+<span class="n">fy</span> <span class="o">=</span> <span class="mf">500000.0</span>     <span class="c1"># το όριο διαρροής του χάλυβα [kPa] </span>
+<span class="n">Es</span> <span class="o">=</span> <span class="mf">200000000.0</span>  <span class="c1"># το μέτρο ελαστικότητας του χάλυβα [kPa] </span>
+<span class="n">fyw</span> <span class="o">=</span> <span class="mf">500000.0</span>    <span class="c1"># το όριο διαρροής του χάλυβα των συνδετήρων [kPa]</span>
+<span class="c1"># ---------------------------</span>
+
+<span class="c1"># Οπλισμός</span>
+<span class="c1">## Επικάλυψη</span>
+<span class="n">cnom</span> <span class="o">=</span> <span class="mf">0.03</span>       <span class="c1"># [m] </span>
+<span class="c1">## Διαμήκης </span>
+<span class="c1">### Εφελκυόμενος</span>
+<span class="n">nL</span> <span class="o">=</span> <span class="mi">5</span>            <span class="c1"># Ο αριθτμός των εφελκυόμενων ράβδων</span>
+<span class="n">ΦL</span> <span class="o">=</span> <span class="mf">0.018</span>        <span class="c1"># Η διάμετρος των εφελκυόμενων ράβδων [m] </span>
+<span class="c1">### Θλιβόμενος</span>
+<span class="n">nL2</span> <span class="o">=</span> <span class="mi">3</span>           <span class="c1"># Ο αριθτμός των θλιβόμενων ράβδων</span>
+<span class="n">ΦL2</span> <span class="o">=</span> <span class="mf">0.018</span>       <span class="c1"># Η διάμετρος των θλιβόμενων ράβδων [m] </span>
+<span class="c1">### Ενδιάμεσος</span>
+<span class="n">nLv</span> <span class="o">=</span> <span class="mi">0</span>           <span class="c1"># Ο αριθτμός των ενδιάμεσων ράβδων</span>
+<span class="n">ΦLv</span> <span class="o">=</span> <span class="mf">0.</span>          <span class="c1"># Η διάμετρος των ενδιάμεσων ράβδων [m] </span>
+<span class="c1">## Δισδιαγώνιος </span>
+<span class="n">nd</span> <span class="o">=</span> <span class="mi">0</span>            <span class="c1"># Ο αριθτμός των δισδιαγώνιων ράβδων</span>
+<span class="n">Φd</span> <span class="o">=</span> <span class="mf">0.</span>           <span class="c1"># Η διάμετρος των δισδιαγώνιων ράβδων [m] </span>
+<span class="c1">## Εγκάρσιος</span>
+<span class="n">nw</span> <span class="o">=</span> <span class="mi">2</span>            <span class="c1"># Ο αριθμός των &quot;τμήσεων&quot; των συνδετήρων (πχ. 2 για 2τμητους)</span>
+<span class="n">Φw</span> <span class="o">=</span> <span class="mf">0.008</span>        <span class="c1"># Η διάμετρος των συνδετήρων [m] </span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.15</span>          <span class="c1"># Η απόσταση μεταξύ των συνδετήρων [m] </span>
+
+<span class="c1"># Αξονικό φορτίο</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mf">0.</span>            <span class="c1"># Αξονικό φορτίο [kN]</span>
+
+<span class="c1"># Μήκος διάτμησης</span>
+<span class="n">Ls</span> <span class="o">=</span> <span class="mf">2.525</span>        <span class="c1"># [m]</span>
+
+<span class="c1"># Αποστάσεις bi περίσφιξης [m]</span>
+<span class="n">bi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h2>Συναρτήσεις για τη δεδομένα της διατομής και τα ποσοστά οπλισμού<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<p>Δεν απαιτείται να τις τροποποιήσετε</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Υπολογισμός As για n ράβδους διαμέτρου Φ. Δουλεύει και με numpy arrays</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">As_for_n_Φ</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">Φ</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">Φ</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">Φ</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Υπολογισμός d1</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">d1calc</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">dL</span><span class="p">,</span> <span class="n">dw</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">c</span> <span class="o">+</span> <span class="n">dw</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">dL</span>
+
+<span class="c1"># Ποσοστό οπλισμού</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ρcalc</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">A</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
+
+<span class="c1"># Μηχανικό ποσοστό οπλισμού</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ωcalc</span><span class="p">(</span><span class="n">A</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">fy</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">fc</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">A</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">fy</span> <span class="o">/</span> <span class="n">fc</span><span class="p">)</span>
+
+<span class="c1"># Ποσοστό εγκάρσιου οπλισμού ΚΑΝ.ΕΠΕ.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ρscalc</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">A</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span>
+
+<span class="c1"># Ποσοστό εγκάρσιου οπλισμού EC2</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ρwcalc</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">α</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">A</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">s</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">α</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h2>Συναρτήσεις για τον υπολογισμό της καμπυλότητας και της ροπής διαρροής<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ξycalc</span><span class="p">(</span><span class="n">α</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">α</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">A</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">α</span> <span class="o">*</span> <span class="n">B</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">-</span> <span class="n">α</span><span class="o">*</span><span class="n">A</span> 
+    
+<span class="k">def</span><span class="w"> </span><span class="nf">Mycalc</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">φy</span><span class="p">,</span> <span class="n">Ec</span><span class="p">,</span> <span class="n">ξy</span><span class="p">,</span> <span class="n">δ2</span><span class="p">,</span> <span class="n">ρ1</span><span class="p">,</span> <span class="n">ρ2</span><span class="p">,</span> <span class="n">ρv</span><span class="p">,</span> <span class="n">Es</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">b</span> <span class="o">*</span> <span class="n">d</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">φy</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">Ec</span> <span class="o">*</span> <span class="n">ξy</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">δ2</span><span class="p">)</span> <span class="o">-</span><span class="n">ξy</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">ξy</span><span class="p">)</span> <span class="o">*</span> <span class="n">ρ1</span> <span class="o">+</span> <span class="p">(</span><span class="n">ξy</span> <span class="o">-</span> <span class="n">δ2</span><span class="p">)</span> <span class="o">*</span> <span class="n">ρ2</span> <span class="o">+</span> <span class="n">ρv</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">δ2</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">δ2</span><span class="p">)</span><span class="o">*</span><span class="n">Es</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># (0.5*Ec*ξy**2)*(0.5*(1+δtonos)-ξy/3)+((1-ξy)*ρ1+(ξy-δtonos)* ρ2+ρv*(1-δtonos)/6)*(1-δtonos)*Es/2)  </span>
+    
+<span class="k">def</span><span class="w"> </span><span class="nf">ABξφ_steel</span><span class="p">(</span><span class="n">ρ</span><span class="p">,</span> <span class="n">ρ2</span><span class="p">,</span> <span class="n">ρv</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">δ2</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">α</span><span class="p">,</span> <span class="n">Es</span><span class="p">):</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">ρ</span> <span class="o">+</span> <span class="n">ρ2</span> <span class="o">+</span> <span class="n">ρv</span> <span class="o">+</span> <span class="n">N</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">d</span> <span class="o">*</span> <span class="n">fy</span><span class="p">)</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">ρ</span> <span class="o">+</span> <span class="n">ρ2</span> <span class="o">*</span> <span class="n">δ2</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">ρv</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">δ2</span><span class="p">)</span> <span class="o">+</span> <span class="n">N</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">d</span> <span class="o">*</span> <span class="n">fy</span><span class="p">)</span>
+    <span class="n">ξy</span> <span class="o">=</span> <span class="n">ξycalc</span><span class="p">(</span><span class="n">α</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+    <span class="n">φy</span> <span class="o">=</span> <span class="n">fy</span> <span class="o">/</span> <span class="p">(</span><span class="n">Es</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">ξy</span><span class="p">)</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">ξy</span><span class="p">,</span> <span class="n">φy</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ABξφ_conc</span><span class="p">(</span><span class="n">ρ</span><span class="p">,</span> <span class="n">ρ2</span><span class="p">,</span> <span class="n">ρv</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">δ2</span><span class="p">,</span> <span class="n">α</span><span class="p">,</span> <span class="n">Ec</span><span class="p">,</span> <span class="n">fc</span><span class="p">):</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">ρ</span> <span class="o">+</span> <span class="n">ρ2</span> <span class="o">+</span> <span class="n">ρv</span> <span class="o">-</span> <span class="n">N</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.8</span> <span class="o">*</span> <span class="n">α</span> <span class="o">*</span> <span class="n">b</span> <span class="o">*</span> <span class="n">d</span> <span class="o">*</span> <span class="n">fc</span><span class="p">)</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">ρ</span> <span class="o">+</span> <span class="n">ρ2</span> <span class="o">*</span> <span class="n">δ2</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">ρv</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">δ2</span><span class="p">)</span>
+    <span class="n">ξy</span> <span class="o">=</span> <span class="n">ξycalc</span><span class="p">(</span><span class="n">α</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+    <span class="n">φy</span> <span class="o">=</span> <span class="mf">1.8</span> <span class="o">*</span> <span class="n">fc</span> <span class="o">/</span> <span class="p">(</span><span class="n">Ec</span> <span class="o">*</span> <span class="n">ξy</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">ξy</span><span class="p">,</span> <span class="n">φy</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id10">
+<h2>Συναρτήσεις για τον υπολογισμό της στροφής διαρροής<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">VRc</span><span class="p">(</span><span class="n">ρtot</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">fc</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">Ac</span><span class="p">):</span>
+    <span class="c1"># Ο ΚΑΝ.ΕΠΕ. μάλλον έχει λάθος σχέση. Πολύ μεγάλα νούμερα και μάλλον τάσεις. Πολλαπλασιασμό με b*d ίσως</span>
+    <span class="c1"># fc [MPa]</span>
+    <span class="c1"># N [kN] θετικ΄η η θλ΄ίψη</span>
+    <span class="c1"># διαστάσεις σε [m]</span>
+    <span class="n">v1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">180.</span> <span class="o">*</span> <span class="p">(</span><span class="mf">100.</span> <span class="o">*</span> <span class="n">ρtot</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span><span class="p">),</span>
+             <span class="mf">35.</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.2</span><span class="o">/</span><span class="n">d</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">fc</span><span class="o">**</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">6.</span><span class="p">)</span>
+            <span class="p">)</span>
+    
+    <span class="k">return</span> <span class="p">(</span><span class="n">v1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.2</span><span class="o">/</span><span class="n">d</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">fc</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.15</span> <span class="o">*</span> <span class="n">N</span> <span class="o">/</span> <span class="n">Ac</span><span class="p">)</span><span class="o">*</span> <span class="n">b</span> <span class="o">*</span> <span class="n">d</span>
+    
+<span class="k">def</span><span class="w"> </span><span class="nf">VRdcEC2</span><span class="p">(</span><span class="n">CRdc</span><span class="p">,</span> <span class="n">Asl</span><span class="p">,</span> <span class="n">fck</span><span class="p">,</span> <span class="n">σcp</span><span class="p">,</span> <span class="n">bw</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="n">ρl</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">Asl</span> <span class="o">/</span> <span class="p">(</span><span class="n">bw</span> <span class="o">*</span> <span class="n">d</span><span class="p">),</span> <span class="mf">0.02</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">200.0</span> <span class="o">/</span> <span class="n">d</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+    <span class="n">vmin</span> <span class="o">=</span> <span class="mf">0.035</span> <span class="o">*</span> <span class="n">k</span><span class="o">**</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">fck</span><span class="o">**</span><span class="mf">0.5</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="mf">0.15</span>
+
+    <span class="n">VRdc1</span> <span class="o">=</span> <span class="p">(</span><span class="n">CRdc</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="p">((</span><span class="mi">100</span> <span class="o">*</span> <span class="n">ρl</span> <span class="o">*</span> <span class="n">fck</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="n">k1</span> <span class="o">*</span> <span class="n">σcp</span><span class="p">)</span> <span class="o">*</span> <span class="n">bw</span> <span class="o">*</span> <span class="n">d</span>
+    <span class="n">VRdc2</span> <span class="o">=</span> <span class="p">(</span><span class="n">vmin</span> <span class="o">+</span> <span class="n">k1</span> <span class="o">*</span> <span class="n">σcp</span><span class="p">)</span> <span class="o">*</span> <span class="n">bw</span> <span class="o">*</span> <span class="n">d</span>
+
+    <span class="n">_VRdc</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">VRdc1</span><span class="p">,</span> <span class="n">VRdc2</span><span class="p">)</span>   
+    <span class="k">return</span> <span class="n">ρl</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">vmin</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">VRdc1</span><span class="p">,</span> <span class="n">VRdc2</span><span class="p">,</span> <span class="n">_VRdc</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">θycalc</span><span class="p">(</span><span class="n">φy</span><span class="p">,</span> <span class="n">Ls</span><span class="p">,</span> <span class="n">av</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">fc</span><span class="p">):</span>
+    <span class="c1"># (fy και fc σε MPa)</span>
+    <span class="n">fy</span> <span class="o">/=</span> <span class="mi">1000</span>
+    <span class="n">fc</span> <span class="o">/=</span> <span class="mi">1000</span>
+    <span class="k">return</span> <span class="n">φy</span> <span class="o">*</span> <span class="p">(</span><span class="n">Ls</span> <span class="o">+</span> <span class="n">av</span><span class="o">*</span><span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">+</span> <span class="mf">0.0014</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">h</span><span class="o">/</span><span class="n">Ls</span><span class="p">)</span> <span class="o">+</span> <span class="n">φy</span><span class="o">*</span><span class="n">db</span><span class="o">*</span><span class="n">fy</span> <span class="o">/</span> <span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="n">fc</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id11">
+<h2>Συναρτήσεις για τον υπολογισμό της στροφής αστοχίας<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">θumcalc</span><span class="p">(</span><span class="n">ν</span><span class="p">,</span> <span class="n">ωtot</span><span class="p">,</span> <span class="n">ω2</span><span class="p">,</span> <span class="n">αs</span><span class="p">,</span> <span class="n">α</span><span class="p">,</span> <span class="n">ρs</span><span class="p">,</span> <span class="n">ρd</span><span class="p">,</span> <span class="n">fc</span><span class="p">,</span> <span class="n">fyw</span><span class="p">):</span>
+    <span class="n">part1</span> <span class="o">=</span> <span class="p">(</span><span class="n">fc</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">ω2</span><span class="p">)</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="p">(</span><span class="n">ωtot</span><span class="o">-</span><span class="n">ω2</span><span class="p">)))</span><span class="o">**</span><span class="mf">0.225</span>
+    <span class="n">part2</span> <span class="o">=</span> <span class="n">αs</span><span class="o">**</span><span class="mf">0.35</span>
+    <span class="n">part3</span> <span class="o">=</span> <span class="mf">25.0</span><span class="o">**</span><span class="p">(</span><span class="n">α</span> <span class="o">*</span> <span class="n">ρs</span> <span class="o">*</span> <span class="n">fyw</span> <span class="o">/</span> <span class="n">fc</span><span class="p">)</span>
+    <span class="n">part4</span> <span class="o">=</span> <span class="mf">1.25</span><span class="o">**</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">ρd</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mf">0.016</span> <span class="o">*</span> <span class="mf">0.3</span><span class="o">**</span><span class="n">ν</span> <span class="o">*</span> <span class="n">part1</span> <span class="o">*</span> <span class="n">part2</span> <span class="o">*</span> <span class="n">part3</span> <span class="o">*</span> <span class="n">part4</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">αcalc</span><span class="p">(</span><span class="n">sh</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">hc</span><span class="p">,</span> <span class="n">Σbi2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sh</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">bc</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sh</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">hc</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">Σbi2</span><span class="o">/</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">bc</span><span class="o">*</span><span class="n">hc</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id12">
+<h2>Διατμητική αντοχή<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Τέμνουσα που παραλαμβάνουν οι συνδετήρες</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">Vwcalc</span><span class="p">(</span><span class="n">ρw</span><span class="p">,</span> <span class="n">bw</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">fyw</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ρw</span> <span class="o">*</span> <span class="n">bw</span> <span class="o">*</span> <span class="n">z</span> <span class="o">*</span> <span class="n">fyw</span>
+
+<span class="c1"># Τέμνουσα αντοχής</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">VRcalc</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">Ls</span> <span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">Ac</span><span class="p">,</span> <span class="n">fc</span><span class="p">,</span> <span class="n">μθpl</span><span class="p">,</span> <span class="n">ρtot</span><span class="p">,</span> <span class="n">αs</span><span class="p">,</span> <span class="n">Vw</span><span class="p">):</span>
+    <span class="c1"># Η σχέση θέλει MN και m. Αποτέλεσμα σε MN</span>
+    <span class="c1"># Θετική η θλίψη, 0 ο εφελκυσμός</span>
+    <span class="k">if</span> <span class="n">N</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">part1</span> <span class="o">=</span> <span class="p">((</span><span class="n">h</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">Ls</span><span class="p">))</span> <span class="o">*</span> <span class="nb">min</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.55</span> <span class="o">*</span> <span class="n">Ac</span> <span class="o">*</span> <span class="n">fc</span><span class="p">)</span>
+    <span class="n">part2</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">0.05</span> <span class="o">*</span> <span class="nb">min</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">μθpl</span><span class="p">)</span>
+    <span class="n">part3</span> <span class="o">=</span> <span class="mf">0.16</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">ρtot</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.16</span> <span class="o">*</span> <span class="nb">min</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">αs</span><span class="p">))</span> <span class="o">*</span> <span class="n">fc</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">Ac</span> <span class="o">+</span> <span class="n">Vw</span>
+    <span class="k">return</span> <span class="n">part1</span> <span class="o">+</span> <span class="n">part2</span> <span class="o">*</span> <span class="n">part3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id13">
+<h1>Αποτελέσματα<a class="headerlink" href="#id13" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">αs</span> <span class="o">=</span> <span class="n">Ls</span> <span class="o">/</span> <span class="n">h</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Λόγος διάτμησης: αs = </span><span class="si">{</span><span class="n">αs</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Λόγος διάτμησης: αs = 4.21
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id14">
+<h2>Εμβαδά οπλισμού<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">As</span> <span class="o">=</span> <span class="n">As_for_n_Φ</span><span class="p">(</span><span class="n">nL</span><span class="p">,</span> <span class="n">ΦL</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Εμβαδό του εφελκυόμενου οπλισμού: As = </span><span class="si">{</span><span class="n">As</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1">m2 = </span><span class="si">{</span><span class="mi">10000</span><span class="o">*</span><span class="n">As</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">cm2&#39;</span><span class="p">)</span>
+
+<span class="n">As2</span> <span class="o">=</span> <span class="n">As_for_n_Φ</span><span class="p">(</span><span class="n">nL2</span><span class="p">,</span> <span class="n">ΦL2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Εμβαδό του θλιβόμενου οπλισμού: As2 = </span><span class="si">{</span><span class="n">As2</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1">m2 = </span><span class="si">{</span><span class="mi">10000</span><span class="o">*</span><span class="n">As2</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">cm2&#39;</span><span class="p">)</span>
+
+<span class="n">Asv</span> <span class="o">=</span> <span class="n">As_for_n_Φ</span><span class="p">(</span><span class="n">nLv</span><span class="p">,</span> <span class="n">ΦLv</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Εμβαδό του ενδιάμεσου οπλισμού: Asv = </span><span class="si">{</span><span class="n">Asv</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1">m2 = </span><span class="si">{</span><span class="mi">10000</span><span class="o">*</span><span class="n">Asv</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">cm2&#39;</span><span class="p">)</span>
+
+<span class="n">Asd</span> <span class="o">=</span> <span class="n">As_for_n_Φ</span><span class="p">(</span><span class="n">nd</span><span class="p">,</span> <span class="n">Φd</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Εμβαδό του δισδιαγώνιου οπλισμού: Asd = </span><span class="si">{</span><span class="n">Asd</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1">m2 = </span><span class="si">{</span><span class="mi">10000</span><span class="o">*</span><span class="n">Asd</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">cm2&#39;</span><span class="p">)</span>
+
+<span class="n">Asw</span> <span class="o">=</span> <span class="n">As_for_n_Φ</span><span class="p">(</span><span class="n">nw</span><span class="p">,</span> <span class="n">Φw</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Εμβαδό του εγκάρσιου οπλισμού: Asw = </span><span class="si">{</span><span class="n">Asw</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1">m2 = </span><span class="si">{</span><span class="mi">10000</span><span class="o">*</span><span class="n">Asw</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">cm2&#39;</span><span class="p">)</span>
+
+<span class="n">Astot</span> <span class="o">=</span> <span class="n">As</span> <span class="o">+</span> <span class="n">As2</span> <span class="o">+</span> <span class="n">Asv</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Συνολικό εμβαδό του διαμήκους οπλισμού: Astot = </span><span class="si">{</span><span class="n">Astot</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1">m2 = </span><span class="si">{</span><span class="mi">10000</span><span class="o">*</span><span class="n">Astot</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">cm2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Εμβαδό του εφελκυόμενου οπλισμού: As = 0.001272m2 = 12.72cm2
+Εμβαδό του θλιβόμενου οπλισμού: As2 = 0.000763m2 = 7.63cm2
+Εμβαδό του ενδιάμεσου οπλισμού: Asv = 0.000000m2 = 0.00cm2
+Εμβαδό του δισδιαγώνιου οπλισμού: Asd = 0.000000m2 = 0.00cm2
+Εμβαδό του εγκάρσιου οπλισμού: Asw = 0.000101m2 = 1.01cm2
+Συνολικό εμβαδό του διαμήκους οπλισμού: Astot = 0.002036m2 = 20.36cm2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id15">
+<h2>Γεωμετρικά στοιχεία οπλισμού<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="n">d1calc</span><span class="p">(</span><span class="n">cnom</span><span class="p">,</span> <span class="n">ΦL</span><span class="p">,</span> <span class="n">Φw</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Συνολική επικάλυψη εφελκυόμενου: d1=</span><span class="si">{</span><span class="n">d1</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+
+<span class="n">d2</span> <span class="o">=</span> <span class="n">d1calc</span><span class="p">(</span><span class="n">cnom</span><span class="p">,</span> <span class="n">ΦL2</span><span class="p">,</span> <span class="n">Φw</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Συνολική επικάλυψη θλιβόμενου: d`=d2=</span><span class="si">{</span><span class="n">d2</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">h</span> <span class="o">-</span> <span class="n">d1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Στατικό ύψος: d=</span><span class="si">{</span><span class="n">d</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+
+<span class="n">δ2</span> <span class="o">=</span> <span class="n">d2</span><span class="o">/</span><span class="n">d</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Λόγος δ`=</span><span class="si">{</span><span class="n">δ2</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">sh</span> <span class="o">=</span> <span class="n">s</span>  <span class="c1">#- Φw</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Απόσταση των συνδετήρων: sh=</span><span class="si">{</span><span class="n">sh</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Παρατήρηση: Σε παλιότερες εκδόσεις του ΚΑΝ.ΕΠΕ. ως sh ορίζονταν η καθαρή απόσταση s-Φw&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">d</span> <span class="o">-</span> <span class="n">d2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ο μοχλοβραχίονας εσωτερικών δυνάμεων: z=</span><span class="si">{</span><span class="n">z</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Συνολική επικάλυψη εφελκυόμενου: d1=0.047m
+Συνολική επικάλυψη θλιβόμενου: d`=d2=0.047m
+Στατικό ύψος: d=0.553m
+Λόγος δ`=0.085
+Απόσταση των συνδετήρων: sh=0.150m
+Παρατήρηση: Σε παλιότερες εκδόσεις του ΚΑΝ.ΕΠΕ. ως sh ορίζονταν η καθαρή απόσταση s-Φw
+
+Ο μοχλοβραχίονας εσωτερικών δυνάμεων: z=0.506m
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id16">
+<h2>Ποσοστά οπλισμού<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ρ</span> <span class="o">=</span> <span class="n">ρcalc</span><span class="p">(</span><span class="n">As</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="n">ω</span> <span class="o">=</span> <span class="n">ωcalc</span><span class="p">(</span><span class="n">As</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">fc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ποσοστό του εφελκυόμενου οπλισμού: ρ = </span><span class="si">{</span><span class="n">ρ</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="mi">1000</span><span class="o">*</span><span class="n">ρ</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">‰&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Μηχανικό ποσοστό του εφελκυόμενου οπλισμού: ω = </span><span class="si">{</span><span class="n">ω</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">ρ2</span> <span class="o">=</span> <span class="n">ρcalc</span><span class="p">(</span><span class="n">As2</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="n">ω2</span> <span class="o">=</span> <span class="n">ωcalc</span><span class="p">(</span><span class="n">As2</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">fc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ποσοστό του θλιβόμενου οπλισμού: ρ` = ρ2 = </span><span class="si">{</span><span class="n">ρ2</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="mi">1000</span><span class="o">*</span><span class="n">ρ2</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">‰&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Μηχανικό ποσοστό του θλιβόμενου οπλισμού: ω` = ω2 = </span><span class="si">{</span><span class="n">ω2</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">ρv</span> <span class="o">=</span> <span class="n">ρcalc</span><span class="p">(</span><span class="n">Asv</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="n">ωv</span> <span class="o">=</span> <span class="n">ωcalc</span><span class="p">(</span><span class="n">Asv</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">fc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ποσοστό του ενδιάμεσου οπλισμού: ρv = </span><span class="si">{</span><span class="n">ρv</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="mi">1000</span><span class="o">*</span><span class="n">ρv</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">‰&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Μηχανικό ποσοστό του ενδιάμεσου οπλισμού: ωv = </span><span class="si">{</span><span class="n">ωv</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">ρtot</span> <span class="o">=</span> <span class="n">ρ</span> <span class="o">+</span> <span class="n">ρ2</span> <span class="o">+</span> <span class="n">ρv</span>
+<span class="n">ωtot</span> <span class="o">=</span> <span class="n">ω</span> <span class="o">+</span> <span class="n">ω2</span> <span class="o">+</span> <span class="n">ωv</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Συνολικό ποσοστό του διαμήκους οπλισμού: ρtot = </span><span class="si">{</span><span class="n">ρtot</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="mi">1000</span><span class="o">*</span><span class="n">ρtot</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">‰&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Συνολικό μηχανικό ποσοστό του διαμήκους οπλισμού: ωtot = </span><span class="si">{</span><span class="n">ωtot</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">ρd</span> <span class="o">=</span> <span class="n">ρcalc</span><span class="p">(</span><span class="n">Asd</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="n">ωd</span> <span class="o">=</span> <span class="n">ωcalc</span><span class="p">(</span><span class="n">Asd</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">fc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ποσοστό του δισδιαγώνιου οπλισμού: ρd = </span><span class="si">{</span><span class="n">ρd</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="mi">1000</span><span class="o">*</span><span class="n">ρd</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">‰&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Μηχανικό ποσοστό του δισδιαγώνιου οπλισμού: ωd = </span><span class="si">{</span><span class="n">ωd</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">ρs</span> <span class="o">=</span> <span class="n">ρscalc</span><span class="p">(</span><span class="n">Asw</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">sh</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ποσοστό του εγκάρσιου οπλισμού (σχέση ΚΑΝ.ΕΠΕ.): ρs = </span><span class="si">{</span><span class="n">ρs</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="mi">1000</span><span class="o">*</span><span class="n">ρs</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">‰&#39;</span><span class="p">)</span>
+
+<span class="n">ρw</span> <span class="o">=</span> <span class="n">ρwcalc</span><span class="p">(</span><span class="n">Asw</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ποσοστό του εγκάρσιου οπλισμού (σχέση EC2): ρw = </span><span class="si">{</span><span class="n">ρw</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="mi">1000</span><span class="o">*</span><span class="n">ρw</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">‰&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ποσοστό του εφελκυόμενου οπλισμού: ρ = 0.00920 = 9.20‰
+Μηχανικό ποσοστό του εφελκυόμενου οπλισμού: ω = 0.288
+
+Ποσοστό του θλιβόμενου οπλισμού: ρ` = ρ2 = 0.00552 = 5.52‰
+Μηχανικό ποσοστό του θλιβόμενου οπλισμού: ω` = ω2 = 0.173
+
+Ποσοστό του ενδιάμεσου οπλισμού: ρv = 0.00000 = 0.00‰
+Μηχανικό ποσοστό του ενδιάμεσου οπλισμού: ωv = 0.000
+
+Συνολικό ποσοστό του διαμήκους οπλισμού: ρtot = 0.01473 = 14.73‰
+Συνολικό μηχανικό ποσοστό του διαμήκους οπλισμού: ωtot = 0.460
+
+Ποσοστό του δισδιαγώνιου οπλισμού: ρd = 0.00000 = 0.00‰
+Μηχανικό ποσοστό του δισδιαγώνιου οπλισμού: ωd = 0.000
+
+Ποσοστό του εγκάρσιου οπλισμού (σχέση ΚΑΝ.ΕΠΕ.): ρs = 0.00268 = 2.68‰
+Ποσοστό του εγκάρσιου οπλισμού (σχέση EC2): ρw = 0.00268 = 2.68‰
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id17">
+<h2>Υπολογισμός της καμπυλότητας και της ροπής διαρροής<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="n">Es</span><span class="o">/</span><span class="n">Ec</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;α = </span><span class="si">{</span><span class="n">α</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>α = 7.905
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id18">
+<h3>Διαρροή λόγω χάλυβα<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_steel</span><span class="p">,</span> <span class="n">B_steel</span><span class="p">,</span> <span class="n">ξy_steel</span><span class="p">,</span> <span class="n">φy_steel</span> <span class="o">=</span> <span class="n">ABξφ_steel</span><span class="p">(</span><span class="n">ρ</span><span class="p">,</span> <span class="n">ρ2</span><span class="p">,</span> <span class="n">ρv</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">δ2</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">α</span><span class="p">,</span> <span class="n">Es</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A = </span><span class="si">{</span><span class="n">A_steel</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;B = </span><span class="si">{</span><span class="n">B_steel</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ξy = </span><span class="si">{</span><span class="n">ξy_steel</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;φy = </span><span class="si">{</span><span class="n">φy_steel</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">m-1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A = 0.01473
+B = 0.00967
+ξy = 0.292
+φy = 0.00638m-1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id19">
+<h3>Διαρροή λόγω μη-γραμμικότητας των παραμορφώσεων του θλιβόµενου σκυροδέματος<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_conc</span><span class="p">,</span> <span class="n">B_conc</span><span class="p">,</span> <span class="n">ξy_conc</span><span class="p">,</span> <span class="n">φy_conc</span> <span class="o">=</span> <span class="n">ABξφ_conc</span><span class="p">(</span><span class="n">ρ</span><span class="p">,</span> <span class="n">ρ2</span><span class="p">,</span> <span class="n">ρv</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">δ2</span><span class="p">,</span> <span class="n">α</span><span class="p">,</span> <span class="n">Ec</span><span class="p">,</span> <span class="n">fc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A = </span><span class="si">{</span><span class="n">A_conc</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;B = </span><span class="si">{</span><span class="n">B_conc</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ξy = </span><span class="si">{</span><span class="n">ξy_conc</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;φy = </span><span class="si">{</span><span class="n">φy_conc</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">m-1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A = 0.01473
+B = 0.00967
+ξy = 0.292
+φy = 0.00706m-1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id20">
+<h3>Τελικές τιμές στη διαρροή<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">φy_steel</span><span class="o">&lt;</span><span class="n">φy_conc</span><span class="p">:</span>
+    <span class="n">ξy</span> <span class="o">=</span> <span class="n">ξy_steel</span>
+    <span class="n">φy</span> <span class="o">=</span> <span class="n">φy_steel</span>
+    <span class="n">verdict</span> <span class="o">=</span> <span class="s1">&#39;χάλυβα&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">ξy</span> <span class="o">=</span> <span class="n">ξy_conc</span>
+    <span class="n">φy</span> <span class="o">=</span> <span class="n">φy_conc</span>
+    <span class="n">verdict</span> <span class="o">=</span> <span class="s1">&#39;μη-γραμμικότητας των παραμορφώσεων του θλιβόµενου σκυροδέματος&#39;</span>
+
+<span class="n">My</span> <span class="o">=</span> <span class="n">Mycalc</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">φy</span><span class="p">,</span> <span class="n">Ec</span><span class="p">,</span> <span class="n">ξy</span><span class="p">,</span> <span class="n">δ2</span><span class="p">,</span> <span class="n">ρ</span><span class="p">,</span> <span class="n">ρ2</span><span class="p">,</span> <span class="n">ρv</span><span class="p">,</span> <span class="n">Es</span><span class="p">)</span>
+    
+<span class="n">xy</span> <span class="o">=</span> <span class="n">ξy</span> <span class="o">*</span> <span class="n">d</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Παρατηρείται ότι προηγείται η διαρροή λόγω </span><span class="si">{</span><span class="n">verdict</span><span class="si">}</span><span class="s1">, οπότε τελικά:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ξy = </span><span class="si">{</span><span class="n">ξy</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;xy = </span><span class="si">{</span><span class="n">xy</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">m (Το ύψος της θλιβόμενης ζώνης στη διαρροή)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;φy = </span><span class="si">{</span><span class="n">φy</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">m-1&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;My = </span><span class="si">{</span><span class="n">My</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">kNm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Παρατηρείται ότι προηγείται η διαρροή λόγω χάλυβα, οπότε τελικά:
+ξy = 0.292
+xy = 0.161m (Το ύψος της θλιβόμενης ζώνης στη διαρροή)
+φy = 0.00638m-1
+My = 318.36kNm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Προσεγγιστικές σχέσεις ΚΑΝ.ΕΠΕ. (δε χρησιμοποιούνται στη συνέχεια)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;φy = </span><span class="si">{</span><span class="mf">1.73</span><span class="o">*</span><span class="w"> </span><span class="n">fy</span><span class="w"> </span><span class="o">/</span><span class="p">(</span><span class="n">Es</span><span class="w"> </span><span class="o">*</span><span class="n">h</span><span class="p">)</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">m-1&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;φy = </span><span class="si">{</span><span class="mf">1.52</span><span class="o">*</span><span class="w"> </span><span class="n">fy</span><span class="w"> </span><span class="o">/</span><span class="p">(</span><span class="n">Es</span><span class="w"> </span><span class="o">*</span><span class="n">d</span><span class="p">)</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">m-1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>φy = 0.00721m-1
+φy = 0.00687m-1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id21">
+<h2>Υπολογισμός της στροφής διαρροής<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
+<section id="v">
+<h3>Έλεγχος τέμνουσας λοξής ρηγμάτωσης - Υπολογισμός αv<a class="headerlink" href="#v" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># def VRc(ρtot, d, fc, N, Ac):</span>
+<span class="c1"># print(VRc(ρtot, d, fc/1000, N, b*d))</span>
+
+<span class="c1"># Χρησιμοποιείται η σχέση του EC2. Προσοχή στις μονάδες, θέλει [N], [mm]</span>
+<span class="n">V_EC2</span> <span class="o">=</span> <span class="n">VRdcEC2</span><span class="p">(</span><span class="mf">0.18</span><span class="p">,</span> <span class="n">As</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span> <span class="n">fc</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="mf">0.001</span><span class="o">*</span><span class="n">N</span><span class="o">/</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">h</span><span class="p">),</span> <span class="mi">1000</span><span class="o">*</span><span class="n">b</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+<span class="n">V_kanepe</span> <span class="o">=</span> <span class="n">VRc</span><span class="p">(</span><span class="n">ρtot</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">fc</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">b</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># def VRc(ρtot, d, fc, N, Ac):</span>
+
+<span class="c1"># VRc = V_EC2[6]/1000.</span>
+<span class="n">VRc</span> <span class="o">=</span> <span class="n">V_kanepe</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ρl = </span><span class="si">{</span><span class="n">V_EC2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;k = </span><span class="si">{</span><span class="n">V_EC2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;vmin = </span><span class="si">{</span><span class="n">V_EC2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;VRdc (1η σχέση EC2) = </span><span class="si">{</span><span class="n">V_EC2</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">N&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;VRdc (2η σχέση EC2) = </span><span class="si">{</span><span class="n">V_EC2</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">N&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;V_kanepe = </span><span class="si">{</span><span class="n">V_kanepe</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">kN&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Vdc = </span><span class="si">{</span><span class="n">VRc</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">kN&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ρl = 0.00920
+k = 1.601
+vmin = 0.284
+VRdc (1η σχέση EC2) = 97675.7N
+VRdc (2η σχέση EC2) = 39222.6N
+V_kanepe = 114.24kN
+Vdc = 114.24kN
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">VMu</span> <span class="o">=</span> <span class="n">My</span> <span class="o">/</span> <span class="n">Ls</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;VMu = </span><span class="si">{</span><span class="n">VMu</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">kN&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">VRc</span><span class="o">&lt;</span><span class="n">VMu</span><span class="p">:</span>
+    <span class="n">αv</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">αv</span> <span class="o">=</span> <span class="mf">0.</span>   
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;αv = </span><span class="si">{</span><span class="n">αv</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VMu = 126.08kN
+αv = 1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="y">
+<h3>Υπολογισμός θy<a class="headerlink" href="#y" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">θy</span> <span class="o">=</span> <span class="n">θycalc</span><span class="p">(</span><span class="n">φy</span><span class="p">,</span> <span class="n">Ls</span><span class="p">,</span> <span class="n">αv</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">ΦL</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">fc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;θy = </span><span class="si">{</span><span class="n">θy</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>θy = 0.0101
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id22">
+<h2>Υπολογισμός της στροφής αστοχίας<a class="headerlink" href="#id22" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ν</span> <span class="o">=</span> <span class="n">N</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">fc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ν=</span><span class="si">{</span><span class="n">ν</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">bo</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">cnom</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">Φw</span><span class="p">)</span>
+<span class="n">ho</span> <span class="o">=</span> <span class="n">h</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">cnom</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">Φw</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;bo=</span><span class="si">{</span><span class="n">bo</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ho=</span><span class="si">{</span><span class="n">ho</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">ho</span><span class="o">/</span><span class="n">bo</span> <span class="o">&gt;</span> <span class="mf">2.0</span><span class="p">:</span>
+    <span class="n">ho</span> <span class="o">=</span> <span class="n">xy</span> <span class="o">-</span> <span class="p">(</span><span class="n">cnom</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">Φw</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hc/bc &gt; 2.0 οπότε χρησιμοποιείται, αντί του ho, το ύψος της θλιβόµενης ζώνης εντός του περισφιγμένου πυρήνα&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ho=</span><span class="si">{</span><span class="n">ho</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">bi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>  
+    <span class="n">bi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">bo</span><span class="p">,</span> <span class="n">ho</span><span class="p">,</span> <span class="n">bo</span><span class="p">,</span> <span class="n">ho</span><span class="p">])</span>  <span class="c1"># Για 2τμητους συνδετήρες</span>
+
+<span class="n">Σbi2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">bi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Σbi2=</span><span class="si">{</span><span class="n">Σbi2</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">m2&#39;</span><span class="p">)</span>
+
+<span class="n">απερ</span> <span class="o">=</span> <span class="n">αcalc</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">bo</span><span class="p">,</span> <span class="n">ho</span><span class="p">,</span> <span class="n">Σbi2</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">απερ</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span> <span class="n">απερ</span> <span class="o">=</span><span class="mf">0.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Συντελεστής αποδοτικότητας περίσφιξης: α=&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">{0:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">απερ</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">θu</span> <span class="o">=</span> <span class="n">θumcalc</span><span class="p">(</span><span class="n">ν</span><span class="p">,</span> <span class="n">ωtot</span><span class="p">,</span> <span class="n">ω2</span><span class="p">,</span> <span class="n">αs</span><span class="p">,</span> <span class="n">απερ</span><span class="p">,</span> <span class="n">ρs</span><span class="p">,</span> <span class="n">ρd</span><span class="p">,</span> <span class="n">fc</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">fyw</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;θu=</span><span class="si">{</span><span class="n">θu</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ν=0.000
+bo=0.182m
+ho=0.532m
+hc/bc &gt; 2.0 οπότε χρησιμοποιείται, αντί του ho, το ύψος της θλιβόµενης ζώνης εντός του περισφιγμένου πυρήνα
+ho=0.127m
+Σbi2=0.0986m2
+Συντελεστής αποδοτικότητας περίσφιξης: α=0.0701
+θu=0.0449
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id23">
+<h3>Αρχικό διάγραμμα Μ-θ (χωρίς τον έλεγχο για τις τέμνουσες)<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xMθs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">θy</span><span class="p">,</span> <span class="n">θu</span><span class="p">]</span>
+<span class="n">yMθs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">My</span><span class="p">,</span> <span class="n">My</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xMθs</span><span class="p">,</span> <span class="n">yMθs</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="o">*</span><span class="n">θu</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="o">*</span><span class="n">My</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;M (kN)&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;θ&#39;</span><span class="p">)</span>   
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Αρχικό διάγραμμα Μ-θ (χωρίς τον έλεγχο για τις τέμνουσες)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/bf334532745d4df9d4d343518a76ce110a37e834c7035dd04e335d8d369ab7a4.png" src="../_images/bf334532745d4df9d4d343518a76ce110a37e834c7035dd04e335d8d369ab7a4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">μθ</span> <span class="o">=</span> <span class="n">θu</span><span class="o">/</span><span class="n">θy</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Αρχική τιμή πλαστιμότητας στροφών μθ=</span><span class="si">{</span><span class="n">μθ</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Αρχική τιμή πλαστιμότητας στροφών μθ=4.42
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id24">
+<h3>Υπολογισμός διατμητικής αντοχής<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Τέμνουσα που παραλαμβάνουν οι συνδετήρες</span>
+<span class="n">Vw</span> <span class="o">=</span> <span class="n">Vwcalc</span><span class="p">(</span><span class="n">ρw</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">fyw</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Vw=</span><span class="si">{</span><span class="n">Vw</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">kN=</span><span class="si">{</span><span class="n">Vw</span><span class="o">/</span><span class="mi">1000</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1">MN&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vw=169.56kN=0.16956MN
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">θu</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">yVRs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">yMs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">:</span>
+    <span class="n">μθpl</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">θy</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">VRi</span><span class="o">=</span><span class="n">VRcalc</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">Ls</span> <span class="p">,</span> <span class="n">N</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">b</span><span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="n">fc</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">μθpl</span><span class="p">,</span> <span class="n">ρtot</span><span class="p">,</span> <span class="n">αs</span><span class="p">,</span> <span class="n">Vw</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span>
+    <span class="n">MVRi</span> <span class="o">=</span> <span class="n">VRi</span> <span class="o">*</span> <span class="n">Ls</span>
+    
+    <span class="n">yVRs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">VRi</span><span class="p">)</span>
+    <span class="n">yMs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">MVRi</span><span class="p">)</span>
+
+<span class="c1"># print(xs)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xsy</span><span class="o">=</span><span class="p">[</span><span class="n">θy</span><span class="p">,</span> <span class="n">θy</span><span class="p">]</span>
+<span class="n">ysy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="n">yVRs</span><span class="p">)]</span>
+
+<span class="n">xsu</span><span class="o">=</span><span class="p">[</span><span class="n">θu</span><span class="p">,</span> <span class="n">θu</span><span class="p">]</span>
+<span class="n">ysu</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="n">yVRs</span><span class="p">)]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">yVRs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Τέμνουσα αντοχής VR&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">θu</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="n">yVRs</span><span class="p">)])</span>
+<span class="c1"># plt.axis([0, 8, 0, 1.2*max(VR0*Ls, My)])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xsy</span><span class="p">,</span> <span class="n">ysy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Διαρροή&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xsu</span><span class="p">,</span> <span class="n">ysu</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Καμπτική αστοχία&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;VR (kN)&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;θ&#39;</span><span class="p">)</span>   
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Μείωση της τέμνουσας αντοχής με την ανελαστική παραμόρφωση&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ad8fac44ab372a5d1767eadf3dc8533921278067306cd8a19fe6f201e98834da.png" src="../_images/ad8fac44ab372a5d1767eadf3dc8533921278067306cd8a19fe6f201e98834da.png" />
+</div>
+</div>
+</section>
+<section id="id25">
+<h3>Έλεγχος πρόωρης αστοχίας από διάτμηση<a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ymax</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">yMs</span><span class="p">),</span> <span class="n">My</span><span class="p">)</span>
+
+<span class="n">xsy</span><span class="o">=</span><span class="p">[</span><span class="n">θy</span><span class="p">,</span> <span class="n">θy</span><span class="p">]</span>
+<span class="n">ysy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="o">*</span><span class="n">ymax</span><span class="p">]</span>
+
+<span class="n">xsu</span><span class="o">=</span><span class="p">[</span><span class="n">θu</span><span class="p">,</span> <span class="n">θu</span><span class="p">]</span>
+<span class="n">ysu</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="o">*</span><span class="n">ymax</span><span class="p">]</span>
+
+<span class="n">xMθs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">θy</span><span class="p">,</span> <span class="n">θu</span><span class="p">]</span>
+<span class="n">yMθs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">My</span><span class="p">,</span> <span class="n">My</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">yMs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Ροπή τέμνουσας αντοχής (VR*Ls)&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">θu</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="o">*</span><span class="n">ymax</span><span class="p">])</span>
+<span class="c1"># plt.axis([0, 8, 0, 1.2*max(VR0*Ls, My)])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xsy</span><span class="p">,</span> <span class="n">ysy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Διαρροή&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xsu</span><span class="p">,</span> <span class="n">ysu</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Αστοχία&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xMθs</span><span class="p">,</span> <span class="n">yMθs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Αρχικό διάγραμμα Μ-θ&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;M (kN)&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;θ&#39;</span><span class="p">)</span>   
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Έλεγχος πρόωρης αστοχίας από διάτμηση&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b7c21ab6342150cc9d915ff0d5f91e731f7d95e6c57368bd89110139f90418b8.png" src="../_images/b7c21ab6342150cc9d915ff0d5f91e731f7d95e6c57368bd89110139f90418b8.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">υ</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;υ&#39;</span><span class="p">)</span>
+<span class="n">μθsol</span><span class="o">=</span><span class="n">solve</span><span class="p">((((</span><span class="n">h</span><span class="o">-</span><span class="n">xy</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">Ls</span><span class="p">))</span><span class="o">*</span><span class="nb">min</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="mf">0.55</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">d</span><span class="o">*</span><span class="n">fc</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.05</span><span class="o">*</span><span class="n">υ</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.16</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">ρtot</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.16</span><span class="o">*</span><span class="nb">min</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">αs</span><span class="p">))</span><span class="o">*</span><span class="p">((</span><span class="n">fc</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">d</span> <span class="o">+</span> <span class="n">Vw</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="o">-</span><span class="n">My</span><span class="o">/</span><span class="n">Ls</span><span class="p">),</span><span class="n">υ</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">θsol</span> <span class="o">=</span> <span class="n">θy</span> <span class="o">*</span> <span class="p">(</span><span class="n">μθsol</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># print(μθsol)</span>
+<span class="c1"># print(θsol)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">VR0</span> <span class="o">=</span> <span class="n">yVRs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">VR0</span> <span class="o">&lt;</span> <span class="n">My</span><span class="o">/</span><span class="n">Ls</span><span class="p">:</span>
+    <span class="n">θu</span> <span class="o">=</span> <span class="mf">1.4</span> <span class="o">*</span> <span class="n">θy</span>
+    <span class="n">θy</span> <span class="o">=</span> <span class="n">θy</span> <span class="o">*</span> <span class="n">VR0</span> <span class="o">*</span> <span class="n">Ls</span> <span class="o">/</span> <span class="n">My</span>     
+    <span class="n">My</span> <span class="o">=</span> <span class="n">VR0</span> <span class="o">*</span> <span class="n">Ls</span>   
+
+<span class="k">elif</span> <span class="n">θsol</span><span class="o">&lt;</span><span class="n">θu</span><span class="p">:</span>
+    <span class="n">θu</span> <span class="o">=</span> <span class="n">θsol</span>    
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Τελικές τιμές&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;My=Mu=</span><span class="si">{</span><span class="n">My</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">kNm&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;θy=</span><span class="si">{</span><span class="n">θy</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;θu=</span><span class="si">{</span><span class="n">θu</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Τελικές τιμές
+My=Mu=318.36kNm
+θy=0.0101
+θu=0.0449
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id26">
+<h2>Τελικό διάγραμμα Μ-θ<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xMθs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">θy</span><span class="p">,</span> <span class="n">θu</span><span class="p">]</span>
+<span class="n">yMθs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">My</span><span class="p">,</span> <span class="n">My</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xMθs</span><span class="p">,</span> <span class="n">yMθs</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># plt.axis([0, 1.2*θu, 0, 1.2*My])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;M (kN)&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;θ&#39;</span><span class="p">)</span>   
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Τελικό διάγραμμα Μ-θ&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9c3c47907682cfffb62f7c96d62d6f781a7da705ab812418554c31a18b2847f4.png" src="../_images/9c3c47907682cfffb62f7c96d62d6f781a7da705ab812418554c31a18b2847f4.png" />
+</div>
+</div>
+</section>
+<section id="sap2000">
+<h2>Αποτελέσματα για το SAP2000<a class="headerlink" href="#sap2000" title="Link to this heading">#</a></h2>
+<section id="hinge-property">
+<h3>Δεδομένα πλαστικής άρθρωσης (<em>Hinge Property</em>)<a class="headerlink" href="#hinge-property" title="Link to this heading">#</a></h3>
+<p>Στις ιδιότητες των πλαστικών αρθρώσεων του SAP2000 δίνεται η τιμή της πλαστικής στροφής <span class="math notranslate nohighlight">\(θ_{pl}=θ_{u}-θ_{y}\)</span></p>
+<p>Στο σημείο της θεωρητικής αστοχίας λαμβάνεται πτώση αντοχής στο 20% της My και στη συνέχεια δίνεται η δυνατότητα παραμόρφωσης με την ίδια αντοχή έως το <span class="math notranslate nohighlight">\(5\cdotθ_{pl}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">θpl</span> <span class="o">=</span> <span class="n">θu</span> <span class="o">-</span> <span class="n">θy</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;θpl=</span><span class="si">{</span><span class="n">θpl</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>θpl=0.0347
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">My</span><span class="p">,</span> <span class="n">My</span><span class="p">,</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">My</span><span class="p">,</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">My</span><span class="p">],</span> <span class="s1">&#39;θ&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">θpl</span><span class="p">,</span> <span class="n">θpl</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">θpl</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">da</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">round</span><span class="p">({</span><span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;θ&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>M</th>
+      <th>θ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>0.00</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>318.36</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>318.36</td>
+      <td>0.0347</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>63.67</td>
+      <td>0.0347</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>63.67</td>
+      <td>0.1735</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="sap">
+<h3>Ενεργός δυσκαμψία. Συντελεστής για SAP<a class="headerlink" href="#sap" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span> <span class="o">=</span> <span class="n">My</span> <span class="o">*</span> <span class="n">Ls</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">θy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;K=</span><span class="si">{</span><span class="n">K</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">kNm2&#39;</span><span class="p">)</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">h</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="mf">12.0</span>
+<span class="n">K0</span> <span class="o">=</span> <span class="n">Ec</span> <span class="o">*</span> <span class="n">I</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;K0=</span><span class="si">{</span><span class="n">K0</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">kNm2&#39;</span><span class="p">)</span>
+
+<span class="n">ModFactor</span> <span class="o">=</span> <span class="n">K</span> <span class="o">/</span> <span class="n">K0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modification Factor for SAP=&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">{0:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ModFactor</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>K=26421.0kNm2
+K0=113850.0kNm2
+Modification Factor for SAP=0.232
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ymax</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">yMs</span><span class="p">),</span> <span class="n">My</span><span class="p">)</span>
+
+<span class="n">xsy</span><span class="o">=</span><span class="p">[</span><span class="n">θy</span><span class="p">,</span> <span class="n">θy</span><span class="p">]</span>
+<span class="n">ysy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="o">*</span><span class="n">ymax</span><span class="p">]</span>
+
+<span class="n">xsu</span><span class="o">=</span><span class="p">[</span><span class="n">θu</span><span class="p">,</span> <span class="n">θu</span><span class="p">]</span>
+<span class="n">ysu</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="o">*</span><span class="n">ymax</span><span class="p">]</span>
+
+<span class="n">xMθs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">θy</span><span class="p">,</span> <span class="n">θu</span><span class="p">]</span>
+<span class="n">yMθs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">My</span><span class="p">,</span> <span class="n">My</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_something</span><span class="p">():</span>
+    <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">yMs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Ροπή τέμνουσας αντοχής (VR*Ls)&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xsy</span><span class="p">,</span> <span class="n">ysy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Διαρροή&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xsu</span><span class="p">,</span> <span class="n">ysu</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Αστοχία&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">θu</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="o">*</span><span class="n">ymax</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Έλεγχος πρόωρης αστοχίας από διάτμηση&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;M (kN)&#39;</span><span class="p">)</span> 
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;θ&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xMθs</span><span class="p">,</span> <span class="n">yMθs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Αρχικό διάγραμμα Μ-θ&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">f</span><span class="p">,</span> <span class="n">ax</span>
+
+
+<span class="n">axaxa</span> <span class="o">=</span> <span class="n">plot_something</span><span class="p">()</span>
+<span class="c1"># axaxa[0].savefig(&#39;axaxa.png&#39;,)</span>
+
+
+
+
+<span class="c1"># plt.figure(figsize=(8, 5))</span>
+<span class="c1"># plt.plot(xs, yMs, label=&quot;Ροπή τέμνουσας αντοχής (VR*Ls)&quot;, lw=2)</span>
+<span class="c1"># plt.axis([0, 1.5*θu, 0, 1.2*ymax])</span>
+<span class="c1"># # plt.axis([0, 8, 0, 1.2*max(VR0*Ls, My)])</span>
+<span class="c1"># plt.plot(xsy, ysy, label=&quot;Διαρροή&quot;, linestyle=&#39;--&#39;)</span>
+<span class="c1"># plt.plot(xsu, ysu, label=&quot;Αστοχία&quot;, linestyle=&#39;--&#39;)</span>
+<span class="c1"># plt.plot(xMθs, yMθs, label=&quot;Αρχικό διάγραμμα Μ-θ&quot;)</span>
+
+<span class="c1"># plt.ylabel(&#39;M (kN)&#39;) </span>
+<span class="c1"># plt.xlabel(&#39;θ&#39;)   </span>
+<span class="c1"># plt.title(&#39;Έλεγχος πρόωρης αστοχίας από διάτμηση&#39;)</span>
+<span class="c1"># plt.legend()</span>
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b7c21ab6342150cc9d915ff0d5f91e731f7d95e6c57368bd89110139f90418b8.png" src="../_images/b7c21ab6342150cc9d915ff0d5f91e731f7d95e6c57368bd89110139f90418b8.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./repairs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../rc3/columns_shear_reinforcement.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Παράδειγμα διαστασιολόγησης υποστυλώματος σε διάτμηση</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="moment_rotation_columns.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Υπολογισμός διαγραμμάτων Μ-θ σύμφωνα με τον ΚΑΝ.ΕΠΕ.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Υπολογισμός διαγραμμάτων Μ-θ σύμφωνα με τον ΚΑΝ.ΕΠΕ.</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Δεδομένα παραδείγματος</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Διαστάσεις της διατομής</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Υλικά</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Οπλισμός</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Διαστάσεις του δομικού στοιχείου</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Δεδομένα χρήστη</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Συναρτήσεις για τη δεδομένα της διατομής και τα ποσοστά οπλισμού</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Συναρτήσεις για τον υπολογισμό της καμπυλότητας και της ροπής διαρροής</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Συναρτήσεις για τον υπολογισμό της στροφής διαρροής</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Συναρτήσεις για τον υπολογισμό της στροφής αστοχίας</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Διατμητική αντοχή</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Αποτελέσματα</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Εμβαδά οπλισμού</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Γεωμετρικά στοιχεία οπλισμού</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Ποσοστά οπλισμού</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Υπολογισμός της καμπυλότητας και της ροπής διαρροής</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Διαρροή λόγω χάλυβα</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Διαρροή λόγω μη-γραμμικότητας των παραμορφώσεων του θλιβόµενου σκυροδέματος</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Τελικές τιμές στη διαρροή</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Υπολογισμός της στροφής διαρροής</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v">Έλεγχος τέμνουσας λοξής ρηγμάτωσης - Υπολογισμός αv</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#y">Υπολογισμός θy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Υπολογισμός της στροφής αστοχίας</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Αρχικό διάγραμμα Μ-θ (χωρίς τον έλεγχο για τις τέμνουσες)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Υπολογισμός διατμητικής αντοχής</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Έλεγχος πρόωρης αστοχίας από διάτμηση</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Τελικό διάγραμμα Μ-θ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sap2000">Αποτελέσματα για το SAP2000</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hinge-property">Δεδομένα πλαστικής άρθρωσης (<em>Hinge Property</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sap">Ενεργός δυσκαμψία. Συντελεστής για SAP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By gp
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

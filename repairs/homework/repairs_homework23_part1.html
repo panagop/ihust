@@ -1,0 +1,1470 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Επισκευές/Ενισχύσεις - Μέρος 1 (Νοέμ. 2023) &#8212; Structural courses jupyter book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'repairs/homework/repairs_homework23_part1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Επισκευές/Ενισχύσεις - Μέρος 2 (Νοεμ.2023)" href="repairs_homework23_part2.html" />
+    <link rel="prev" title="Υπολογισμός διαγραμμάτων Μ-θ σύμφωνα με τον ΚΑΝ.ΕΠΕ." href="../moment_rotation_columns.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo_civil.png" class="logo__image only-light" alt="Structural courses jupyter book - Home"/>
+    <script>document.write(`<img src="../../_static/logo_civil.png" class="logo__image only-dark" alt="Structural courses jupyter book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Ihu Courses Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../markdown.html">Markdown Files</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Στατική με Μητρώα</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../mitroa/examples.html">Εφαρμογές</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/examples/example1.html">Στατική με Μητρώα - Παράδειγμα 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/examples/example2.html">Στατική με Μητρώα - Παράδειγμα 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/examples/example3.html">Εφαρμογή 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/examples/example4.html">Εφαρμογή 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/examples/example5.html">Εφαρμογή 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/examples/example6.html">Εφαρμογή 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/examples/example7.html">Εφαρμογή 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/examples/example7-trans.html">Εφαρμογή 7 - Χρήση μητρώων μετασχηματισμού</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/examples/example8-trans.html">Εφαρμογή 8 - Χρήση μητρώων μετασχηματισμού σε μη ορθογωνικό φορέα</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/examples/example9.html">Εφαρμογή 9 - Δικτύωμα</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/examples/example10.html">Εφαρμογή 10 - Δικτύωμα</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../mitroa/modelling.html">Προσομοίωση σε λογισμικό</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/modelling/statics_vs_sap.html">Στατική vs SAP2000</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/modelling/sap2000_default.html">Επίλυση πλαισίου με το SAP2000 (default)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/modelling/sap2000_no_shear.html">Επίλυση πλαισίου με το SAP2000 (αγνοώντας το έργο των τεμνουσών)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/modelling/frame2d_pi.html">Επίλυση πλαισίου με το Frame2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/modelling/sap2000_truss.html">Επίλυση δικτυώματος με το SAP2000</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mitroa/modelling/frame2d_truss.html">Επίλυση δικτυώματος με το Frame2d</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Οπλισμένο Σκυρόδεμα 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../rc1/markdown-01.html">Διαστασιολόγηση δοκών</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rc1/enal_loads.html">Παράδειγμα χρήσης εναλλακτών φορτίσεων σε δοκό</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rc1/grades.html">Βαθμολογίες ασκήσεων</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Οπλισμένο Σκυρόδεμα 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../rc2/homework.html">Εργασία - Έλεγχος αποτελεσμάτων SAP2000</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../rc2/homework/homework_2021-22/intro.html">Εργασίες 2021-22</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../rc2/homework/homework_2021-22/betonII_lab_01_2021.html">ΟΣ2 ΙΙ (2021-22): Δεδομένα - Αρχικοί υπολογισμοί</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rc2/homework/homework_2021-22/betonII_lab_02-Sap_results_tables_2021.html">ΟΣ2 ΙΙ (2021-22): Αποτελέσματα SAP2000 - Περιβάλλουσες</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../rc2/homework/homework_2022-23/intro.html">Εργασίες 2022-23</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../rc2/homework/homework_2022-23/betonII_lab_01_2022.html">ΟΣ2 ΙΙ (2022-23): Δεδομένα - Αρχικοί υπολογισμοί</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rc2/homework/homework_2022-23/betonII_lab_02-Sap_results_tables_2022.html">ΟΣ2 ΙΙ (2022-23): Αποτελέσματα SAP2000 - Περιβάλλουσες</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../rc2/homework/homework_2023-24/intro.html">Εργασίες 2023-24</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../rc2/homework/homework_2023-24/betonII_lab_01_2023.html">ΟΣ2 ΙΙ (2023-24): Δεδομένα - Αρχικοί υπολογισμοί</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rc2/homework/homework_2023-24/betonII_lab_02-Sap_results_tables_2023.html">ΟΣ2 ΙΙ (2023-24): Αποτελέσματα SAP2000 - Περιβάλλουσες</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../rc2/homework/homework_2024-25/intro.html">Εργασίες 2024-25</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../rc2/homework/homework_2024-25/betonII_lab_01_2024.html">ΟΣ2 ΙΙ (2024-25): Δεδομένα - Αρχικοί υπολογισμοί</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rc2/homework/homework_2024-25/betonII_lab_02-Sap_results_tables_2024.html">ΟΣ2 ΙΙ (2024-25): Αποτελέσματα SAP2000 - Περιβάλλουσες</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../rc2/shear.html">Διαστασιολόγηση σε διάτμηση</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rc2/shear/beams_shear_reinforcement.html">Παράδειγμα διαστασιολόγησης δοκού σε διάτμηση</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Οπλισμένο Σκυρόδεμα 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../rc3/columns_shear_reinforcement.html">Παράδειγμα διαστασιολόγησης υποστυλώματος σε διάτμηση</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Επισκευές &amp; ενισχύσεις</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../moment_rotation_beams.html">Υπολογισμός διαγραμμάτων Μ-θ σύμφωνα με τον ΚΑΝ.ΕΠΕ.</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../moment_rotation_columns.html">Υπολογισμός διαγραμμάτων Μ-θ σύμφωνα με τον ΚΑΝ.ΕΠΕ.</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Επισκευές/Ενισχύσεις - Μέρος 1 (Νοέμ. 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repairs_homework23_part2.html">Επισκευές/Ενισχύσεις - Μέρος 2 (Νοεμ.2023)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">MiniAppz</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../miniappz/index.html">Mini Appz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../miniappz/blabla2.html">Interactive Linear Interpolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../miniappz/blabla3.html">Normal Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../miniappz/blabla4.html">Κέντρο βάρους πλακοδοκών</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../miniappz/blabla5.html">Δοκός υπό ομοιόμορφη φόρτιση</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Βιβλιογραφία</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/panagop/ihust/main?urlpath=tree/docs/repairs/homework/repairs_homework23_part1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/panagop/ihust" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/panagop/ihust/edit/main/docs/repairs/homework/repairs_homework23_part1.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/panagop/ihust/issues/new?title=Issue%20on%20page%20%2Frepairs/homework/repairs_homework23_part1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/repairs/homework/repairs_homework23_part1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Επισκευές/Ενισχύσεις - Μέρος 1 (Νοέμ. 2023)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Εισαγωγή αριθμού μητρώου φοιτητών</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Δεδομένα</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Μάζα</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Εμφάνιση αρχικών αποτελεσμάτων (πριν το τρέξιμο της ανάλυσης)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Αρχικό τρέξιμο - Υπολογισμός ιδιομορφών/ιδιοπεριόδων</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Διατομές</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opensees">Ανάλυση στο OpenSees για υπολογισμό ιδιομορφών</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Αποτελέσματα 1ης ιδιομοφής</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Υπολογισμός σεισμικών δράσεων</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opensees-g-0-3q-ex">Επίλυση στο OpenSees για G+0.3Q+Ex</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Επισκευές/Ενισχύσεις - Μέρος 1 (Νοέμ. 2023)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">streng.ppp.sections.geometry.rectangular</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectangularSectionGeometry</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">streng.ppp.sections.geometry.tee</span><span class="w"> </span><span class="kn">import</span> <span class="n">TeeSectionGeometry</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">streng.codes.eurocodes.ec8.cls.seismic_action.spectra</span><span class="w"> </span><span class="kn">import</span> <span class="n">SpectraEc8</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">openseespy.opensees</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ops</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">opsvis</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">opsv</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h2>Εισαγωγή αριθμού μητρώου φοιτητών<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Αντικαταστήστε τα ψηφία με αυτά του αριθμού μητρώου σας και τρέξτε το jupyter notebook.<br />
+Δε θα χρειαστεί να κάνετε κάποια άλλη αλλαγή ή κάποια εισαγωγή δεδομένων</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">κ</span><span class="p">,</span> <span class="n">λ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">ν</span> <span class="o">=</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Δεδομένα<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Δεδομένα φοιτητών βάσει ΑΕΜ</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">5.8</span><span class="o">+</span><span class="mf">0.05</span><span class="o">*</span><span class="n">μ</span>
+<span class="n">H_is</span> <span class="o">=</span> <span class="mf">3.8</span><span class="o">+</span><span class="mf">0.05</span><span class="o">*</span><span class="n">ν</span>
+<span class="n">H_or</span> <span class="o">=</span> <span class="mf">2.8</span><span class="o">+</span><span class="mf">0.05</span><span class="o">*</span><span class="n">ν</span>
+
+<span class="k">if</span> <span class="n">ν</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">:</span>
+    <span class="n">bc_is</span><span class="o">=</span><span class="n">hc_is</span><span class="o">=</span><span class="mf">0.35</span>
+    <span class="n">bc_or</span><span class="o">=</span><span class="n">hc_or</span><span class="o">=</span><span class="mf">0.30</span>
+    <span class="n">bw</span><span class="o">=</span><span class="mf">0.25</span>
+    <span class="n">h_is</span><span class="o">=</span><span class="mf">0.65</span>
+    <span class="n">h_or</span><span class="o">=</span><span class="mf">0.55</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">bc_is</span><span class="o">=</span><span class="n">hc_is</span><span class="o">=</span><span class="mf">0.40</span>
+    <span class="n">bc_or</span><span class="o">=</span><span class="n">hc_or</span><span class="o">=</span><span class="mf">0.35</span>
+    <span class="n">bw</span><span class="o">=</span><span class="mf">0.25</span>
+    <span class="n">h_is</span><span class="o">=</span><span class="mf">0.70</span>
+    <span class="n">h_or</span><span class="o">=</span><span class="mf">0.60</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="mf">26.5</span> <span class="o">+</span> <span class="mf">0.3</span><span class="o">*</span><span class="n">κ</span> <span class="o">+</span> <span class="mf">0.4</span><span class="o">*</span><span class="n">λ</span><span class="o">+</span> <span class="mf">0.4</span><span class="o">*</span><span class="n">μ</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mf">5.8</span> <span class="o">+</span> <span class="mf">0.3</span><span class="o">*</span><span class="n">κ</span> <span class="o">+</span> <span class="mf">0.4</span><span class="o">*</span><span class="n">λ</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">μ</span>
+    
+<span class="n">cnom</span> <span class="o">=</span> <span class="mf">0.028</span>    
+    
+<span class="n">fcm</span> <span class="o">=</span> <span class="mi">16</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">μ</span><span class="o">+</span><span class="mf">0.4</span><span class="o">*</span><span class="n">ν</span> <span class="c1"># σε (MPa)</span>
+<span class="n">Ecm</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">22</span><span class="o">*</span><span class="p">(</span><span class="n">fcm</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">**</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+   
+<span class="n">U</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="k">if</span> <span class="n">ν</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">:</span>
+    <span class="n">agR</span> <span class="o">=</span> <span class="mf">0.24</span>
+    <span class="n">ductility_class</span> <span class="o">=</span> <span class="s1">&#39;H&#39;</span>
+    <span class="n">ground_type</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+    <span class="n">importance</span> <span class="o">=</span> <span class="s1">&#39;III&#39;</span>
+    <span class="n">γI</span><span class="o">=</span><span class="mf">1.2</span>
+    <span class="n">q_factor</span> <span class="o">=</span> <span class="mf">4.5</span> <span class="o">*</span> <span class="mf">1.3</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">agR</span> <span class="o">=</span> <span class="mf">0.36</span>
+    <span class="n">ductility_class</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span>
+    <span class="n">ground_type</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+    <span class="n">importance</span> <span class="o">=</span> <span class="s1">&#39;II&#39;</span> 
+    <span class="n">γI</span><span class="o">=</span><span class="mf">1.0</span>
+    <span class="n">q_factor</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="mf">1.3</span>
+
+<span class="n">ag</span> <span class="o">=</span> <span class="n">agR</span><span class="o">*</span><span class="n">γI</span>
+
+<span class="n">specEC8</span> <span class="o">=</span> <span class="n">SpectraEc8</span><span class="p">(</span><span class="n">αgR</span><span class="o">=</span><span class="n">agR</span><span class="p">,</span>
+                     <span class="n">γI</span><span class="o">=</span><span class="n">γI</span><span class="p">,</span>
+                     <span class="n">ground_type</span> <span class="o">=</span> <span class="n">ground_type</span><span class="p">,</span>
+                     <span class="n">spectrum_type</span> <span class="o">=</span> 
+                     <span class="mi">1</span><span class="p">,</span>
+                     <span class="n">η</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                     <span class="n">q</span><span class="o">=</span><span class="n">q_factor</span><span class="p">,</span>
+                     <span class="n">β</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id4">
+<h3>Μάζα<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mass</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span><span class="o">+</span><span class="mf">0.3</span><span class="o">*</span><span class="n">q</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">9.81</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>Εμφάνιση αρχικών αποτελεσμάτων (πριν το τρέξιμο της ανάλυσης)<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Διαστάσεις φορέα&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;L = </span><span class="si">{</span><span class="n">L</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;H_ισογ = </span><span class="si">{</span><span class="n">H_is</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;H_ορ = </span><span class="si">{</span><span class="n">H_or</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Διαστάσεις δοκών&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Δοκοί ισογείου: b = </span><span class="si">{</span><span class="n">bw</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">m   h=</span><span class="si">{</span><span class="n">h_is</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Δοκοί ορόφων:   b = </span><span class="si">{</span><span class="n">bw</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">m   h=</span><span class="si">{</span><span class="n">h_or</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Διαστάσεις στύλων&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Στύλοι ισογείου: b = </span><span class="si">{</span><span class="n">bc_is</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">m   h=</span><span class="si">{</span><span class="n">bc_is</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Στύλοι ορόφων:   b = </span><span class="si">{</span><span class="n">bc_or</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">m   h=</span><span class="si">{</span><span class="n">bc_or</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">m&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Υλικά&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Σκυρόδεμα&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;fcm = </span><span class="si">{</span><span class="n">fcm</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">MPa   Ecm=</span><span class="si">{</span><span class="n">Ecm</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">GPa&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Φορτία δοκών&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;g = </span><span class="si">{</span><span class="n">g</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">kN/m   q=</span><span class="si">{</span><span class="n">q</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">kN/m&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Μάζες&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;m = </span><span class="si">{</span><span class="n">mass</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">t (ίση σε όλους τους ορόφους)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Δεδομένα φάσματος σχεδιασμού&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;γI = </span><span class="si">{</span><span class="n">γI</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> για κατηγορία σπουδαιότητας </span><span class="si">{</span><span class="n">importance</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;agR = </span><span class="si">{</span><span class="n">agR</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">g = </span><span class="si">{</span><span class="n">agR</span><span class="o">*</span><span class="mf">9.81</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">m/sec2&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ag = </span><span class="si">{</span><span class="n">ag</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">g = </span><span class="si">{</span><span class="n">ag</span><span class="o">*</span><span class="mf">9.81</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">m/sec2&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Κατηγορία πλαστιμότητας = DC</span><span class="si">{</span><span class="n">ductility_class</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Κατηγορία εδάφους: </span><span class="si">{</span><span class="n">ground_type</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;TB = </span><span class="si">{</span><span class="n">specEC8</span><span class="o">.</span><span class="n">TB</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">sec&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;TC = </span><span class="si">{</span><span class="n">specEC8</span><span class="o">.</span><span class="n">TC</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">sec&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;TD = </span><span class="si">{</span><span class="n">specEC8</span><span class="o">.</span><span class="n">TD</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">sec&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;S = </span><span class="si">{</span><span class="n">specEC8</span><span class="o">.</span><span class="n">S</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">sec&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Συντελεστής συμπεριφοράς q = </span><span class="si">{</span><span class="n">specEC8</span><span class="o">.</span><span class="n">q</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Διαστάσεις φορέα
+L = 6.15m
+H_ισογ = 4.10m
+H_ορ = 3.10m
+
+Διαστάσεις δοκών
+Δοκοί ισογείου: b = 0.25m   h=0.70m
+Δοκοί ορόφων:   b = 0.25m   h=0.60m
+
+Διαστάσεις στύλων
+Στύλοι ισογείου: b = 0.40m   h=0.40m
+Στύλοι ορόφων:   b = 0.35m   h=0.35m
+
+Υλικά
+Σκυρόδεμα
+fcm = 21.90MPa   Ecm=27.8GPa
+
+Φορτία δοκών
+g = 35.20kN/m   q=15.20kN/m
+
+Μάζες
+m = 49.85t (ίση σε όλους τους ορόφους)
+
+Δεδομένα φάσματος σχεδιασμού
+γI = 1.00 για κατηγορία σπουδαιότητας II
+agR = 0.360g = 3.532m/sec2
+ag = 0.360g = 3.532m/sec2
+Κατηγορία πλαστιμότητας = DCM
+Κατηγορία εδάφους: C
+TB = 0.20sec
+TC = 0.60sec
+TD = 2.00sec
+S = 1.15sec
+Συντελεστής συμπεριφοράς q = 3.90
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h2>Αρχικό τρέξιμο - Υπολογισμός ιδιομορφών/ιδιοπεριόδων<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h3>Διατομές<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beam_is</span> <span class="o">=</span> <span class="n">RectangularSectionGeometry</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="n">bw</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">h_is</span><span class="p">)</span>
+<span class="n">A_beam_is</span> <span class="o">=</span> <span class="n">beam_is</span><span class="o">.</span><span class="n">area</span>
+<span class="n">Iz_beam_is</span> <span class="o">=</span> <span class="n">beam_is</span><span class="o">.</span><span class="n">moment_of_inertia_xx</span> <span class="o">*</span> <span class="mf">0.5</span>
+<span class="n">Avy_beam_is</span> <span class="o">=</span> <span class="n">beam_is</span><span class="o">.</span><span class="n">shear_area_2</span> <span class="o">*</span> <span class="mf">0.5</span>
+
+<span class="n">beam_or</span> <span class="o">=</span> <span class="n">RectangularSectionGeometry</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="n">bw</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">h_or</span><span class="p">)</span>
+<span class="n">A_beam_or</span> <span class="o">=</span> <span class="n">beam_or</span><span class="o">.</span><span class="n">area</span>
+<span class="n">Iz_beam_or</span> <span class="o">=</span> <span class="n">beam_or</span><span class="o">.</span><span class="n">moment_of_inertia_xx</span> <span class="o">*</span> <span class="mf">0.5</span>
+<span class="n">Avy_beam_or</span> <span class="o">=</span> <span class="n">beam_or</span><span class="o">.</span><span class="n">shear_area_2</span> <span class="o">*</span> <span class="mf">0.5</span>
+
+<span class="n">col_is</span> <span class="o">=</span> <span class="n">RectangularSectionGeometry</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="n">bc_is</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">hc_is</span><span class="p">)</span>
+<span class="n">A_col_is</span> <span class="o">=</span> <span class="n">col_is</span><span class="o">.</span><span class="n">area</span>
+<span class="n">Iz_col_is</span> <span class="o">=</span> <span class="n">col_is</span><span class="o">.</span><span class="n">moment_of_inertia_xx</span> <span class="o">*</span> <span class="mf">0.5</span>
+<span class="n">Avy_col_is</span> <span class="o">=</span> <span class="n">col_is</span><span class="o">.</span><span class="n">shear_area_2</span> <span class="o">*</span> <span class="mf">0.5</span>
+
+<span class="n">col_or</span> <span class="o">=</span> <span class="n">RectangularSectionGeometry</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="n">bc_or</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">hc_or</span><span class="p">)</span>
+<span class="n">A_col_or</span> <span class="o">=</span> <span class="n">col_or</span><span class="o">.</span><span class="n">area</span>
+<span class="n">Iz_col_or</span> <span class="o">=</span> <span class="n">col_or</span><span class="o">.</span><span class="n">moment_of_inertia_xx</span> <span class="o">*</span> <span class="mf">0.5</span>
+<span class="n">Avy_col_or</span> <span class="o">=</span> <span class="n">col_or</span><span class="o">.</span><span class="n">shear_area_2</span> <span class="o">*</span> <span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="opensees">
+<h3>Ανάλυση στο OpenSees για υπολογισμό ιδιομορφών<a class="headerlink" href="#opensees" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ops</span><span class="o">.</span><span class="n">wipe</span><span class="p">()</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="s1">&#39;-ndm&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;-ndf&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">E</span> <span class="o">=</span> <span class="n">Ecm</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span>
+<span class="n">U</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">E</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span><span class="o">+</span><span class="n">U</span><span class="p">))</span>
+
+<span class="n">ops</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">H_is</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">H_is</span><span class="o">+</span><span class="n">H_or</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">H_is</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">H_or</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">H_is</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">H_is</span><span class="o">+</span><span class="n">H_or</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">H_is</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">H_or</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="n">H_is</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="n">H_is</span><span class="o">+</span><span class="n">H_or</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="n">H_is</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">H_or</span><span class="p">)</span>
+
+<span class="n">ops</span><span class="o">.</span><span class="n">fix</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">fix</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">fix</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ops</span><span class="o">.</span><span class="n">geomTransf</span><span class="p">(</span><span class="s1">&#39;Linear&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ops</span><span class="o">.</span><span class="n">mass</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">mass</span><span class="p">,</span> <span class="mf">1.0e-10</span><span class="p">,</span> <span class="mf">1.0e-10</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">mass</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">mass</span><span class="p">,</span> <span class="mf">1.0e-10</span><span class="p">,</span> <span class="mf">1.0e-10</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">mass</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">mass</span><span class="p">,</span> <span class="mf">1.0e-10</span><span class="p">,</span> <span class="mf">1.0e-10</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
+    <span class="n">ops</span><span class="o">.</span><span class="n">equalDOF</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">]:</span>
+    <span class="n">ops</span><span class="o">.</span><span class="n">equalDOF</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">]:</span>
+    <span class="n">ops</span><span class="o">.</span><span class="n">equalDOF</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Στύλοι             </span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_col_is</span><span class="p">,</span> <span class="n">Iz_col_is</span><span class="p">,</span> <span class="n">Avy_col_is</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_col_or</span><span class="p">,</span> <span class="n">Iz_col_or</span><span class="p">,</span> <span class="n">Avy_col_or</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_col_or</span><span class="p">,</span> <span class="n">Iz_col_or</span><span class="p">,</span> <span class="n">Avy_col_or</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_col_is</span><span class="p">,</span> <span class="n">Iz_col_is</span><span class="p">,</span> <span class="n">Avy_col_is</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_col_or</span><span class="p">,</span> <span class="n">Iz_col_or</span><span class="p">,</span> <span class="n">Avy_col_or</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_col_or</span><span class="p">,</span> <span class="n">Iz_col_or</span><span class="p">,</span> <span class="n">Avy_col_or</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_col_is</span><span class="p">,</span> <span class="n">Iz_col_is</span><span class="p">,</span> <span class="n">Avy_col_is</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_col_or</span><span class="p">,</span> <span class="n">Iz_col_or</span><span class="p">,</span> <span class="n">Avy_col_or</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_col_or</span><span class="p">,</span> <span class="n">Iz_col_or</span><span class="p">,</span> <span class="n">Avy_col_or</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)</span>
+<span class="c1"># Δοκοί</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_beam_is</span><span class="p">,</span> <span class="n">Iz_beam_is</span><span class="p">,</span> <span class="n">Avy_beam_is</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_beam_or</span><span class="p">,</span> <span class="n">Iz_beam_or</span><span class="p">,</span> <span class="n">Avy_beam_or</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)  </span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_beam_or</span><span class="p">,</span> <span class="n">Iz_beam_or</span><span class="p">,</span> <span class="n">Avy_beam_or</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)  </span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_beam_is</span><span class="p">,</span> <span class="n">Iz_beam_is</span><span class="p">,</span> <span class="n">Avy_beam_is</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_beam_or</span><span class="p">,</span> <span class="n">Iz_beam_or</span><span class="p">,</span> <span class="n">Avy_beam_or</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)  </span>
+<span class="n">ops</span><span class="o">.</span><span class="n">element</span><span class="p">(</span><span class="s1">&#39;ElasticTimoshenkoBeam&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">A_beam_or</span><span class="p">,</span> <span class="n">Iz_beam_or</span><span class="p">,</span> <span class="n">Avy_beam_or</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># , &#39;-mass&#39;, 0., &#39;-lMass&#39;)   </span>
+             
+<span class="n">elem_type</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;col&#39;</span><span class="p">,</span>
+             <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;col&#39;</span><span class="p">,</span>
+             <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;col&#39;</span><span class="p">,</span>
+             <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;col&#39;</span><span class="p">,</span>
+             <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;col&#39;</span><span class="p">,</span>
+             <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;col&#39;</span><span class="p">,</span>
+             <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39;col&#39;</span><span class="p">,</span>
+             <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;col&#39;</span><span class="p">,</span>
+             <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39;col&#39;</span><span class="p">,</span>
+             <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;beam&#39;</span><span class="p">,</span>
+             <span class="mi">11</span><span class="p">:</span> <span class="s1">&#39;beam&#39;</span><span class="p">,</span>
+             <span class="mi">12</span><span class="p">:</span> <span class="s1">&#39;beam&#39;</span><span class="p">,</span>
+             <span class="mi">13</span><span class="p">:</span> <span class="s1">&#39;beam&#39;</span><span class="p">,</span>
+             <span class="mi">14</span><span class="p">:</span> <span class="s1">&#39;beam&#39;</span><span class="p">,</span>
+             <span class="mi">15</span><span class="p">:</span> <span class="s1">&#39;beam&#39;</span><span class="p">}</span>
+
+<span class="n">numEigen</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">eigenValues</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">eigen</span><span class="p">(</span><span class="s1">&#39;-fullGenLapack&#39;</span><span class="p">,</span> <span class="n">numEigen</span><span class="p">)</span>
+
+<span class="n">_periods</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">numEigen</span><span class="p">):</span>
+    <span class="n">lamb</span> <span class="o">=</span> <span class="n">eigenValues</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">period</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
+    <span class="n">_periods</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">period</span><span class="p">)</span>
+    
+    <span class="n">eigen_vector</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">mn</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span> <span class="c1"># self.model.master_nodes:</span>
+        <span class="c1"># print(f&#39;eigen {i} mn {mn}&#39;)</span>
+        <span class="n">eigen_vector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">nodeEigenvector</span><span class="p">(</span><span class="n">mn</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">results_ele</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING - the &#39;fullGenLapack&#39; eigen solver is VERY SLOW. Consider using the default eigen solver.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h3>Αποτελέσματα 1ης ιδιομοφής<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Θεμελιώδης ιδιοπερίοδος T</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">period</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">s&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Συνιστώσες 1ης ιδιομορφής (δε θα δείτε ακριβώς τα ίδια νούμερα, θα έχετε όμως τις ίδιες αναλογίες):&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">e</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">eigen_vector</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Θεμελιώδης ιδιοπερίοδος T1 = 0.925s
+Συνιστώσες 1ης ιδιομορφής (δε θα δείτε ακριβώς τα ίδια νούμερα, θα έχετε όμως τις ίδιες αναλογίες):
+[&#39;0.0462&#39;, &#39;0.0828&#39;, &#39;0.1052&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id9">
+<h2>Υπολογισμός σεισμικών δράσεων<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Sd_T</span> <span class="o">=</span> <span class="n">specEC8</span><span class="o">.</span><span class="n">Sd</span><span class="p">(</span><span class="n">period</span><span class="p">)</span> <span class="o">*</span> <span class="mf">9.81</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">mass</span> <span class="o">*</span> <span class="mf">3.</span>
+
+<span class="k">if</span> <span class="n">period</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="o">*</span><span class="n">specEC8</span><span class="o">.</span><span class="n">TC</span><span class="p">:</span>
+    <span class="n">λ_ec8</span> <span class="o">=</span> <span class="mf">0.85</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">λ_ec8</span> <span class="o">=</span> <span class="mf">1.0</span>
+    
+<span class="n">Fb</span> <span class="o">=</span> <span class="n">M</span> <span class="o">*</span> <span class="n">Sd_T</span> <span class="o">*</span> <span class="n">λ_ec8</span>
+
+<span class="n">eigen_vector_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">eigen_vector</span><span class="p">)</span>
+<span class="n">mass_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">mass</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">mass</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Επιτάχυνση σχεδιασμού Sd(T) = </span><span class="si">{</span><span class="n">Sd_T</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">m/sec2&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Μάζα για το σύνολο του κτιρίου M = </span><span class="si">{</span><span class="n">M</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">t&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;λ = </span><span class="si">{</span><span class="n">λ_ec8</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Τέμνουσα βάσης Fb = </span><span class="si">{</span><span class="n">Fb</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">kN&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Επιτάχυνση σχεδιασμού Sd(T) = 1.688m/sec2
+Μάζα για το σύνολο του κτιρίου M = 149.56t
+λ = 0.85
+Τέμνουσα βάσης Fb = 214.56kN
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigen_vector_array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.04618717, 0.08276893, 0.10523987])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Fi</span> <span class="o">=</span> <span class="p">(</span><span class="n">eigen_vector_array</span> <span class="o">*</span> <span class="n">mass_array</span><span class="p">)</span> <span class="o">*</span> <span class="n">Fb</span> <span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">eigen_vector_array</span> <span class="o">*</span> <span class="n">mass_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_i</span><span class="p">,</span> <span class="n">_fi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">Fi</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;F</span><span class="si">{</span><span class="n">_i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">_fi</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">kN&#39;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F1 = 42.31kN
+F2 = 75.83kN
+F3 = 96.41kN
+</pre></div>
+</div>
+</div>
+</div>
+<section id="opensees-g-0-3q-ex">
+<h3>Επίλυση στο OpenSees για G+0.3Q+Ex<a class="headerlink" href="#opensees-g-0-3q-ex" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_ele</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># G+0.3Q+Ex Analysis</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">timeSeries</span><span class="p">(</span><span class="s1">&#39;Constant&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">pattern</span><span class="p">(</span><span class="s1">&#39;Plain&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Fi</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">Fi</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">Fi</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">eleLoad</span><span class="p">(</span><span class="s1">&#39;-ele&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;-type&#39;</span><span class="p">,</span> <span class="s1">&#39;-beamUniform&#39;</span><span class="p">,</span> <span class="o">-</span><span class="p">(</span><span class="n">g</span><span class="o">+</span><span class="mf">0.3</span><span class="o">*</span><span class="n">q</span><span class="p">))</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">eleLoad</span><span class="p">(</span><span class="s1">&#39;-ele&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;-type&#39;</span><span class="p">,</span> <span class="s1">&#39;-beamUniform&#39;</span><span class="p">,</span> <span class="o">-</span><span class="p">(</span><span class="n">g</span><span class="o">+</span><span class="mf">0.3</span><span class="o">*</span><span class="n">q</span><span class="p">))</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">eleLoad</span><span class="p">(</span><span class="s1">&#39;-ele&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;-type&#39;</span><span class="p">,</span> <span class="s1">&#39;-beamUniform&#39;</span><span class="p">,</span> <span class="o">-</span><span class="p">(</span><span class="n">g</span><span class="o">+</span><span class="mf">0.3</span><span class="o">*</span><span class="n">q</span><span class="p">))</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">eleLoad</span><span class="p">(</span><span class="s1">&#39;-ele&#39;</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;-type&#39;</span><span class="p">,</span> <span class="s1">&#39;-beamUniform&#39;</span><span class="p">,</span> <span class="o">-</span><span class="p">(</span><span class="n">g</span><span class="o">+</span><span class="mf">0.3</span><span class="o">*</span><span class="n">q</span><span class="p">))</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">eleLoad</span><span class="p">(</span><span class="s1">&#39;-ele&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;-type&#39;</span><span class="p">,</span> <span class="s1">&#39;-beamUniform&#39;</span><span class="p">,</span> <span class="o">-</span><span class="p">(</span><span class="n">g</span><span class="o">+</span><span class="mf">0.3</span><span class="o">*</span><span class="n">q</span><span class="p">))</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">eleLoad</span><span class="p">(</span><span class="s1">&#39;-ele&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;-type&#39;</span><span class="p">,</span> <span class="s1">&#39;-beamUniform&#39;</span><span class="p">,</span> <span class="o">-</span><span class="p">(</span><span class="n">g</span><span class="o">+</span><span class="mf">0.3</span><span class="o">*</span><span class="n">q</span><span class="p">))</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">constraints</span><span class="p">(</span><span class="s1">&#39;Transformation&#39;</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;RCM&#39;</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;BandGeneral&#39;</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39;NormDispIncr&#39;</span><span class="p">,</span> <span class="mf">1.0e-6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">algorithm</span><span class="p">(</span><span class="s1">&#39;Linear&#39;</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">integrator</span><span class="p">(</span><span class="s1">&#39;LoadControl&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">analysis</span><span class="p">(</span><span class="s1">&#39;Static&#39;</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">results_ele</span><span class="o">.</span><span class="n">extend</span><span class="p">([[</span><span class="s1">&#39;G+0.3Q+Ex&#39;</span><span class="p">,</span> <span class="n">ele</span><span class="p">,</span> <span class="n">elem_type</span><span class="p">[</span><span class="n">ele</span><span class="p">]]</span> <span class="o">+</span> <span class="n">ops</span><span class="o">.</span><span class="n">eleForce</span><span class="p">(</span><span class="n">ele</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)])</span>
+
+<span class="n">ops</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;timeSeries&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;loadPattern&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ops</span><span class="o">.</span><span class="n">wipeAnalysis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">opsv</span><span class="o">.</span><span class="n">plot_model</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="../../_images/eccd9a078efaed4bfc35306c24fdc0867d9a7f59563320159deb521857cf0f4d.png" src="../../_images/eccd9a078efaed4bfc35306c24fdc0867d9a7f59563320159deb521857cf0f4d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ops_to_mvn</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;elem_type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;col&#39;</span><span class="p">:</span>
+        <span class="n">Ni</span> <span class="o">=</span> <span class="o">-</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Fyi_&#39;</span><span class="p">]</span>
+        <span class="n">Nj</span> <span class="o">=</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Fyj_&#39;</span><span class="p">]</span>
+        <span class="n">Vi</span> <span class="o">=</span> <span class="o">-</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Fxi_&#39;</span><span class="p">]</span>
+        <span class="n">Vj</span> <span class="o">=</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Fxj_&#39;</span><span class="p">]</span>
+        <span class="n">Mi</span> <span class="o">=</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Mi_&#39;</span><span class="p">]</span>
+        <span class="n">Mj</span> <span class="o">=</span> <span class="o">-</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Mj_&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Ni</span> <span class="o">=</span> <span class="o">-</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Fxi_&#39;</span><span class="p">]</span>
+        <span class="n">Nj</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Fxj_&#39;</span><span class="p">]</span>
+        <span class="n">Vi</span> <span class="o">=</span> <span class="o">-</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Fyi_&#39;</span><span class="p">]</span>
+        <span class="n">Vj</span> <span class="o">=</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Fyj_&#39;</span><span class="p">]</span>  
+        <span class="n">Mi</span> <span class="o">=</span> <span class="o">-</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Mi_&#39;</span><span class="p">]</span>
+        <span class="n">Mj</span> <span class="o">=</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Mj_&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">Ni</span><span class="p">,</span> <span class="n">Nj</span><span class="p">,</span> <span class="n">Vi</span><span class="p">,</span> <span class="n">Vj</span><span class="p">,</span> <span class="n">Mi</span><span class="p">,</span> <span class="n">Mj</span>
+
+<span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">results_ele</span><span class="p">,</span>
+                          <span class="n">columns</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;load_case&#39;</span><span class="p">,</span> <span class="s1">&#39;elem_id&#39;</span><span class="p">,</span> <span class="s1">&#39;elem_type&#39;</span><span class="p">,</span> <span class="s1">&#39;Fxi_&#39;</span><span class="p">,</span> <span class="s1">&#39;Fyi_&#39;</span><span class="p">,</span> <span class="s1">&#39;Mi_&#39;</span><span class="p">,</span> <span class="s1">&#39;Fxj_&#39;</span><span class="p">,</span> <span class="s1">&#39;Fyj_&#39;</span><span class="p">,</span> <span class="s1">&#39;Mj_&#39;</span><span class="p">])</span>
+
+<span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Ni&#39;</span><span class="p">],</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Nj&#39;</span><span class="p">],</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Vi&#39;</span><span class="p">],</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Vj&#39;</span><span class="p">],</span> \
+    <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Mi&#39;</span><span class="p">],</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Mj&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">results_df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">ops_to_mvn</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">results_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>load_case</th>
+      <th>elem_id</th>
+      <th>elem_type</th>
+      <th>Fxi_</th>
+      <th>Fyi_</th>
+      <th>Mi_</th>
+      <th>Fxj_</th>
+      <th>Fyj_</th>
+      <th>Mj_</th>
+      <th>Ni</th>
+      <th>Nj</th>
+      <th>Vi</th>
+      <th>Vj</th>
+      <th>Mi</th>
+      <th>Mj</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>G+0.3Q+Ex</td>
+      <td>1</td>
+      <td>col</td>
+      <td>-55.29</td>
+      <td>227.64</td>
+      <td>139.49</td>
+      <td>55.29</td>
+      <td>-227.64</td>
+      <td>87.18</td>
+      <td>-227.64</td>
+      <td>-227.64</td>
+      <td>55.29</td>
+      <td>55.29</td>
+      <td>139.49</td>
+      <td>-87.18</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>G+0.3Q+Ex</td>
+      <td>2</td>
+      <td>col</td>
+      <td>-24.69</td>
+      <td>172.86</td>
+      <td>37.25</td>
+      <td>24.69</td>
+      <td>-172.86</td>
+      <td>39.29</td>
+      <td>-172.86</td>
+      <td>-172.86</td>
+      <td>24.69</td>
+      <td>24.69</td>
+      <td>37.25</td>
+      <td>-39.29</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>G+0.3Q+Ex</td>
+      <td>3</td>
+      <td>col</td>
+      <td>6.70</td>
+      <td>92.50</td>
+      <td>-12.90</td>
+      <td>-6.70</td>
+      <td>-92.50</td>
+      <td>-7.86</td>
+      <td>-92.50</td>
+      <td>-92.50</td>
+      <td>-6.70</td>
+      <td>-6.70</td>
+      <td>-12.90</td>
+      <td>7.86</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>G+0.3Q+Ex</td>
+      <td>4</td>
+      <td>col</td>
+      <td>-82.23</td>
+      <td>812.13</td>
+      <td>175.82</td>
+      <td>82.23</td>
+      <td>-812.13</td>
+      <td>161.34</td>
+      <td>-812.13</td>
+      <td>-812.13</td>
+      <td>82.23</td>
+      <td>82.23</td>
+      <td>175.82</td>
+      <td>-161.34</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>G+0.3Q+Ex</td>
+      <td>5</td>
+      <td>col</td>
+      <td>-75.59</td>
+      <td>539.94</td>
+      <td>118.22</td>
+      <td>75.59</td>
+      <td>-539.94</td>
+      <td>116.12</td>
+      <td>-539.94</td>
+      <td>-539.94</td>
+      <td>75.59</td>
+      <td>75.59</td>
+      <td>118.22</td>
+      <td>-116.12</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>G+0.3Q+Ex</td>
+      <td>6</td>
+      <td>col</td>
+      <td>-43.53</td>
+      <td>276.85</td>
+      <td>63.24</td>
+      <td>43.53</td>
+      <td>-276.85</td>
+      <td>71.69</td>
+      <td>-276.85</td>
+      <td>-276.85</td>
+      <td>43.53</td>
+      <td>43.53</td>
+      <td>63.24</td>
+      <td>-71.69</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>G+0.3Q+Ex</td>
+      <td>7</td>
+      <td>col</td>
+      <td>-77.04</td>
+      <td>427.38</td>
+      <td>168.81</td>
+      <td>77.04</td>
+      <td>-427.38</td>
+      <td>147.04</td>
+      <td>-427.38</td>
+      <td>-427.38</td>
+      <td>77.04</td>
+      <td>77.04</td>
+      <td>168.81</td>
+      <td>-147.04</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>G+0.3Q+Ex</td>
+      <td>8</td>
+      <td>col</td>
+      <td>-71.96</td>
+      <td>265.30</td>
+      <td>108.87</td>
+      <td>71.96</td>
+      <td>-265.30</td>
+      <td>114.19</td>
+      <td>-265.30</td>
+      <td>-265.30</td>
+      <td>71.96</td>
+      <td>71.96</td>
+      <td>108.87</td>
+      <td>-114.19</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>G+0.3Q+Ex</td>
+      <td>9</td>
+      <td>col</td>
+      <td>-59.59</td>
+      <td>119.70</td>
+      <td>81.29</td>
+      <td>59.59</td>
+      <td>-119.70</td>
+      <td>103.43</td>
+      <td>-119.70</td>
+      <td>-119.70</td>
+      <td>59.59</td>
+      <td>59.59</td>
+      <td>81.29</td>
+      <td>-103.43</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>G+0.3Q+Ex</td>
+      <td>10</td>
+      <td>beam</td>
+      <td>0.00</td>
+      <td>54.78</td>
+      <td>-124.43</td>
+      <td>0.00</td>
+      <td>189.74</td>
+      <td>-290.57</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>-54.78</td>
+      <td>189.74</td>
+      <td>124.43</td>
+      <td>-290.57</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>G+0.3Q+Ex</td>
+      <td>11</td>
+      <td>beam</td>
+      <td>0.00</td>
+      <td>80.36</td>
+      <td>-26.39</td>
+      <td>0.00</td>
+      <td>164.17</td>
+      <td>-231.33</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>-80.36</td>
+      <td>164.17</td>
+      <td>26.39</td>
+      <td>-231.33</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>G+0.3Q+Ex</td>
+      <td>12</td>
+      <td>beam</td>
+      <td>0.00</td>
+      <td>92.50</td>
+      <td>7.86</td>
+      <td>0.00</td>
+      <td>152.02</td>
+      <td>-190.88</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>-92.50</td>
+      <td>152.02</td>
+      <td>-7.86</td>
+      <td>-190.88</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>G+0.3Q+Ex</td>
+      <td>13</td>
+      <td>beam</td>
+      <td>0.00</td>
+      <td>82.44</td>
+      <td>11.01</td>
+      <td>0.00</td>
+      <td>162.08</td>
+      <td>-255.91</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>-82.44</td>
+      <td>162.08</td>
+      <td>-11.01</td>
+      <td>-255.91</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>G+0.3Q+Ex</td>
+      <td>14</td>
+      <td>beam</td>
+      <td>0.00</td>
+      <td>98.93</td>
+      <td>51.97</td>
+      <td>0.00</td>
+      <td>145.60</td>
+      <td>-195.48</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>-98.93</td>
+      <td>145.60</td>
+      <td>-51.97</td>
+      <td>-195.48</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>G+0.3Q+Ex</td>
+      <td>15</td>
+      <td>beam</td>
+      <td>0.00</td>
+      <td>124.83</td>
+      <td>119.19</td>
+      <td>0.00</td>
+      <td>119.70</td>
+      <td>-103.43</td>
+      <td>-0.00</td>
+      <td>0.00</td>
+      <td>-124.83</td>
+      <td>119.70</td>
+      <td>-119.19</td>
+      <td>-103.43</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./repairs\homework"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../moment_rotation_columns.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Υπολογισμός διαγραμμάτων Μ-θ σύμφωνα με τον ΚΑΝ.ΕΠΕ.</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="repairs_homework23_part2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Επισκευές/Ενισχύσεις - Μέρος 2 (Νοεμ.2023)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Εισαγωγή αριθμού μητρώου φοιτητών</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Δεδομένα</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Μάζα</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Εμφάνιση αρχικών αποτελεσμάτων (πριν το τρέξιμο της ανάλυσης)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Αρχικό τρέξιμο - Υπολογισμός ιδιομορφών/ιδιοπεριόδων</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Διατομές</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opensees">Ανάλυση στο OpenSees για υπολογισμό ιδιομορφών</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Αποτελέσματα 1ης ιδιομοφής</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Υπολογισμός σεισμικών δράσεων</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opensees-g-0-3q-ex">Επίλυση στο OpenSees για G+0.3Q+Ex</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By gp
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

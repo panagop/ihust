@@ -1,0 +1,95 @@
+Traceback (most recent call last):
+  File "D:\mypython_projects\ihust\.venv\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "D:\mypython_projects\ihust\.venv\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\mypython_projects\ihust\.venv\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\panagop\AppData\Roaming\uv\python\cpython-3.12.9-windows-x86_64-none\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\mypython_projects\ihust\.venv\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "D:\mypython_projects\ihust\.venv\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "D:\mypython_projects\ihust\.venv\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+print('Διαστάσεις φορέα')
+print(f'L = {L:.2f}m')
+print(f'H_ισογ = {H_is:.2f}m')
+print(f'H_ορ = {H_or:.2f}m')
+print('')
+print('Διαστάσεις δοκών')
+print(f'Δοκοί ισογείου: b = {bw:.2f}m   h={h_is:.2f}m')
+print(f'Δοκοί ορόφων:   b = {bw:.2f}m   h={h_or:.2f}m')
+print('')
+print('Διαστάσεις στύλων')
+print(f'Στύλοι ισογείου: b = {bc_is:.2f}m   h={bc_is:.2f}m')
+print(f'Στύλοι ορόφων:   b = {bc_or:.2f}m   h={bc_or:.2f}m')
+print('')
+print('Υλικά')
+print('Σκυρόδεμα')
+print(f'fcm = {fcm:.2f}MPa   Ecm={Ecm:.1f}GPa')
+print('')
+print('Χάλυβας')
+print(f'fy = {fy:.2f}MPa')
+print(f'fu = {fu:.2f}MPa')
+print(f'fye = {fye:.2f}MPa')
+print(f'fue = {fue:.2f}MPa')
+print('')
+print('Φορτία δοκών')
+print(f'g = {g:.2f}kN/m   q={q:.2f}kN/m')
+print('')
+print('Μάζες')
+print(f'm = {mass:.2f}t (ίση σε όλους τους ορόφους)')
+print('')
+# print('Δεδομένα φάσματος σχεδιασμού')
+# print(f'γI = {γI:.2f} για κατηγορία σπουδαιότητας {importance}')
+# print(f'agR = {agR:.3f}g = {agR*9.81:.3f}m/sec2')
+# print(f'ag = {ag:.3f}g = {ag*9.81:.3f}m/sec2')
+# print(f'Κατηγορία πλαστιμότητας = DC{ductility_class}')
+# print(f'Κατηγορία εδάφους: {ground_type}')
+# print(f'TB = {specEC8.TB:.2f}sec')
+# print(f'TC = {specEC8.TC:.2f}sec')
+# print(f'TD = {specEC8.TD:.2f}sec')
+# print(f'S = {specEC8.S:.2f}sec')
+# print(f'Συντελεστής συμπεριφοράς q = {specEC8.q:.2f}')
+
+------------------
+
+----- stdout -----
+Διαστάσεις φορέα
+L = 6.15m
+H_ισογ = 4.10m
+H_ορ = 3.10m
+
+Διαστάσεις δοκών
+Δοκοί ισογείου: b = 0.25m   h=0.70m
+Δοκοί ορόφων:   b = 0.25m   h=0.60m
+
+Διαστάσεις στύλων
+Στύλοι ισογείου: b = 0.40m   h=0.40m
+Στύλοι ορόφων:   b = 0.35m   h=0.35m
+
+Υλικά
+Σκυρόδεμα
+fcm = 21.90MPa   Ecm=27.8GPa
+
+Χάλυβας
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[5][39m[32m, line 19[39m
+[32m     17[39m [38;5;28mprint[39m([33m'[39m[33m'[39m)
+[32m     18[39m [38;5;28mprint[39m([33m'[39m[33mΧάλυβας[39m[33m'[39m)
+[32m---> [39m[32m19[39m [38;5;28mprint[39m([33mf[39m[33m'[39m[33mfy = [39m[38;5;132;01m{[39;00m[43mfy[49m[38;5;132;01m:[39;00m[33m.2f[39m[38;5;132;01m}[39;00m[33mMPa[39m[33m'[39m)
+[32m     20[39m [38;5;28mprint[39m([33mf[39m[33m'[39m[33mfu = [39m[38;5;132;01m{[39;00mfu[38;5;132;01m:[39;00m[33m.2f[39m[38;5;132;01m}[39;00m[33mMPa[39m[33m'[39m)
+[32m     21[39m [38;5;28mprint[39m([33mf[39m[33m'[39m[33mfye = [39m[38;5;132;01m{[39;00mfye[38;5;132;01m:[39;00m[33m.2f[39m[38;5;132;01m}[39;00m[33mMPa[39m[33m'[39m)
+
+[31mNameError[39m: name 'fy' is not defined
+
