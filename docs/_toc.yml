@@ -73,10 +73,11 @@ parts:
 
   - caption: MiniAppz
     chapters:
-    - file: rc2/blabla2.md
-    - file: rc2/blabla3.md
-    - file: rc2/blabla4.md
-    - file: rc2/blabla5.md
+    - file: miniappz/index.md
+    - file: miniappz/blabla2.md
+    - file: miniappz/blabla3.md
+    - file: miniappz/blabla4.md
+    - file: miniappz/blabla5.md
 
   - caption: Βιβλιογραφία
     chapters:

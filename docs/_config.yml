@@ -77,15 +77,12 @@ html:
     utterances: false
   theme:
     name: "sphinx_book_theme"
-    # options:
-    #   theme_toggle: false   # 👈 disables dark/light toggle
-    #   default_mode: "light" # 👈 ensures light mode is used
-  # extra_files:
-  #   - path: "visualizations/linear_interpolation.html"
-  #     dest: "visualizations/"
+    options:
+      theme_toggle: false   # 👈 disables dark/light toggle
+      default_mode: "light" # 👈 ensures light mode is used
 
 
-# 👇 This controls code visibility
-code_toggle:
-  show_buttons: true      # show toggle button
-  hide_code_by_default: true  # hide code when page loads
+# # 👇 This controls code visibility
+# code_toggle:
+#   show_buttons: true      # show toggle button
+#   hide_code_by_default: true  # hide code when page loads
