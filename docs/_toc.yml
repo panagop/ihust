@@ -37,6 +37,7 @@ parts:
     - file: notebooks/lessons/rc1/markdown-01
       sections:
       - file: notebooks/lessons/rc1/enal_loads
+    - file: notebooks/lessons/rc1/grades.md
 
   - caption: Οπλισμένο Σκυρόδεμα 2
     # numbered: true
@@ -70,6 +71,10 @@ parts:
       - file: rc2/shear/beams_shear_reinforcement.ipynb
 
     - file: rc2/blabla.md
+    - file: rc2/blabla2.md
+    - file: rc2/blabla3.md
+    - file: rc2/blabla4.md
+    - file: rc2/blabla5.md
 
   - caption: Βιβλιογραφία
     chapters:

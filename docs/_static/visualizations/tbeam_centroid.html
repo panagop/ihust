@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Centroid of a T-Beam</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 2em; }
+    input { margin: 0.4em; padding: 0.3em; font-size: 1em; }
+    input:invalid { border: 2px solid red; }
+    input:valid { border: 2px solid green; }
+    label { margin-right: 0.5em; }
+    .section { margin-bottom: 1.5em; }
+    #output { font-size: 1.3em; margin-top: 1.2em; }
+
+    svg {
+      margin-top: 2em;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+    }
+
+    .label { font-size: 12px; fill: #333; }
+    .arrow {
+      stroke: black;
+      stroke-width: 1;
+    }
+
+    .centroid-line {
+      stroke: red;
+      stroke-width: 2;
+      stroke-dasharray: 5,5;
+    }
+  </style>
+</head>
+<body>
+  <h2>Centroid of a T-Beam</h2>
+  <p>
+    \[
+      \bar{y} = \dfrac{A_1 \cdot y_1 + A_2 \cdot y_2}{A_1 + A_2}
+    \]
+    where:
+    \( A_1 = b_f \cdot h_f \), \( y_1 = \dfrac{h_f}{2} \),  
+    \( A_2 = b_w \cdot h_w \), \( y_2 = h_f + \dfrac{h_w}{2} \)
+  </p>
+
+  <div class="section">
+    <strong>Flange Dimensions:</strong><br>
+    <label>Width \( b_f \):</label><input type="number" id="bf" value="150" step="any" required>
+    <label>Height \( h_f \):</label><input type="number" id="hf" value="20" step="any" required>
+  </div>
+
+  <div class="section">
+    <strong>Web Dimensions:</strong><br>
+    <label>Width \( b_w \):</label><input type="number" id="bw" value="25" step="any" required>
+    <label>Height \( h_w \):</label><input type="number" id="hw" value="50" step="any" required>
+  </div>
+
+  <p id="output"></p>
+
+  <svg id="beamSVG" width="100%" height="260" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <!-- Horizontal Arrows -->
+      <marker id="arrow-end-h" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+        <path d="M0,0 L10,5 L0,10 Z" fill="black"/>
+      </marker>
+      <marker id="arrow-start-h" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="180">
+        <path d="M0,0 L10,5 L0,10 Z" fill="black"/>
+      </marker>
+      <!-- Vertical Arrows -->
+      <marker id="arrow-end-v" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="-90">
+        <path d="M0,0 L10,5 L0,10 Z" fill="black"/>
+      </marker>
+      <marker id="arrow-start-v" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="90">
+        <path d="M0,0 L10,5 L0,10 Z" fill="black"/>
+      </marker>
+    </defs>
+
+    <rect id="flange" fill="#90caf9"/>
+    <rect id="web" fill="#64b5f6"/>
+    <line id="centroidLine" class="centroid-line" x1="0" x2="400" y1="0" y2="0"/>
+    <text id="centroidLabel" class="label">ȳ</text>
+
+    <!-- Arrows and Labels -->
+    <line id="bfArrow" class="arrow" marker-start="url(#arrow-start-h)" marker-end="url(#arrow-end-h)"/>
+    <text id="bfLabel" class="label" text-anchor="middle">bf</text>
+
+    <line id="bwArrow" class="arrow" marker-start="url(#arrow-start-h)" marker-end="url(#arrow-end-h)"/>
+    <text id="bwLabel" class="label" text-anchor="middle">bw</text>
+
+    <line id="hfArrow" class="arrow" marker-start="url(#arrow-start-v)" marker-end="url(#arrow-end-v)"/>
+    <text id="hfLabel" class="label">hf</text>
+
+    <line id="hwArrow" class="arrow" marker-start="url(#arrow-start-v)" marker-end="url(#arrow-end-v)"/>
+    <text id="hwLabel" class="label">hw</text>
+  </svg>
+
+  <script>
+    const inputs = ["bf", "hf", "bw", "hw"].map(id => document.getElementById(id));
+    const output = document.getElementById("output");
+
+    const flange = document.getElementById("flange");
+    const web = document.getElementById("web");
+    const centroidLine = document.getElementById("centroidLine");
+    const centroidLabel = document.getElementById("centroidLabel");
+
+    const bfArrow = document.getElementById("bfArrow");
+    const bfLabel = document.getElementById("bfLabel");
+
+    const bwArrow = document.getElementById("bwArrow");
+    const bwLabel = document.getElementById("bwLabel");
+
+    const hfArrow = document.getElementById("hfArrow");
+    const hfLabel = document.getElementById("hfLabel");
+
+    const hwArrow = document.getElementById("hwArrow");
+    const hwLabel = document.getElementById("hwLabel");
+
+    function update() {
+      const [bf, hf, bw, hw] = inputs.map(el => parseFloat(el.value));
+      if ([bf, hf, bw, hw].some(isNaN) || bf <= 0 || hf <= 0 || bw <= 0 || hw <= 0) {
+        output.innerHTML = "\\(\\text{Please enter valid positive dimensions.}\\)";
+        MathJax.typesetPromise([output]);
+        return;
+      }
+
+      const A1 = bf * hf;
+      const A2 = bw * hw;
+      const y1 = hf / 2;
+      const y2 = hf + hw / 2;
+      const yBar = (A1 * y1 + A2 * y2) / (A1 + A2);
+
+      const latex = `\\bar{y} = \\dfrac{${A1} \\cdot ${y1} + ${A2} \\cdot ${y2}}{${A1} + ${A2}} = ${yBar.toFixed(2)} \\text{ units from top}`;
+      output.innerHTML = `\\(${latex}\\)`;
+      MathJax.typesetPromise([output]);
+
+      const padding = 40;
+      const totalHeight = hf + hw;
+      const maxWidth = Math.max(bf, bw);
+      const scaleX = (400 - 2 * padding) / maxWidth;
+      const scaleY = (260 - 2 * padding) / totalHeight;
+      const scale = Math.min(scaleX, scaleY);
+
+      const offsetX = (400 - bf * scale) / 2;
+      const flangeW = bf * scale;
+      const flangeH = hf * scale;
+      const webW = bw * scale;
+      const webH = hw * scale;
+      const webX = offsetX + (flangeW - webW) / 2;
+      const webY = padding + flangeH;
+      const yBarSVG = padding + yBar * scale;
+      const dimX = offsetX - 30;  // shared for hₓ and hᵥ
+
+      flange.setAttribute("x", offsetX);
+      flange.setAttribute("y", padding);
+      flange.setAttribute("width", flangeW);
+      flange.setAttribute("height", flangeH);
+
+      web.setAttribute("x", webX);
+      web.setAttribute("y", webY);
+      web.setAttribute("width", webW);
+      web.setAttribute("height", webH);
+
+      centroidLine.setAttribute("y1", yBarSVG);
+      centroidLine.setAttribute("y2", yBarSVG);
+      centroidLabel.setAttribute("x", 390);
+      centroidLabel.setAttribute("y", yBarSVG - 5);
+      centroidLabel.setAttribute("text-anchor", "end");
+
+      bfArrow.setAttribute("x1", offsetX);
+      bfArrow.setAttribute("y1", padding - 20);
+      bfArrow.setAttribute("x2", offsetX + flangeW);
+      bfArrow.setAttribute("y2", padding - 20);
+      bfLabel.setAttribute("x", offsetX + flangeW / 2);
+      bfLabel.setAttribute("y", padding - 25);
+
+      bwArrow.setAttribute("x1", webX);
+      bwArrow.setAttribute("y1", webY + webH + 20);
+      bwArrow.setAttribute("x2", webX + webW);
+      bwArrow.setAttribute("y2", webY + webH + 20);
+      bwLabel.setAttribute("x", webX + webW / 2);
+      bwLabel.setAttribute("y", webY + webH + 15);
+
+      hfArrow.setAttribute("x1", dimX);
+      hfArrow.setAttribute("x2", dimX);
+      hfArrow.setAttribute("y1", padding + flangeH);
+      hfArrow.setAttribute("y2", padding);
+      hfLabel.setAttribute("x", dimX - 15);
+      hfLabel.setAttribute("y", padding + flangeH / 2);
+
+      hwArrow.setAttribute("x1", dimX);
+      hwArrow.setAttribute("x2", dimX);
+      hwArrow.setAttribute("y1", padding + flangeH + webH);
+      hwArrow.setAttribute("y2", padding + flangeH);
+      hwLabel.setAttribute("x", dimX - 15);
+      hwLabel.setAttribute("y", padding + flangeH + webH / 2);
+    }
+
+    document.querySelectorAll("input").forEach(input =>
+      input.addEventListener("input", update)
+    );
+    update();
+  </script>
+</body>
+</html>
