@@ -34,10 +34,10 @@ parts:
 
   - caption: Οπλισμένο Σκυρόδεμα 1
     chapters:
-    - file: notebooks/lessons/rc1/markdown-01
+    - file: rc1/markdown-01
       sections:
-      - file: notebooks/lessons/rc1/enal_loads
-    - file: notebooks/lessons/rc1/grades.md
+      - file: rc1/enal_loads
+    - file: rc1/grades.md
 
   - caption: Οπλισμένο Σκυρόδεμα 2
     # numbered: true
@@ -70,6 +70,16 @@ parts:
       sections:
       - file: rc2/shear/beams_shear_reinforcement.ipynb
 
+  - caption: Οπλισμένο Σκυρόδεμα 3
+    chapters:
+    - file: rc3/columns_shear_reinforcement.ipynb
+
+  - caption: Επισκευές & ενισχύσεις
+    chapters:
+    - file: repairs/moment_rotation_beams.ipynb
+    - file: repairs/moment_rotation_columns.ipynb
+    - file: repairs/homework/repairs_homework23_part1.ipynb
+    - file: repairs/homework/repairs_homework23_part2.ipynb
 
   - caption: MiniAppz
     chapters:
