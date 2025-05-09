@@ -96,6 +96,7 @@ class CapacitySpectrumMethod:
         # Return the last intersection point or None if no intersection
         return x_solve[-1] if len(x_solve) > 0 else None
 
+
     def calc_performance_point(self):
         """Calculate the performance point through iteration"""
         self.output.data.clear()
@@ -180,6 +181,8 @@ class CapacitySpectrumMethodProcedureB:
         bl.curve_ini.y = self.structure.Sa
         bl.calc()
         return bl.bilinear_curve
+
+
 
     def _try_more_points(self):
         self.dpi_rng = np.linspace(0.5 * self.dstar, 1.5 * self.dstar, 11)
