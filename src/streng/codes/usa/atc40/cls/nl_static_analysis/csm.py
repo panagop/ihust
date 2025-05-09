@@ -93,6 +93,7 @@ class CapacitySpectrumMethod:
         x_solve, y_solve = intersection(_Sd, _Sa, self.structure.Sd, self.structure.Sa)
         return x_solve[-1]
 
+
     def calc_performance_point(self):
         # self.output.log_table.dict_list.clear()
         x_i = self.Sd_first_try
@@ -160,6 +161,8 @@ class CapacitySpectrumMethodProcedureB:
         bl.curve_ini.y = self.structure.Sa
         bl.calc()
         return bl.bilinear_curve
+
+
 
     def _try_more_points(self):
         self.dpi_rng = np.linspace(0.5 * self.dstar, 1.5 * self.dstar, 11)
