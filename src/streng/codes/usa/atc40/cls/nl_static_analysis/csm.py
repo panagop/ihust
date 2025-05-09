@@ -49,69 +49,89 @@ class CapacitySpectrumMethod:
     structure: StructureProperties
     demand: Demand
     first_try_case: str = 'intersection'
-
+    max_iterations: int = 50
+    tolerance: float = 0.0001
+    
     def __post_init__(self):
         self.output = OutputTable()
-
+        self.performance_point = None
+    
     @property
     def Sd_first_try(self):
         if self.first_try_case == 'intersection':
             x_solve, y_solve = intersection(self.demand.Sd, self.demand.Sa, self.structure.Sd, self.structure.Sa)
-            return x_solve[-1]
+            return x_solve[-1] if len(x_solve) > 0 else None
         elif self.first_try_case == 'equal displacements':
             Sd_T0 = 100.
             Sa_T0 = Sd_T0 * (2 * np.pi / self.structure.T0) ** 2
             Sa_T0_array = np.array([0.0, Sa_T0])
             Sd_T0_array = np.array([0.0, Sd_T0])
             xT0_solve, yT0_solve = intersection(self.demand.Sd, self.demand.Sa, Sd_T0_array, Sa_T0_array)
-            return xT0_solve[-1]
+            return xT0_solve[-1] if len(xT0_solve) > 0 else None
         else:
-            return 0.
+            raise ValueError(f"Unknown first_try_case: {self.first_try_case}")
 
     def __iterate_SR(self, x0):
+        """Calculate the next iteration point using spectral reduction factors"""
         bl = Bilin(xtarget=x0)
         bl.curve_ini.x, bl.curve_ini.y = self.structure.Sd, self.structure.Sa
         bl.calc()
 
         β0 = bl.bilinear_curve.β0
         βeff = csm_atc40.βeff(0.05, β0, self.structure.behavior)
-
         Teff = bl.bilinear_curve.Teq(self.structure.T0)
 
-
+        # Select appropriate reduction factor based on period
         SRA = csm_atc40.SRA(βeff, self.structure.behavior)
         SRV = csm_atc40.SRV(βeff, self.structure.behavior)
+        SR = SRV if Teff > self.demand.TC else SRA
 
-        if Teff > self.demand.TC:
-            SR = SRV
-        else:
-            SR = SRA
-
+        # Apply reduction to demand spectrum
         _Sa = SR * self.demand.Sa
         _Sd = SR * self.demand.Sd
 
+        # Find intersection with capacity curve
         x_solve, y_solve = intersection(_Sd, _Sa, self.structure.Sd, self.structure.Sa)
-        return x_solve[-1]
+        
+        # Return the last intersection point or None if no intersection
+        return x_solve[-1] if len(x_solve) > 0 else None
 
     def calc_performance_point(self):
-        # self.output.log_table.dict_list.clear()
-        x_i = self.Sd_first_try
-        iter_num = 0
-        error = 100.
+        """Calculate the performance point through iteration"""
         self.output.data.clear()
+        
+        # Get initial estimate
+        x_i = self.Sd_first_try
+        if x_i is None:
+            raise ValueError("Could not determine initial displacement estimate")
+        
+        iter_num = 0
+        error = float('inf')
         self.output.data.append({'__iteration': iter_num, 'Sd': x_i, 'error': None})
-        while error > 0.0001:
+        
+        # Iteration loop
+        while error > self.tolerance and iter_num < self.max_iterations:
             x_new = self.__iterate_SR(x_i)
-            error = abs((x_new - x_i) / x_i)
+            
+            # Check for convergence failure
+            if x_new is None:
+                raise ValueError(f"No intersection found at iteration {iter_num}")
+                
+            error = abs((x_new - x_i) / x_i) if x_i != 0 else abs(x_new)
             x_i = x_new
-            iter_num = iter_num + 1
+            iter_num += 1
 
             self.output.data.append({'__iteration': iter_num, 'Sd': x_i, 'error': error})
+            
+        # Check if we reached max iterations without converging
+        if iter_num == self.max_iterations and error > self.tolerance:
+            print(f"Warning: Maximum iterations ({self.max_iterations}) reached with error = {error:.4f}")
+        
+        self.performance_point = {'Sd': x_i, 'Sa': np.interp(x_i, self.structure.Sd, self.structure.Sa)}
+        print(f'Solution: Sd = {x_i:.4f}m, Sa = {self.performance_point["Sa"]:.4f}g')
+        
+        return self.performance_point
 
-            # print(f'__iteration: {iter_num} x={x_i:.4f} error={error:.2%}')
-
-
-        print(f'solution: Sd = {x_i:.4f}m')
 
 
 @dataclass

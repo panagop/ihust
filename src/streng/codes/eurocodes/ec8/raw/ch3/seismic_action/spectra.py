@@ -138,10 +138,10 @@ def Se(T, αg, S, TB, TC, TD, η=1.0):
             :nowrap:
 
             \\begin{eqnarray}
-                0 \le T \le T_B \\rightarrow & S_e(T) & = α_g\cdot S \cdot (1+\dfrac{T}{T_B}\cdot(η\cdot 2.5 -1)) \\\\
-                T_B \le T \le T_C \\rightarrow & S_e(T) & = α_g\cdot S \cdot η\cdot 2.5 \\\\
-                T_C \le T \le T_D \\rightarrow & S_e(T) & = α_g\cdot S \cdot η\cdot 2.5\cdot \dfrac{T_C}{T} \\\\
-                T_D \le T \le 4s \\rightarrow & S_e(T) & = α_g\cdot S \cdot η\cdot 2.5\cdot \dfrac{T_C\cdot T_D}{T^2}
+                0 \\le T \\le T_B \\rightarrow & S_e(T) & = α_g\\cdot S \\cdot (1+\\dfrac{T}{T_B}\\cdot(η\\cdot 2.5 -1)) \\\\
+                T_B \\le T \\le T_C \\rightarrow & S_e(T) & = α_g\\cdot S \\cdot η\\cdot 2.5 \\\\
+                T_C \\le T \\le T_D \\rightarrow & S_e(T) & = α_g\\cdot S \\cdot η\\cdot 2.5\\cdot \\dfrac{T_C}{T} \\\\
+                T_D \\le T \\le 4s \\rightarrow & S_e(T) & = α_g\\cdot S \\cdot η\\cdot 2.5\\cdot \\dfrac{T_C\\cdot T_D}{T^2}
             \\end{eqnarray}
 
     """
@@ -181,7 +181,7 @@ def SDe(T, Se):
         float: The elastic displacement response spectrum. Given using the expression:
 
         .. math::
-            S_{De}=S_e(T)\cdot(\dfrac{T}{2π})^2
+            S_{De}=S_e(T)\\cdot(\\dfrac{T}{2π})^2
 
     """
     return Se * (T / (2 * math.pi)) ** 2
@@ -200,7 +200,7 @@ def dg(αg, S, TC, TD):
         float: Design ground displacement. Given using the expression:
 
          .. math::
-            d_{g}=0.025\cdot α_g \cdot S \cdot T_C  \cdot T_D
+            d_{g}=0.025\\cdot α_g \\cdot S \\cdot T_C  \\cdot T_D
 
     """
     return 0.025 * αg * S * TC * TD
@@ -226,10 +226,10 @@ def Sd(T, αg, S, TB, TC, TD, q, β=0.2):
             :nowrap:
 
             \\begin{eqnarray}
-                0 \le T \le T_B \\rightarrow & S_d(T) & = α_g\cdot S \cdot (\dfrac{2}{3}+\dfrac{T}{T_B}\cdot(\dfrac{2.5}{q} - \dfrac{2}{3})) \\\\
-                T_B \le T \le T_C \\rightarrow & S_d(T) & = α_g\cdot S \cdot \dfrac{2.5}{q} \\\\
-                T_C \le T \le T_D \\rightarrow & S_d(T) & = α_g\cdot S \cdot \dfrac{2.5}{q} \cdot \dfrac{T_C}{T} \ge β \cdot α_g \\\\
-                T_D \le T \le 4s \\rightarrow & S_d(T) & = α_g\cdot S \cdot \dfrac{2.5}{q} \cdot \dfrac{T_C\cdot T_D}{T^2} \ge β \cdot α_g
+                0 \\le T \\le T_B \\rightarrow & S_d(T) & = α_g\\cdot S \\cdot (\\dfrac{2}{3}+\\dfrac{T}{T_B}\\cdot(\\dfrac{2.5}{q} - \\dfrac{2}{3})) \\\\
+                T_B \\le T \\le T_C \\rightarrow & S_d(T) & = α_g\\cdot S \\cdot \\dfrac{2.5}{q} \\\\
+                T_C \\le T \\le T_D \\rightarrow & S_d(T) & = α_g\\cdot S \\cdot \\dfrac{2.5}{q} \\cdot \\dfrac{T_C}{T} \\ge β \\cdot α_g \\\\
+                T_D \\le T \\le 4s \\rightarrow & S_d(T) & = α_g\\cdot S \\cdot \\dfrac{2.5}{q} \\cdot \\dfrac{T_C\\cdot T_D}{T^2} \\ge β \\cdot α_g
             \\end{eqnarray}
 
     """
@@ -268,7 +268,7 @@ def η(ξ):
         float: The value of the damping correction factor. Given using the expressions:
 
         .. math::
-            η = \sqrt{\dfrac{10}{5+ξ}} \ge 0.55
+            η = \\sqrt{\\dfrac{10}{5+ξ}} \\ge 0.55
     """
 
     return max(0.55, (10. / (5. + ξ)) ** 0.5)
