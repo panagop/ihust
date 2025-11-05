@@ -1,5 +1,5 @@
 [project]
-name = "your_project"
+name = "ihust"
 version = "0.1.0"
 description = "A Streamlit app with Jupyter Book docs"
 authors = [{name = "gp"}]
