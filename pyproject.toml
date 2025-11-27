@@ -18,6 +18,7 @@ dependencies = [
     "seaborn>=0.13.2",
     "notebook>=7.3.3",
     "openpyxl>=3.1.5",
+    "vfo>=0.0.19",
 ]
 
 [build-system]
