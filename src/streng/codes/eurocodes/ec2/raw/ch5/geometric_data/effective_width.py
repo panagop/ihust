@@ -31,7 +31,7 @@ def beff(bw, beff1, beff2, b):
         float: Given using the expression:
 
         .. math::
-            b_{eff}=\sum{b_{eff,i}} + b_w \le b
+            b_{eff}=\\sum{b_{eff,i}} + b_w \\le b
 
     """
     return min(bw + beff1 + beff2, b)
@@ -50,7 +50,7 @@ def beffi(bi, l0):
         float: Given using the expression:
 
         .. math::
-            b_{eff,i}=0.2\cdot b_i +0.1\cdot l_0 \le 0.2\cdot l_0
+            b_{eff,i}=0.2\\cdot b_i +0.1\\cdot l_0 \\le 0.2\\cdot l_0
 
     """
     return min(0.2 * bi + 0.1 * l0, 0.2 * l0, bi)

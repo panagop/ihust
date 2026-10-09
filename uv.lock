@@ -613,6 +613,7 @@ dependencies = [
     { name = "seaborn" },
     { name = "streamlit" },
     { name = "sympy" },
+    { name = "tabulate" },
     { name = "vfo" },
 ]
 
@@ -636,6 +637,7 @@ requires-dist = [
     { name = "seaborn", specifier = ">=0.13.2" },
     { name = "streamlit" },
     { name = "sympy", specifier = ">=1.13.3" },
+    { name = "tabulate", specifier = ">=0.9.0" },
     { name = "vfo", specifier = ">=0.0.19" },
 ]
 
